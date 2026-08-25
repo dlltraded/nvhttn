@@ -36,10 +36,10 @@
     <button id="login-btn" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition">Đăng Nhập</button>
     
     <!-- Install Guide -->
-    <div id="install-guide" class="mt-8 text-sm text-slate-600 bg-slate-50 p-4 rounded-lg border border-slate-200">
+    <div id="install-guide" class="hidden mt-8 text-sm text-slate-600 bg-slate-50 p-4 rounded-lg border border-slate-200">
       <p class="font-bold text-slate-800 mb-2">📲 Cài đặt App lên điện thoại:</p>
       <p id="ios-guide" class="hidden">iOS (iPhone): Ấn nút <b>Chia sẻ</b> <svg class="inline w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg> dưới Safari > chọn <b>Thêm vào MH chính</b> (Add to Home Screen).</p>
-      <button id="android-install-btn" class="hidden w-full bg-slate-200 text-slate-700 font-bold py-2 rounded-lg hover:bg-slate-300 transition">⬇️ Cài đặt App (Android)</button>
+      <button id="android-install-btn" class="hidden w-full bg-slate-200 text-slate-700 font-bold py-2 rounded-lg hover:bg-slate-300 transition">⬇️ Cài đặt App</button>
     </div>
   </div>
 </div>
@@ -179,6 +179,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const installBtn = document.getElementById('android-install-btn');
   const iosGuide = document.getElementById('ios-guide');
   
+  const installGuide = document.getElementById('install-guide');
+  
   // Detect iOS and check if already installed
   const isIos = () => {
     const userAgent = window.navigator.userAgent.toLowerCase();
@@ -187,12 +189,14 @@ document.addEventListener('DOMContentLoaded', function () {
   const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
 
   if (isIos() && !isInStandaloneMode()) {
+    installGuide.classList.remove('hidden');
     iosGuide.classList.remove('hidden');
   }
 
   window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
+    installGuide.classList.remove('hidden');
     installBtn.classList.remove('hidden');
   });
 
