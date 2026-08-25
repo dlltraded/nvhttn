@@ -16,6 +16,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- SweetAlert2 -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
   
   <style>
     body { background-color: #f8fafc; font-family: system-ui, -apple-system, sans-serif; }
@@ -29,8 +31,9 @@
   <div class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-sm text-center">
     <img src="../assets/logo-nvh.png" alt="Logo" class="w-20 h-20 mx-auto mb-4 rounded-full">
     <h2 class="text-2xl font-bold text-slate-800 mb-6">HVE Register</h2>
-    <input type="password" id="auth-input" class="w-full px-4 py-3 border border-slate-300 rounded-lg mb-4 text-center focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Nhập mật khẩu truy cập">
-    <button onclick="checkAuth()" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition">Đăng Nhập</button>
+    <input type="password" id="auth-input" class="w-full px-4 py-3 border border-slate-300 rounded-lg mb-2 text-center focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Nhập mật khẩu truy cập">
+    <p id="auth-error" class="hidden text-red-500 text-sm font-semibold mb-3">❌ Sai mật khẩu, vui lòng thử lại!</p>
+    <button id="login-btn" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition">Đăng Nhập</button>
   </div>
 </div>
 
@@ -159,51 +162,58 @@
   </main>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
-  // 1. Service Worker Registration
+document.addEventListener('DOMContentLoaded', function () {
+
+  // -------- Service Worker --------
   if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./sw.js').catch(err => {
-        console.log('ServiceWorker error: ', err);
-      });
-    });
+    navigator.serviceWorker.register('./sw.js').catch(err => console.log('SW error:', err));
   }
 
-  // 2. Auth Logic
+  // -------- Auth --------
   const AUTH_KEY = 'hve_webapp_auth';
   const PASS = 'HVE@2026';
+  const authScreen = document.getElementById('auth-screen');
+  const appScreen = document.getElementById('app-screen');
+  const authInput = document.getElementById('auth-input');
+  const authError = document.getElementById('auth-error');
 
-  function checkAuth(password = null) {
-    if (typeof password !== 'string') {
-      password = document.getElementById('auth-input').value.trim();
-    }
-    if (password === PASS || localStorage.getItem(AUTH_KEY) === 'true') {
-      localStorage.setItem(AUTH_KEY, 'true');
-      document.getElementById('auth-screen').classList.add('hidden');
-      document.getElementById('app-screen').classList.remove('hidden');
-    } else if (password !== null && password !== '') {
-      Swal.fire({ icon: 'error', title: 'Sai mật khẩu', text: 'Vui lòng kiểm tra lại.', confirmButtonColor: '#0b1f3b' });
-    }
+  function showApp() {
+    localStorage.setItem(AUTH_KEY, 'true');
+    authScreen.classList.add('hidden');
+    appScreen.classList.remove('hidden');
   }
 
-  document.getElementById('auth-input').addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
-      checkAuth();
+  function checkAuth() {
+    const password = authInput.value.trim();
+    if (password === PASS) {
+      showApp();
+    } else {
+      authError.classList.remove('hidden');
+      authInput.focus();
     }
-  });
+  }
 
   function logout() {
     localStorage.removeItem(AUTH_KEY);
     location.reload();
   }
+  window.logout = logout;
 
-  // Auto check on load
-  if(localStorage.getItem(AUTH_KEY) === 'true') {
-    checkAuth('');
+  // Auto-login if session exists
+  if (localStorage.getItem(AUTH_KEY) === 'true') {
+    showApp();
   }
 
-  // 3. Supabase Logic
+  document.getElementById('login-btn').addEventListener('click', checkAuth);
+  authInput.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') checkAuth();
+  });
+  authInput.addEventListener('input', function () {
+    authError.classList.add('hidden');
+  });
+
+  // -------- Supabase --------
   const SUPABASE_URL = 'https://sxrjulkzmqlrggxvhgtb.supabase.co';
   const SUPABASE_ANON_KEY = 'sb_publishable_-JGQB7CIBudgja_wjtBOQA_T8gNpR3k';
   const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, { auth: { persistSession: false } });
@@ -212,14 +222,14 @@
   const submitBtn = document.getElementById('submit-btn');
   const spinner = document.getElementById('spinner');
 
-  // Enforce exactly 2 subjects visually
+  // Enforce exactly 2 subjects
   const subjectBoxes = document.querySelectorAll('input[name="subject"]');
   subjectBoxes.forEach(box => {
     box.addEventListener('change', () => {
       const checked = document.querySelectorAll('input[name="subject"]:checked');
       document.getElementById('subject-error').style.display = 'none';
-      if(checked.length >= 2) {
-        subjectBoxes.forEach(b => { if(!b.checked) b.disabled = true; });
+      if (checked.length >= 2) {
+        subjectBoxes.forEach(b => { if (!b.checked) b.disabled = true; });
       } else {
         subjectBoxes.forEach(b => { b.disabled = false; });
       }
@@ -228,18 +238,22 @@
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    
+
     const checkedSubjects = document.querySelectorAll('input[name="subject"]:checked');
     if (checkedSubjects.length !== 2) {
       document.getElementById('subject-error').style.display = 'block';
-      Swal.fire({ icon: 'warning', title: 'Chọn môn năng khiếu', text: 'Vui lòng chọn chính xác 2 môn.', confirmButtonColor: '#0b1f3b' });
+      return;
+    }
+
+    const pkgEl = document.querySelector('input[name="package"]:checked');
+    if (!pkgEl) {
+      alert('Vui lòng chọn gói học.');
       return;
     }
 
     submitBtn.disabled = true;
     spinner.classList.remove('hidden');
 
-    const pkgEl = document.querySelector('input[name="package"]:checked');
     const selectedSubjects = Array.from(checkedSubjects).map(cb => cb.value);
 
     const payload = {
@@ -252,14 +266,14 @@
       programs: ['Rèn luyện Kỹ năng hè 2026-2027', ...selectedSubjects],
       wants_after_1630: document.getElementById('after1630').checked,
       staff_discount_claim: document.getElementById('staffDiscount').checked,
-      status: 'Đã đăng ký', // Critical requirement
-      source: 'webapp-tu-van' // Critical requirement
+      status: 'Đã đăng ký',
+      source: 'webapp-tu-van'
     };
 
     let { error } = await supabase.from('leads').insert(payload);
 
-    // Fallback if missing columns on test DB
-    if (error && /column|schema/i.test(error.message || '')){
+    // Fallback if missing columns
+    if (error && /column|schema/i.test(error.message || '')) {
       const fallback = {
         parent_name: payload.parent_name,
         phone: payload.phone,
@@ -281,19 +295,20 @@
     } else {
       Swal.fire({
         icon: 'success',
-        title: 'Thành công!',
-        text: `Đã lưu hồ sơ của bé ${payload.child_name}`,
+        title: '✅ Đã lưu hồ sơ!',
+        text: `Bé ${payload.child_name} - ${payload.phone}`,
         confirmButtonColor: '#0b1f3b',
-        timer: 2000,
+        timer: 2500,
         showConfirmButton: false
       }).then(() => {
         form.reset();
-        // re-enable checkboxes
         subjectBoxes.forEach(b => { b.disabled = false; });
-        window.scrollTo(0,0);
+        window.scrollTo(0, 0);
       });
     }
   });
+
+}); // end DOMContentLoaded
 </script>
 </body>
 </html>
