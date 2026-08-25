@@ -2,22 +2,24 @@
   "name": "HVE Register",
   "short_name": "HVE Register",
   "description": "Ứng dụng nội bộ dành cho tư vấn viên đăng ký ghi danh",
-  "start_url": "./",
+  "start_url": "/webapp/",
+  "scope": "/webapp/",
   "display": "standalone",
-  "background_color": "#ffffff",
+  "orientation": "portrait",
+  "background_color": "#0b1f3b",
   "theme_color": "#0b1f3b",
   "icons": [
     {
       "src": "./icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "./icon.svg",
-      "sizes": "192x192 512x512",
+      "sizes": "512x512",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "maskable"
     }
   ]
 }
