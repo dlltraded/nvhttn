@@ -34,6 +34,13 @@
     <input type="password" id="auth-input" class="w-full px-4 py-3 border border-slate-300 rounded-lg mb-2 text-center focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Nhập mật khẩu truy cập">
     <p id="auth-error" class="hidden text-red-500 text-sm font-semibold mb-3">❌ Sai mật khẩu, vui lòng thử lại!</p>
     <button id="login-btn" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition">Đăng Nhập</button>
+    
+    <!-- Install Guide -->
+    <div id="install-guide" class="mt-8 text-sm text-slate-600 bg-slate-50 p-4 rounded-lg border border-slate-200">
+      <p class="font-bold text-slate-800 mb-2">📲 Cài đặt App lên điện thoại:</p>
+      <p id="ios-guide" class="hidden">iOS (iPhone): Ấn nút <b>Chia sẻ</b> <svg class="inline w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg> dưới Safari > chọn <b>Thêm vào MH chính</b> (Add to Home Screen).</p>
+      <button id="android-install-btn" class="hidden w-full bg-slate-200 text-slate-700 font-bold py-2 rounded-lg hover:bg-slate-300 transition">⬇️ Cài đặt App (Android)</button>
+    </div>
   </div>
 </div>
 
@@ -166,6 +173,39 @@ document.addEventListener('DOMContentLoaded', function () {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./sw.js').catch(err => console.log('SW error:', err));
   }
+
+  // -------- PWA Install Prompt --------
+  let deferredPrompt;
+  const installBtn = document.getElementById('android-install-btn');
+  const iosGuide = document.getElementById('ios-guide');
+  
+  // Detect iOS and check if already installed
+  const isIos = () => {
+    const userAgent = window.navigator.userAgent.toLowerCase();
+    return /iphone|ipad|ipod/.test(userAgent);
+  };
+  const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
+
+  if (isIos() && !isInStandaloneMode()) {
+    iosGuide.classList.remove('hidden');
+  }
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    installBtn.classList.remove('hidden');
+  });
+
+  installBtn.addEventListener('click', async () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      if (outcome === 'accepted') {
+        installBtn.classList.add('hidden');
+      }
+      deferredPrompt = null;
+    }
+  });
 
   // -------- Auth --------
   const AUTH_KEY = 'hve_webapp_auth';
