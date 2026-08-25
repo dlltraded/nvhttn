@@ -288,7 +288,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (error) {
       console.error(error);
-      Swal.fire({ icon: 'error', title: 'Lỗi hệ thống', text: 'Không thể lưu dữ liệu, vui lòng thử lại.', confirmButtonColor: '#0b1f3b' });
+      Swal.fire({ icon: 'error', title: 'Lỗi hệ thống', text: 'Không thể lưu dữ liệu: ' + (error.message || 'Lỗi không xác định'), confirmButtonColor: '#0b1f3b' });
     } else {
       Swal.fire({
         icon: 'success',
