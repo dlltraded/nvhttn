@@ -175,17 +175,23 @@
   const PASS = 'HVE@2026';
 
   function checkAuth(password = null) {
-    if(password === null) {
-      password = document.getElementById('auth-input').value;
+    if (typeof password !== 'string') {
+      password = document.getElementById('auth-input').value.trim();
     }
     if (password === PASS || localStorage.getItem(AUTH_KEY) === 'true') {
       localStorage.setItem(AUTH_KEY, 'true');
       document.getElementById('auth-screen').classList.add('hidden');
       document.getElementById('app-screen').classList.remove('hidden');
-    } else if (password) {
+    } else if (password !== null && password !== '') {
       Swal.fire({ icon: 'error', title: 'Sai mật khẩu', text: 'Vui lòng kiểm tra lại.', confirmButtonColor: '#0b1f3b' });
     }
   }
+
+  document.getElementById('auth-input').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+      checkAuth();
+    }
+  });
 
   function logout() {
     localStorage.removeItem(AUTH_KEY);
