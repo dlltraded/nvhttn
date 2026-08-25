@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>HVE Register</title>
+  
+  <!-- PWA Meta Tags -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0b1f3b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="../assets/logo-nvh.png">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+  <style>
+    body { background-color: #f8fafc; font-family: system-ui, -apple-system, sans-serif; }
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body class="text-slate-800 pb-20">
+
+<!-- PASSWORD SCREEN -->
+<div id="auth-screen" class="min-h-screen flex items-center justify-center bg-slate-100 px-4">
+  <div class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-sm text-center">
+    <img src="../assets/logo-nvh.png" alt="Logo" class="w-20 h-20 mx-auto mb-4 rounded-full">
+    <h2 class="text-2xl font-bold text-slate-800 mb-6">HVE Register</h2>
+    <input type="password" id="auth-input" class="w-full px-4 py-3 border border-slate-300 rounded-lg mb-4 text-center focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Nhập mật khẩu truy cập">
+    <button onclick="checkAuth()" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition">Đăng Nhập</button>
+  </div>
+</div>
+
+<!-- MAIN APP SCREEN -->
+<div id="app-screen" class="hidden max-w-md mx-auto bg-white min-h-screen shadow-md">
+  
+  <header class="bg-[#0b1f3b] text-white p-4 sticky top-0 z-10 flex items-center gap-3 shadow-md">
+    <img src="../assets/logo-nvh.png" class="w-10 h-10 rounded-full bg-white p-1">
+    <div>
+      <h1 class="font-bold text-lg leading-tight">HVE Register</h1>
+      <p class="text-xs text-blue-200">Ghi danh trực tiếp (Status: Đã đăng ký)</p>
+    </div>
+    <button onclick="logout()" class="ml-auto text-xs bg-slate-700/50 px-3 py-1.5 rounded-md hover:bg-slate-700">Thoát</button>
+  </header>
+
+  <main class="p-5">
+    <form id="reg-form" class="space-y-5">
+      
+      <!-- Phụ huynh -->
+      <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+        <h3 class="font-bold text-slate-700 mb-3 flex items-center gap-2"><span>👤</span> Phụ huynh</h3>
+        <div class="space-y-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-500 mb-1">Họ tên phụ huynh *</label>
+            <input type="text" id="parent_name" required class="w-full px-3 py-2.5 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-500 mb-1">Số điện thoại *</label>
+            <input type="tel" id="phone" required class="w-full px-3 py-2.5 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+          </div>
+        </div>
+      </div>
+
+      <!-- Học sinh -->
+      <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+        <h3 class="font-bold text-slate-700 mb-3 flex items-center gap-2"><span>👦</span> Học sinh</h3>
+        <div class="space-y-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-500 mb-1">Họ tên học sinh *</label>
+            <input type="text" id="child_name" required class="w-full px-3 py-2.5 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-slate-500 mb-1">Tuổi *</label>
+              <input type="number" id="child_age" required class="w-full px-3 py-2.5 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-500 mb-1">Trường *</label>
+              <input type="text" id="child_school" required class="w-full px-3 py-2.5 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gói học -->
+      <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+        <h3 class="font-bold text-slate-700 mb-3 flex items-center gap-2"><span>📦</span> Gói học (Tháng) *</h3>
+        <div class="space-y-2">
+          <label class="flex items-center gap-3 p-3 bg-white border border-slate-200 rounded-lg cursor-pointer hover:border-blue-400">
+            <input type="radio" name="package" value="th-1" required class="w-5 h-5 text-blue-600 focus:ring-blue-500">
+            <div>
+              <div class="font-semibold text-sm">Tiểu học · 01 buổi (2.530k)</div>
+            </div>
+          </label>
+          <label class="flex items-center gap-3 p-3 bg-white border border-slate-200 rounded-lg cursor-pointer hover:border-blue-400">
+            <input type="radio" name="package" value="th-2" class="w-5 h-5 text-blue-600 focus:ring-blue-500">
+            <div>
+              <div class="font-semibold text-sm">Tiểu học · 02 buổi (2.900k)</div>
+            </div>
+          </label>
+          <label class="flex items-center gap-3 p-3 bg-white border border-slate-200 rounded-lg cursor-pointer hover:border-blue-400">
+            <input type="radio" name="package" value="thcs-1" class="w-5 h-5 text-blue-600 focus:ring-blue-500">
+            <div>
+              <div class="font-semibold text-sm">THCS · 01 buổi (2.655k)</div>
+            </div>
+          </label>
+          <label class="flex items-center gap-3 p-3 bg-white border border-slate-200 rounded-lg cursor-pointer hover:border-blue-400">
+            <input type="radio" name="package" value="thcs-2" class="w-5 h-5 text-blue-600 focus:ring-blue-500">
+            <div>
+              <div class="font-semibold text-sm">THCS · 02 buổi (3.025k)</div>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Môn học -->
+      <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+        <h3 class="font-bold text-slate-700 mb-1 flex items-center gap-2"><span>🎨</span> Chọn 2 môn năng khiếu</h3>
+        <p class="text-xs text-red-500 font-semibold mb-3" id="subject-error" style="display:none">Vui lòng chọn đúng 2 môn</p>
+        <div class="grid grid-cols-2 gap-2">
+          <label class="flex items-center gap-2 p-2.5 bg-white border border-slate-200 rounded-lg cursor-pointer hover:border-blue-400"><input type="checkbox" name="subject" value="Bóng rổ" class="w-4 h-4 rounded text-blue-600"><span class="text-sm font-medium">Bóng rổ</span></label>
+          <label class="flex items-center gap-2 p-2.5 bg-white border border-slate-200 rounded-lg cursor-pointer hover:border-blue-400"><input type="checkbox" name="subject" value="Bóng đá" class="w-4 h-4 rounded text-blue-600"><span class="text-sm font-medium">Bóng đá</span></label>
+          <label class="flex items-center gap-2 p-2.5 bg-white border border-slate-200 rounded-lg cursor-pointer hover:border-blue-400"><input type="checkbox" name="subject" value="Bơi lội" class="w-4 h-4 rounded text-blue-600"><span class="text-sm font-medium">Bơi lội</span></label>
+          <label class="flex items-center gap-2 p-2.5 bg-white border border-slate-200 rounded-lg cursor-pointer hover:border-blue-400"><input type="checkbox" name="subject" value="Robotics & AI" class="w-4 h-4 rounded text-blue-600"><span class="text-sm font-medium">Robotics</span></label>
+          <label class="flex items-center gap-2 p-2.5 bg-white border border-slate-200 rounded-lg cursor-pointer hover:border-blue-400"><input type="checkbox" name="subject" value="Vẽ" class="w-4 h-4 rounded text-blue-600"><span class="text-sm font-medium">Vẽ</span></label>
+          <label class="flex items-center gap-2 p-2.5 bg-white border border-slate-200 rounded-lg cursor-pointer hover:border-blue-400"><input type="checkbox" name="subject" value="Nhảy hiện đại" class="w-4 h-4 rounded text-blue-600"><span class="text-sm font-medium">Nhảy hiện đại</span></label>
+          <label class="flex items-center gap-2 p-2.5 bg-white border border-slate-200 rounded-lg cursor-pointer hover:border-blue-400 col-span-2"><input type="checkbox" name="subject" value="MC" class="w-4 h-4 rounded text-blue-600"><span class="text-sm font-medium">MC (Dẫn chương trình)</span></label>
+        </div>
+      </div>
+
+      <!-- Option thêm -->
+      <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 space-y-3">
+        <label class="flex items-start gap-3 cursor-pointer">
+          <input type="checkbox" id="after1630" class="w-5 h-5 rounded text-blue-600 mt-0.5">
+          <div>
+            <div class="text-sm font-bold text-slate-700">Đón sau 16:30</div>
+            <div class="text-xs text-slate-500">Phụ huynh có nhu cầu gửi muộn</div>
+          </div>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer">
+          <input type="checkbox" id="staffDiscount" class="w-5 h-5 rounded text-blue-600 mt-0.5">
+          <div>
+            <div class="text-sm font-bold text-slate-700">Con cán bộ công chức</div>
+            <div class="text-xs text-slate-500">Dùng để xét ưu đãi</div>
+          </div>
+        </label>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" id="submit-btn" class="w-full bg-[#0b1f3b] text-white font-bold py-4 rounded-xl shadow-lg hover:bg-blue-800 transition text-lg mt-4 flex items-center justify-center gap-2">
+        <svg class="w-5 h-5 hidden animate-spin" id="spinner" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+        LƯU HỒ SƠ (ĐÃ ĐĂNG KÝ)
+      </button>
+
+    </form>
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script>
+  // 1. Service Worker Registration
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js').catch(err => {
+        console.log('ServiceWorker error: ', err);
+      });
+    });
+  }
+
+  // 2. Auth Logic
+  const AUTH_KEY = 'hve_webapp_auth';
+  const PASS = 'HVE@2026';
+
+  function checkAuth(password = null) {
+    if(password === null) {
+      password = document.getElementById('auth-input').value;
+    }
+    if (password === PASS || localStorage.getItem(AUTH_KEY) === 'true') {
+      localStorage.setItem(AUTH_KEY, 'true');
+      document.getElementById('auth-screen').classList.add('hidden');
+      document.getElementById('app-screen').classList.remove('hidden');
+    } else if (password) {
+      Swal.fire({ icon: 'error', title: 'Sai mật khẩu', text: 'Vui lòng kiểm tra lại.', confirmButtonColor: '#0b1f3b' });
+    }
+  }
+
+  function logout() {
+    localStorage.removeItem(AUTH_KEY);
+    location.reload();
+  }
+
+  // Auto check on load
+  if(localStorage.getItem(AUTH_KEY) === 'true') {
+    checkAuth('');
+  }
+
+  // 3. Supabase Logic
+  const SUPABASE_URL = 'https://sxrjulkzmqlrggxvhgtb.supabase.co';
+  const SUPABASE_ANON_KEY = 'sb_publishable_-JGQB7CIBudgja_wjtBOQA_T8gNpR3k';
+  const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, { auth: { persistSession: false } });
+
+  const form = document.getElementById('reg-form');
+  const submitBtn = document.getElementById('submit-btn');
+  const spinner = document.getElementById('spinner');
+
+  // Enforce exactly 2 subjects visually
+  const subjectBoxes = document.querySelectorAll('input[name="subject"]');
+  subjectBoxes.forEach(box => {
+    box.addEventListener('change', () => {
+      const checked = document.querySelectorAll('input[name="subject"]:checked');
+      document.getElementById('subject-error').style.display = 'none';
+      if(checked.length >= 2) {
+        subjectBoxes.forEach(b => { if(!b.checked) b.disabled = true; });
+      } else {
+        subjectBoxes.forEach(b => { b.disabled = false; });
+      }
+    });
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const checkedSubjects = document.querySelectorAll('input[name="subject"]:checked');
+    if (checkedSubjects.length !== 2) {
+      document.getElementById('subject-error').style.display = 'block';
+      Swal.fire({ icon: 'warning', title: 'Chọn môn năng khiếu', text: 'Vui lòng chọn chính xác 2 môn.', confirmButtonColor: '#0b1f3b' });
+      return;
+    }
+
+    submitBtn.disabled = true;
+    spinner.classList.remove('hidden');
+
+    const pkgEl = document.querySelector('input[name="package"]:checked');
+    const selectedSubjects = Array.from(checkedSubjects).map(cb => cb.value);
+
+    const payload = {
+      parent_name: document.getElementById('parent_name').value.trim(),
+      phone: document.getElementById('phone').value.trim(),
+      child_name: document.getElementById('child_name').value.trim(),
+      child_age: parseInt(document.getElementById('child_age').value, 10) || null,
+      child_school: document.getElementById('child_school').value.trim(),
+      package_selected: pkgEl.value,
+      programs: ['Rèn luyện Kỹ năng hè 2026-2027', ...selectedSubjects],
+      wants_after_1630: document.getElementById('after1630').checked,
+      staff_discount_claim: document.getElementById('staffDiscount').checked,
+      status: 'Đã đăng ký', // Critical requirement
+      source: 'webapp-tu-van' // Critical requirement
+    };
+
+    let { error } = await supabase.from('leads').insert(payload);
+
+    // Fallback if missing columns on test DB
+    if (error && /column|schema/i.test(error.message || '')){
+      const fallback = {
+        parent_name: payload.parent_name,
+        phone: payload.phone,
+        child_name: payload.child_name,
+        child_age: payload.child_age,
+        programs: payload.programs,
+        status: payload.status,
+        source: payload.source
+      };
+      ({ error } = await supabase.from('leads').insert(fallback));
+    }
+
+    submitBtn.disabled = false;
+    spinner.classList.add('hidden');
+
+    if (error) {
+      console.error(error);
+      Swal.fire({ icon: 'error', title: 'Lỗi hệ thống', text: 'Không thể lưu dữ liệu, vui lòng thử lại.', confirmButtonColor: '#0b1f3b' });
+    } else {
+      Swal.fire({
+        icon: 'success',
+        title: 'Thành công!',
+        text: `Đã lưu hồ sơ của bé ${payload.child_name}`,
+        confirmButtonColor: '#0b1f3b',
+        timer: 2000,
+        showConfirmButton: false
+      }).then(() => {
+        form.reset();
+        // re-enable checkboxes
+        subjectBoxes.forEach(b => { b.disabled = false; });
+        window.scrollTo(0,0);
+      });
+    }
+  });
+</script>
+</body>
+</html>
