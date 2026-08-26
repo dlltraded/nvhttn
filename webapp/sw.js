@@ -1,10 +1,11 @@
-const CACHE_NAME = 'hve-register-v8';
+const CACHE_NAME = 'hve-register-v9';
 const urlsToCache = [
-  './',
-  './index.html',
-  './manifest.json',
-  './icon-192.png',
-  './icon-512.png'
+  '/webapp/',
+  '/webapp/index.html',
+  '/webapp/manifest.json',
+  '/webapp/icon-192.png',
+  '/webapp/icon-512.png',
+  '/webapp/icon-maskable-512.png'
 ];
 
 self.addEventListener('install', event => {
@@ -33,13 +34,19 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
-  // Network first for HTML/manifest, cache first for assets
+  if (event.request.method !== 'GET') return;
+
+  // Always refresh navigations and PWA metadata; fall back to the app shell offline.
   const url = new URL(event.request.url);
-  if (url.pathname.endsWith('.html') || url.pathname.endsWith('manifest.json')) {
+  if (event.request.mode === 'navigate') {
     event.respondWith(
-      fetch(event.request).catch(() => caches.match(event.request))
+      fetch(event.request).catch(() => caches.match('/webapp/'))
     );
-  } else {
+  } else if (url.origin === self.location.origin && url.pathname === '/webapp/manifest.json') {
+    event.respondWith(
+      fetch(event.request).catch(() => caches.match('/webapp/manifest.json'))
+    );
+  } else if (url.origin === self.location.origin) {
     event.respondWith(
       caches.match(event.request).then(response => response || fetch(event.request))
     );

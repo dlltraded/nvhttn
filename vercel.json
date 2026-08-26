@@ -1,20 +1,23 @@
 {
   "outputDirectory": ".",
   "cleanUrls": false,
-  "trailingSlash": false,
+  "trailingSlash": true,
   "headers": [
     {
       "source": "/webapp/sw.js",
       "headers": [
         { "key": "Cache-Control", "value": "no-cache" },
-        { "key": "Content-Type", "value": "application/javascript" }
+        { "key": "Content-Type", "value": "application/javascript" },
+        { "key": "Service-Worker-Allowed", "value": "/webapp/" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" }
       ]
     },
     {
       "source": "/webapp/manifest.json",
       "headers": [
         { "key": "Cache-Control", "value": "no-cache" },
-        { "key": "Content-Type", "value": "application/manifest+json" }
+        { "key": "Content-Type", "value": "application/manifest+json" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" }
       ]
     }
   ]
