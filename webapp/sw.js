@@ -1,9 +1,9 @@
-const CACHE_NAME = 'hve-register-v3';
+const CACHE_NAME = 'hve-register-v4';
 const urlsToCache = [
   './',
   './index.html',
   './manifest.json',
-  './icon.svg'
+  './logo-nvh.png'
 ];
 
 self.addEventListener('install', event => {
