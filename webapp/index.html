@@ -35,11 +35,24 @@
     <p id="auth-error" class="hidden text-red-500 text-sm font-semibold mb-3">❌ Sai mật khẩu, vui lòng thử lại!</p>
     <button id="login-btn" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition">Đăng Nhập</button>
     
-    <!-- Install Guide -->
-    <div id="install-guide" class="hidden mt-8 text-sm text-slate-600 bg-slate-50 p-4 rounded-lg border border-slate-200">
-      <p class="font-bold text-slate-800 mb-2">📲 Cài đặt App lên điện thoại:</p>
-      <p id="ios-guide" class="hidden">iOS (iPhone): Ấn nút <b>Chia sẻ</b> <svg class="inline w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg> dưới Safari > chọn <b>Thêm vào MH chính</b> (Add to Home Screen).</p>
-      <button id="android-install-btn" class="hidden w-full bg-slate-200 text-slate-700 font-bold py-2 rounded-lg hover:bg-slate-300 transition">⬇️ Cài đặt App</button>
+    <!-- Install Guide - Always visible -->
+    <div class="mt-6 border-t border-slate-100 pt-5">
+      <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-3">📲 Cài App lên điện thoại</p>
+
+      <!-- Android: show button if available, else manual guide -->
+      <div id="android-block">
+        <button id="android-install-btn" class="hidden w-full bg-[#0b1f3b] text-white font-bold py-3 rounded-xl shadow hover:bg-blue-900 transition mb-2">⬇️ Nhấn để cài đặt App (Android)</button>
+        <p id="android-manual" class="hidden text-xs text-slate-500 bg-slate-50 rounded-lg p-3 text-left">
+          📱 <b>Android (Chrome):</b> Ấn menu <b>⋮</b> góc trên phải → chọn <b>"Thêm vào màn hình chính"</b> hoặc <b>"Cài đặt ứng dụng"</b>.
+        </p>
+      </div>
+
+      <!-- iOS: always show -->
+      <p id="ios-guide" class="hidden text-xs text-slate-500 bg-slate-50 rounded-lg p-3 text-left mt-2">
+        🍎 <b>iPhone (Safari):</b> Ấn biểu tượng <b>Chia sẻ</b> ↑ ở thanh dưới → chọn <b>"Thêm vào MH Chính"</b>.
+      </p>
+
+      <p id="desktop-note" class="hidden text-xs text-slate-400 mt-2">Mở link trên <b>điện thoại</b> để cài đặt App.</p>
     </div>
   </div>
 </div>
@@ -176,37 +189,41 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // -------- PWA Install Prompt --------
   let deferredPrompt;
-  const installBtn = document.getElementById('android-install-btn');
-  const iosGuide = document.getElementById('ios-guide');
-  
-  const installGuide = document.getElementById('install-guide');
-  
-  // Detect iOS and check if already installed
-  const isIos = () => {
-    const userAgent = window.navigator.userAgent.toLowerCase();
-    return /iphone|ipad|ipod/.test(userAgent);
-  };
-  const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
+  const installBtn    = document.getElementById('android-install-btn');
+  const androidManual = document.getElementById('android-manual');
+  const iosGuide      = document.getElementById('ios-guide');
+  const desktopNote   = document.getElementById('desktop-note');
 
-  if (isIos() && !isInStandaloneMode()) {
-    installGuide.classList.remove('hidden');
-    iosGuide.classList.remove('hidden');
+  const isIos = () => /iphone|ipad|ipod/i.test(navigator.userAgent);
+  const isAndroid = () => /android/i.test(navigator.userAgent);
+  const isStandalone = () => window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+
+  if (!isStandalone()) {
+    if (isIos()) {
+      // iPhone / iPad: always show Safari share instructions
+      iosGuide.classList.remove('hidden');
+    } else if (isAndroid()) {
+      // Android: listen for Chrome's native prompt, else show manual guide
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        installBtn.classList.remove('hidden'); // show big install button
+      });
+      // After 2.5s, if prompt hasn't fired, show the manual menu guide
+      setTimeout(() => {
+        if (!deferredPrompt) androidManual.classList.remove('hidden');
+      }, 2500);
+    } else {
+      // Desktop
+      desktopNote.classList.remove('hidden');
+    }
   }
-
-  window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault();
-    deferredPrompt = e;
-    installGuide.classList.remove('hidden');
-    installBtn.classList.remove('hidden');
-  });
 
   installBtn.addEventListener('click', async () => {
     if (deferredPrompt) {
       deferredPrompt.prompt();
       const { outcome } = await deferredPrompt.userChoice;
-      if (outcome === 'accepted') {
-        installBtn.classList.add('hidden');
-      }
+      if (outcome === 'accepted') installBtn.classList.add('hidden');
       deferredPrompt = null;
     }
   });
