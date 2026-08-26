@@ -1141,6 +1141,10 @@ const I18N = {
   "form.successH": {vi:"Đăng ký thành công!", en:"Registration Successful!"},
   "form.successP": {vi:"Cảm ơn ba mẹ đã đăng ký. Đội ngũ Nhà Văn hóa Thanh Thiếu nhi TP. Đồng Nai sẽ liên hệ tư vấn trong thời gian sớm nhất.", en:"Thank you for registering. Our team at the Youth Culture House, Dong Nai City will contact you shortly."},
   "form.errorGeneric": {vi:"Có lỗi xảy ra, vui lòng thử lại hoặc gọi hotline 090 858 3999.", en:"Something went wrong, please try again or call 090 858 3999."},
+  "promo.badge": {vi:"Ưu đãi độc quyền", en:"Exclusive Offer"},
+  "promo.title": {vi:"Giảm thêm 5% học phí<br>cho 100 suất đăng ký đầu tiên!", en:"Extra 5% tuition discount<br>for the first 100 registrations!"},
+  "promo.desc": {vi:"Chỉ áp dụng cho phụ huynh đăng ký giữ chỗ qua form online trước ngày <strong>khai giảng 07/09/2026</strong>. Đăng ký ngay để chọn được tuyến xe đưa đón phù hợp nhất!", en:"Available only for parents who reserve a spot via the online form before <strong>the opening day 07/09/2026</strong>. Register now to secure the most suitable shuttle route for your child!"},
+  "promo.cta": {vi:"Đăng ký nhận ưu đãi ngay", en:"Register for the offer now"},
   "steps.eyebrow": {vi:"Quy trình đơn giản", en:"Simple Process"},
   "steps.h2": {vi:"Chỉ 3 bước để con có chỗ học", en:"Just 3 steps to secure a spot"},
   "steps.s1h": {vi:"Đăng ký trực tuyến", en:"Register online"},
@@ -1346,12 +1350,12 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="promo-popup">
     <button class="promo-close" id="promoClose" aria-label="Đóng">&times;</button>
     <div class="promo-head">
-      <div class="promo-badge">Ưu đãi độc quyền</div>
-      <h3>Giảm thêm 5% học phí<br>cho 100 suất đăng ký đầu tiên!</h3>
+      <div class="promo-badge" data-i18n="promo.badge">Ưu đãi độc quyền</div>
+      <h3 data-i18n-html="promo.title">Giảm thêm 5% học phí<br>cho 100 suất đăng ký đầu tiên!</h3>
     </div>
     <div class="promo-body">
-      <p>Chỉ áp dụng cho phụ huynh đăng ký giữ chỗ qua form online trước ngày <strong>khai giảng 07/09/2026</strong>. Đăng ký ngay để chọn được tuyến xe đưa đón phù hợp nhất!</p>
-      <a href="#dang-ky" class="promo-btn" id="promoBtnCTA">Đăng ký nhận ưu đãi ngay</a>
+      <p data-i18n-html="promo.desc">Chỉ áp dụng cho phụ huynh đăng ký giữ chỗ qua form online trước ngày <strong>khai giảng 07/09/2026</strong>. Đăng ký ngay để chọn được tuyến xe đưa đón phù hợp nhất!</p>
+      <a href="#dang-ky" class="promo-btn" id="promoBtnCTA" data-i18n="promo.cta">Đăng ký nhận ưu đãi ngay</a>
     </div>
   </div>
 </div>
