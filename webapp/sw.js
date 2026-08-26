@@ -1,4 +1,4 @@
-const CACHE_NAME = 'hve-register-v5';
+const CACHE_NAME = 'hve-register-v6';
 const urlsToCache = [
   './',
   './index.html',
