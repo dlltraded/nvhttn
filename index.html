@@ -562,17 +562,17 @@
       <p data-i18n="program.p">Học sinh được tư vấn, bố trí năng khiếu phù hợp độ tuổi, sức khỏe và nguyện vọng — song song rèn luyện các kỹ năng nền tảng mỗi ngày.</p>
     </div>
 
-    <h3 style="text-align:center;font-size:17px;margin-bottom:20px">Chọn 2 trong 7 môn năng khiếu</h3>
+    <h3 style="text-align:center;font-size:17px;margin-bottom:20px" data-i18n="program.pickTitle">Chọn 2 trong 7 môn năng khiếu</h3>
     
     <div class="english-club-banner">
       <img src="assets/english_club.jpg" alt="Câu lạc bộ Tiếng Anh" class="ecb-img">
       <div class="ecb-content">
         <div style="position:absolute; top: -5px; right: -5px; font-size:70px; opacity:0.1; line-height:1">🇬🇧</div>
         <div style="display:flex; align-items:center; gap:12px; margin-bottom:8px">
-          <span style="background:var(--gold-500); color:var(--navy-900); padding:4px 10px; border-radius:999px; font-size:12px; font-weight:800; text-transform:uppercase;">MIỄN PHÍ</span>
-          <h4 style="font-size:19px;font-weight:800;color:var(--gold-500);margin:0">CLB Tiếng Anh</h4>
+          <span style="background:var(--gold-500); color:var(--navy-900); padding:4px 10px; border-radius:999px; font-size:12px; font-weight:800; text-transform:uppercase;" data-i18n="ecb.badge">MIỄN PHÍ</span>
+          <h4 style="font-size:19px;font-weight:800;color:var(--gold-500);margin:0" data-i18n="ecb.title">CLB Tiếng Anh</h4>
         </div>
-        <p style="font-size:14.5px;opacity:0.9;line-height:1.5;margin:0">
+        <p style="font-size:14.5px;opacity:0.9;line-height:1.5;margin:0" data-i18n-html="ecb.desc">
           Tất cả học viên được tham gia sinh hoạt Câu lạc bộ Tiếng Anh hàng ngày với <strong>100% Giáo viên nước ngoài</strong>, giúp các em phản xạ tự nhiên và tự tin giao tiếp.
         </p>
       </div>
@@ -811,15 +811,15 @@
           </div>
 
           <div class="f-group" style="margin-bottom:10px">
-            <label>Chọn 02 môn năng khiếu * <span style="font-size:12px;color:var(--red-600);display:none" id="subject-error">(Vui lòng chọn đúng 2 môn)</span></label>
+            <label><span data-i18n="form.subjectLabel">Chọn 02 môn năng khiếu</span> * <span style="font-size:12px;color:var(--red-600);display:none" id="subject-error"><span data-i18n="form.subjectError">(Vui lòng chọn đúng 2 môn)</span></span></label>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px" id="subject-checkboxes">
-              <label class="checkline" style="margin:0;align-items:center;padding:10px 12px"><input type="checkbox" name="subject" value="Bóng rổ"><div class="ct" style="margin:0">Bóng rổ</div></label>
-              <label class="checkline" style="margin:0;align-items:center;padding:10px 12px"><input type="checkbox" name="subject" value="Bóng đá"><div class="ct" style="margin:0">Bóng đá</div></label>
-              <label class="checkline" style="margin:0;align-items:center;padding:10px 12px"><input type="checkbox" name="subject" value="Bơi lội"><div class="ct" style="margin:0">Bơi lội</div></label>
-              <label class="checkline" style="margin:0;align-items:center;padding:10px 12px"><input type="checkbox" name="subject" value="Robotics & AI"><div class="ct" style="margin:0">Robotics & AI</div></label>
-              <label class="checkline" style="margin:0;align-items:center;padding:10px 12px"><input type="checkbox" name="subject" value="Vẽ"><div class="ct" style="margin:0">Hội họa (Vẽ)</div></label>
-              <label class="checkline" style="margin:0;align-items:center;padding:10px 12px"><input type="checkbox" name="subject" value="Nhảy hiện đại"><div class="ct" style="margin:0">Nhảy hiện đại</div></label>
-              <label class="checkline" style="margin:0;align-items:center;padding:10px 12px"><input type="checkbox" name="subject" value="MC"><div class="ct" style="margin:0">MC</div></label>
+              <label class="checkline" style="margin:0;align-items:center;padding:10px 12px"><input type="checkbox" name="subject" value="Bóng rổ"><div class="ct" style="margin:0" data-i18n="program.bongro">Bóng rổ</div></label>
+              <label class="checkline" style="margin:0;align-items:center;padding:10px 12px"><input type="checkbox" name="subject" value="Bóng đá"><div class="ct" style="margin:0" data-i18n="program.bongda">Bóng đá</div></label>
+              <label class="checkline" style="margin:0;align-items:center;padding:10px 12px"><input type="checkbox" name="subject" value="Bơi lội"><div class="ct" style="margin:0" data-i18n="program.boiloi">Bơi lội</div></label>
+              <label class="checkline" style="margin:0;align-items:center;padding:10px 12px"><input type="checkbox" name="subject" value="Robotics & AI"><div class="ct" style="margin:0" data-i18n="program.robotics">Robotics &amp; AI</div></label>
+              <label class="checkline" style="margin:0;align-items:center;padding:10px 12px"><input type="checkbox" name="subject" value="Vẽ"><div class="ct" style="margin:0" data-i18n="program.ve">Hội họa &amp; Sáng tạo</div></label>
+              <label class="checkline" style="margin:0;align-items:center;padding:10px 12px"><input type="checkbox" name="subject" value="Nhảy hiện đại"><div class="ct" style="margin:0" data-i18n="program.nhay">Nhảy hiện đại</div></label>
+              <label class="checkline" style="margin:0;align-items:center;padding:10px 12px;grid-column:span 2"><input type="checkbox" name="subject" value="MC"><div class="ct" style="margin:0" data-i18n="program.mc">MC &amp; Kỹ năng nói</div></label>
             </div>
           </div>
 
@@ -1145,6 +1145,9 @@ const I18N = {
   "promo.title": {vi:"Giảm thêm 5% học phí<br>cho 100 suất đăng ký đầu tiên!", en:"Extra 5% tuition discount<br>for the first 100 registrations!"},
   "promo.desc": {vi:"Chỉ áp dụng cho phụ huynh đăng ký giữ chỗ qua form online trước ngày <strong>khai giảng 07/09/2026</strong>. Đăng ký ngay để chọn được tuyến xe đưa đón phù hợp nhất!", en:"Available only for parents who reserve a spot via the online form before <strong>the opening day 07/09/2026</strong>. Register now to secure the most suitable shuttle route for your child!"},
   "promo.cta": {vi:"Đăng ký nhận ưu đãi ngay", en:"Register for the offer now"},
+  "ecb.badge": {vi:"MIỄN PHÍ", en:"FREE"},
+  "ecb.title": {vi:"CLB Tiếng Anh", en:"English Club"},
+  "ecb.desc": {vi:"Tất cả học viên được tham gia sinh hoạt Câu lạc bộ Tiếng Anh hàng ngày với <strong>100% Giáo viên nước ngoài</strong>, giúp các em phản xạ tự nhiên và tự tin giao tiếp.", en:"All students join the daily English Club with <strong>100% Native Teachers</strong>, helping them develop natural reflexes and confident communication skills."},
   "steps.eyebrow": {vi:"Quy trình đơn giản", en:"Simple Process"},
   "steps.h2": {vi:"Chỉ 3 bước để con có chỗ học", en:"Just 3 steps to secure a spot"},
   "steps.s1h": {vi:"Đăng ký trực tuyến", en:"Register online"},
