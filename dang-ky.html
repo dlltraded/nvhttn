@@ -128,6 +128,12 @@
     .btn-sub:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(245,179,1,.55);}
     .btn-sub:disabled{opacity:.6;cursor:not-allowed;transform:none;}
     .privacy-note{font-size:11.5px;color:var(--ink3);text-align:center;margin-top:10px;line-height:1.5;}
+    .ref-banner{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:1.5px solid #86efac;border-radius:14px;padding:14px 16px;margin-bottom:14px;}
+    .ref-banner .rb-icon{font-size:22px;flex-shrink:0;}
+    .ref-banner .rb-body{flex:1;}
+    .ref-banner .rb-title{font-size:13px;font-weight:700;color:#15803d;margin-bottom:2px;}
+    .ref-banner .rb-code{font-size:16px;font-weight:900;color:#166534;letter-spacing:.05em;}
+    .ref-banner .rb-note{font-size:12px;color:#16a34a;margin-top:2px;}
     .hidden{display:none!important;}
     @keyframes spin{to{transform:rotate(360deg)}}
     .spinner{width:20px;height:20px;border:2.5px solid rgba(0,0,0,.15);border-top-color:#1a0d00;border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0;}
@@ -190,6 +196,17 @@
 
   <!-- RIGHT: FORM -->
   <div class="form-panel">
+
+    <!-- Ref banner: shown when ?ref=CODE in URL -->
+    <div class="ref-banner hidden" id="refBanner">
+      <div class="rb-icon">🎁</div>
+      <div class="rb-body">
+        <div class="rb-title" data-i18n="ref.bannerTitle">Đăng ký qua mã giới thiệu</div>
+        <div class="rb-code" id="refBannerCode"></div>
+        <div class="rb-note" data-i18n="ref.bannerNote">Mã này sẽ được áp dụng tự động — ba mẹ sẽ nhận ưu đãi học phí khi đăng ký thành công.</div>
+      </div>
+    </div>
+
     <div class="form-err" id="formErr"></div>
     <form id="regForm" novalidate>
 
@@ -387,7 +404,9 @@ const I18N = {
   "err.generic":{vi:"Có lỗi xảy ra, vui lòng thử lại hoặc gọi 090 858 3999.",en:"Something went wrong. Please try again or call 090 858 3999."},
   "btn.submit":{vi:"🚀 Gửi đăng ký",en:"🚀 Submit Registration"},
   "btn.sending":{vi:"Đang gửi...",en:"Sending..."},
-  "note.privacy":{vi:"🔒 Thông tin gia đình được bảo mật, chỉ dùng để tư vấn chương trình.",en:"🔒 Your information is kept private and used only for program consultation."}
+  "note.privacy":{vi:"🔒 Thông tin gia đình được bảo mật, chỉ dùng để tư vấn chương trình.",en:"🔒 Your information is kept private and used only for program consultation."},
+  "ref.bannerTitle":{vi:"Đăng ký qua mã giới thiệu",en:"Registering with a referral code"},
+  "ref.bannerNote":{vi:"Mã này sẽ được áp dụng tự động — ba mẹ sẽ nhận ưu đãi học phí khi đăng ký thành công.",en:"This code will be applied automatically — you will receive a tuition discount upon successful registration."}
 };
 
 let currentLang = localStorage.getItem('nvh_lang') || 'vi';
@@ -437,13 +456,28 @@ document.querySelectorAll('input[name=subject]').forEach(cb => {
   });
 });
 
-refInput.addEventListener('blur', async () => {
-  const code = refInput.value.trim().toUpperCase();
+const checkRefCode = async (code) => {
   if (!code) { refOk.classList.add('hidden'); return; }
   const { data } = await db.from('leads').select('parent_name').eq('referral_code', code).maybeSingle();
   if (data) { refOkText.textContent = (currentLang==='vi'?'Mã hợp lệ – ':'Valid code – ')+data.parent_name; refOk.classList.remove('hidden'); }
   else refOk.classList.add('hidden');
-});
+};
+
+refInput.addEventListener('blur', () => checkRefCode(refInput.value.trim().toUpperCase()));
+
+/* ── Auto-fill ref from URL ?ref=CODE ── */
+(async () => {
+  const params = new URLSearchParams(window.location.search);
+  const refParam = (params.get('ref') || params.get('referral') || '').toUpperCase();
+  if (!refParam) return;
+  refInput.value = refParam;
+  // Show ref banner
+  const banner = document.getElementById('refBanner');
+  const bannerCode = document.getElementById('refBannerCode');
+  if (banner) { bannerCode.textContent = refParam; banner.classList.remove('hidden'); }
+  // Validate in background
+  await checkRefCode(refParam);
+})();
 
 document.getElementById('regForm').addEventListener('submit', async (e) => {
   e.preventDefault();
