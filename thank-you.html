@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng ký thành công – Nhà Văn hóa Thanh Thiếu nhi TP. Đồng Nai</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--navy:#0b1f3b;--navy2:#162d52;--gold:#f5b301;--green:#20b84d;}
+    body{font-family:'Inter',sans-serif;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(145deg,var(--navy) 0%,var(--navy2) 60%,#1a3a6b 100%);padding:24px;overflow:hidden;position:relative;}
+    body::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.12) 1px,transparent 1.5px);background-size:30px 30px;pointer-events:none;}
+    .blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.25;pointer-events:none;}
+    .blob-1{width:400px;height:400px;background:var(--gold);top:-100px;right:-100px;animation:float 8s ease-in-out infinite;}
+    .blob-2{width:300px;height:300px;background:#3b82f6;bottom:-80px;left:-80px;animation:float 10s ease-in-out infinite reverse;}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-30px)}}
+    .card{position:relative;z-index:1;background:rgba(255,255,255,.07);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.18);border-radius:28px;padding:48px 40px 40px;max-width:480px;width:100%;text-align:center;box-shadow:0 40px 80px rgba(0,0,0,.4);animation:slideUp .6s cubic-bezier(.34,1.56,.64,1) both;}
+    @keyframes slideUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+    .icon-wrap{width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,var(--green),#16a34a);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;box-shadow:0 0 0 16px rgba(32,184,77,.15);animation:pulse 2s ease-in-out infinite;}
+    @keyframes pulse{0%,100%{box-shadow:0 0 0 16px rgba(32,184,77,.15)}50%{box-shadow:0 0 0 24px rgba(32,184,77,.05)}}
+    .icon-wrap svg{width:44px;height:44px;stroke:#fff;stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+    .badge{display:inline-block;background:rgba(245,179,1,.15);border:1px solid rgba(245,179,1,.4);color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.08em;padding:5px 14px;border-radius:999px;margin-bottom:16px;text-transform:uppercase;}
+    h1{font-size:clamp(22px,5vw,28px);font-weight:900;color:#fff;line-height:1.25;margin-bottom:12px;}
+    h1 span{color:var(--gold);}
+    .desc{font-size:14.5px;color:rgba(255,255,255,.72);line-height:1.65;margin-bottom:28px;}
+    .desc strong{color:#fff;font-weight:700;}
+    .info-box{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:16px 20px;margin-bottom:28px;text-align:left;display:flex;flex-direction:column;gap:10px;}
+    .info-row{display:flex;align-items:flex-start;gap:10px;}
+    .info-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
+    .info-text{font-size:13.5px;color:rgba(255,255,255,.8);line-height:1.5;}
+    .info-text strong{color:#fff;}
+    .countdown-wrap{margin-bottom:20px;}
+    .countdown-text{font-size:13px;color:rgba(255,255,255,.55);margin-bottom:10px;}
+    .progress-bar{height:4px;background:rgba(255,255,255,.1);border-radius:99px;overflow:hidden;margin-bottom:8px;}
+    .progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),#f97316);border-radius:99px;animation:drain 5s linear forwards;}
+    @keyframes drain{from{width:100%}to{width:0%}}
+    .countdown-num{font-size:26px;font-weight:900;color:var(--gold);line-height:1;}
+    .btn-home{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(180deg,var(--gold),#d97706);color:#1a0d00;font-weight:800;font-size:15px;padding:14px 28px;border-radius:12px;text-decoration:none;box-shadow:0 8px 24px rgba(245,179,1,.4);transition:transform .2s,box-shadow .2s;}
+    .btn-home:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(245,179,1,.55);}
+    .footer-logo{margin-top:32px;font-size:11.5px;color:rgba(255,255,255,.35);letter-spacing:.04em;}
+  </style>
+</head>
+<body>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="card">
+    <div class="icon-wrap">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <div class="badge">✅ Ghi nhận thành công</div>
+    <h1>Cảm ơn ba mẹ đã<br><span>đăng ký giữ chỗ!</span></h1>
+    <p class="desc">Đội ngũ <strong>Nhà Văn hóa Thanh Thiếu nhi TP. Đồng Nai</strong> đã nhận được thông tin và sẽ liên hệ tư vấn lịch học &amp; tuyến xe trong thời gian sớm nhất.</p>
+    <div class="info-box">
+      <div class="info-row"><span class="info-icon">📞</span><div class="info-text">Cần hỗ trợ ngay: <strong>090 858 3999</strong> (Mr. Bách)</div></div>
+      <div class="info-row"><span class="info-icon">🕐</span><div class="info-text">Giờ tiếp nhận: <strong>Thứ 2–CN · 8:00–11:00 &amp; 14:00–17:00</strong></div></div>
+      <div class="info-row"><span class="info-icon">📍</span><div class="info-text">Ghi danh trực tiếp: <strong>Phòng Truyền thống – Nhà Văn hóa Thanh Thiếu nhi TP. Đồng Nai</strong></div></div>
+    </div>
+    <div class="countdown-wrap">
+      <p class="countdown-text">Tự động quay về trang chủ sau</p>
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <div class="countdown-num" id="countNum">5</div>
+    </div>
+    <a href="/" class="btn-home" id="homeBtn">&#8592; Về trang chủ ngay</a>
+    <div class="footer-logo">NHÀ VĂN HÓA THANH THIẾU NHI · TP. ĐỒNG NAI</div>
+  </div>
+  <script>
+    let count = 5;
+    const numEl = document.getElementById('countNum');
+    const homeBtn = document.getElementById('homeBtn');
+    const timer = setInterval(() => { count--; numEl.textContent = count; if (count <= 0) { clearInterval(timer); window.location.href = '/'; } }, 1000);
+    homeBtn.addEventListener('click', () => clearInterval(timer));
+  </script>
+</body>
+</html>

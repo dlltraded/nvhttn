@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng ký giữ chỗ – Lớp Rèn luyện Kỹ năng 2026-2027</title>
+  <meta name="description" content="Đăng ký giữ chỗ Lớp Rèn luyện Kỹ năng 2026-2027 tại Nhà Văn hóa Thanh Thiếu nhi TP. Đồng Nai. Form đăng ký nhanh, tối ưu mobile.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --navy:#0b1f3b;--navy2:#162d52;--gold:#f5b301;--gold2:#d97706;
+      --green:#20b84d;--red:#ef4444;--line:#e2e8f0;
+      --ink:#1e293b;--ink2:#475569;--ink3:#94a3b8;
+      --r:12px;
+    }
+    html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent;}
+    body{font-family:'Inter',sans-serif;background:#f1f5f9;color:var(--ink);min-height:100dvh;}
+
+    /* TOP BAR */
+    .topbar{background:var(--navy);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3);}
+    .topbar .brand{display:flex;flex-direction:column;}
+    .topbar .brand-name{font-size:12px;font-weight:800;color:#fff;letter-spacing:.02em;}
+    .topbar .brand-sub{font-size:10px;color:rgba(255,255,255,.5);font-weight:500;}
+    .topbar a.back{color:rgba(255,255,255,.7);font-size:13px;font-weight:600;text-decoration:none;display:flex;align-items:center;gap:4px;}
+    .topbar a.back:hover{color:#fff;}
+
+    /* HERO */
+    .hero{background:linear-gradient(140deg,var(--navy) 0%,var(--navy2) 100%);padding:24px 16px 28px;text-align:center;}
+    .hero .pill{display:inline-block;background:rgba(245,179,1,.18);border:1px solid rgba(245,179,1,.45);color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.07em;padding:4px 14px;border-radius:999px;margin-bottom:10px;text-transform:uppercase;}
+    .hero h1{font-size:22px;font-weight:900;color:#fff;line-height:1.25;margin-bottom:8px;}
+    .hero h1 em{color:var(--gold);font-style:normal;}
+    .hero p{font-size:13px;color:rgba(255,255,255,.65);line-height:1.6;}
+
+    /* TRUST STRIP */
+    .trust{display:flex;gap:8px;padding:12px 14px;overflow-x:auto;background:#fff;border-bottom:1px solid var(--line);}
+    .trust::-webkit-scrollbar{display:none;}
+    .trust-item{flex-shrink:0;display:flex;align-items:center;gap:6px;background:#f8fafc;border-radius:8px;padding:6px 11px;border:1px solid var(--line);}
+    .trust-item span{font-size:12px;font-weight:600;color:var(--ink);white-space:nowrap;}
+
+    /* BACK LINK */
+    .back-link{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--ink3);text-decoration:none;padding:10px 16px;background:#fff;border-bottom:1px solid var(--line);}
+    .back-link:hover{color:var(--navy);}
+
+    /* CARD */
+    .card{background:#fff;border-radius:var(--r);margin:16px;padding:20px 16px;box-shadow:0 1px 4px rgba(0,0,0,.06);}
+
+    /* SECTION LABEL */
+    .slabel{font-size:11px;font-weight:700;color:var(--ink3);letter-spacing:.08em;text-transform:uppercase;margin:24px 0 12px;padding:0 16px;}
+    .slabel:first-child{margin-top:8px;}
+
+    /* FIELD */
+    .f{margin-bottom:14px;}
+    .f label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px;}
+    .f .req{color:var(--red);}
+    .f input,.f select{
+      width:100%;padding:13px 14px;font-family:inherit;font-size:15px;color:var(--ink);
+      border:1.5px solid var(--line);border-radius:var(--r);background:#fff;outline:none;
+      transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;appearance:none;
+    }
+    .f input:focus,.f select:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(11,31,59,.08);}
+    .f .hint{font-size:11.5px;color:var(--ink3);margin-top:5px;}
+
+    /* SUBJECT GRID */
+    .subject-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+    .sitem{position:relative;border:1.5px solid var(--line);border-radius:var(--r);padding:12px 10px;cursor:pointer;background:#fff;display:flex;align-items:center;gap:8px;transition:all .18s;}
+    .sitem input{position:absolute;opacity:0;width:0;height:0;}
+    .sitem:has(input:checked){border-color:var(--navy);background:#eef2ff;}
+    .schk{width:20px;height:20px;border-radius:5px;border:2px solid var(--line);background:#fff;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .18s;}
+    .sitem:has(input:checked) .schk{background:var(--navy);border-color:var(--navy);}
+    .sitem:has(input:checked) .schk::after{content:'';display:block;width:5px;height:9px;border:2px solid #fff;border-top:none;border-left:none;transform:rotate(45deg) translateY(-1px);}
+    .sname{font-size:13px;font-weight:600;color:var(--ink);line-height:1.3;}
+    .sitem.full{grid-column:span 2;}
+    .field-err{font-size:12px;color:var(--red);margin:6px 16px 0;display:none;}
+    .field-err.show{display:block;}
+
+    /* PACKAGE GRID */
+    .pkg-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+    .pkg-card{position:relative;border:1.5px solid var(--line);border-radius:var(--r);padding:16px 12px;cursor:pointer;background:#fff;transition:all .18s;}
+    .pkg-card input{position:absolute;opacity:0;width:0;height:0;}
+    .pkg-card:has(input:checked){border-color:var(--navy);background:#eef2ff;}
+    .pkg-chk{position:absolute;top:10px;right:10px;width:20px;height:20px;border-radius:50%;border:2px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;transition:all .18s;}
+    .pkg-card:has(input:checked) .pkg-chk{background:var(--navy);border-color:var(--navy);}
+    .pkg-card:has(input:checked) .pkg-chk::after{content:'';display:block;width:5px;height:9px;border:2px solid #fff;border-top:none;border-left:none;transform:rotate(45deg) translateY(-1px);}
+    .pkg-name{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px;padding-right:24px;}
+    .pkg-sub{font-size:11px;color:var(--ink3);margin-bottom:8px;line-height:1.4;}
+    .pkg-price{font-size:17px;font-weight:900;color:var(--navy);}
+    .pkg-note{font-size:11.5px;color:var(--ink3);margin-top:8px;padding:0 16px;line-height:1.5;}
+
+    /* TOGGLE */
+    .toggle{display:flex;align-items:flex-start;gap:12px;border:1.5px solid var(--line);border-radius:var(--r);padding:14px;cursor:pointer;transition:all .18s;background:#fff;}
+    .toggle:has(input:checked){border-color:var(--navy);background:#eef2ff;}
+    .toggle input{flex-shrink:0;width:20px;height:20px;margin-top:1px;accent-color:var(--navy);}
+    .toggle .tlabel{font-size:13px;font-weight:600;color:var(--ink);line-height:1.4;}
+    .toggle .tsub{font-size:12px;color:var(--ink2);margin-top:3px;line-height:1.4;}
+
+    /* REFERRAL */
+    .ref-ok{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--green);font-weight:700;margin-top:6px;}
+    .hidden{display:none!important;}
+
+    /* SUBMIT */
+    .submit-wrap{padding:0 16px 40px;}
+    .form-err{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:12px 14px;font-size:13px;color:var(--red);margin-bottom:14px;display:none;}
+    .form-err.show{display:block;}
+    .btn-submit{width:100%;padding:17px;background:linear-gradient(180deg,var(--gold),var(--gold2));color:#1a0d00;font-weight:900;font-size:16px;border:none;border-radius:var(--r);cursor:pointer;box-shadow:0 8px 24px rgba(245,179,1,.4);transition:transform .2s,box-shadow .2s;display:flex;align-items:center;justify-content:center;gap:8px;}
+    .btn-submit:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(245,179,1,.55);}
+    .btn-submit:disabled{opacity:.6;cursor:not-allowed;transform:none;}
+    .privacy{font-size:11.5px;color:var(--ink3);text-align:center;margin-top:10px;line-height:1.5;}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .spinner{width:20px;height:20px;border:2.5px solid rgba(0,0,0,.2);border-top-color:#000;border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0;}
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-name">NHÀ VĂN HÓA THANH THIẾU NHI</div>
+    <div class="brand-sub">Thành phố Đồng Nai</div>
+  </div>
+  <a href="/" class="back">← Trang chủ</a>
+</header>
+
+<div class="hero">
+  <div class="pill">📋 Form đăng ký nhanh</div>
+  <h1>Lớp <em>Rèn luyện Kỹ năng</em><br>Năm học 2026 – 2027</h1>
+  <p>Điền thông tin bên dưới — đội ngũ sẽ liên hệ xác nhận trong thời gian sớm nhất.</p>
+</div>
+
+<div class="trust">
+  <div class="trust-item">🚌 <span>Xe đưa đón tận trường</span></div>
+  <div class="trust-item">🍱 <span>Ăn trưa + bán trú</span></div>
+  <div class="trust-item">⚽ <span>7 môn năng khiếu</span></div>
+  <div class="trust-item">🇬🇧 <span>CLB Tiếng Anh miễn phí</span></div>
+  <div class="trust-item">📞 <span>090 858 3999</span></div>
+</div>
+
+<a href="/" class="back-link">← Xem chương trình đầy đủ trước khi đăng ký</a>
+
+<div class="form-err" id="formErr"></div>
+
+<form id="regForm" novalidate>
+
+  <p class="slabel">Thông tin phụ huynh</p>
+  <div class="card">
+    <div class="f">
+      <label for="parent_name">Họ tên phụ huynh <span class="req">*</span></label>
+      <input type="text" id="parent_name" placeholder="VD: Nguyễn Văn An" required autocomplete="name">
+    </div>
+    <div class="f" style="margin-bottom:0">
+      <label for="phone">Số điện thoại <span class="req">*</span></label>
+      <input type="tel" id="phone" placeholder="VD: 0901234567" required autocomplete="tel" inputmode="numeric">
+    </div>
+  </div>
+
+  <p class="slabel">Thông tin học sinh</p>
+  <div class="card">
+    <div class="f">
+      <label for="child_name">Họ tên học sinh <span class="req">*</span></label>
+      <input type="text" id="child_name" placeholder="VD: Nguyễn Minh Khoa" required>
+    </div>
+    <div class="f">
+      <label for="child_age">Tuổi của bé <span class="req">*</span></label>
+      <select id="child_age" required>
+        <option value="">-- Chọn độ tuổi --</option>
+        <option value="6">6 tuổi (Lớp 1)</option>
+        <option value="7">7 tuổi (Lớp 2)</option>
+        <option value="8">8 tuổi (Lớp 3)</option>
+        <option value="9">9 tuổi (Lớp 4)</option>
+        <option value="10">10 tuổi (Lớp 5)</option>
+        <option value="11">11 tuổi (Lớp 6 – THCS)</option>
+        <option value="12">12 tuổi (Lớp 7 – THCS)</option>
+        <option value="13">13 tuổi (Lớp 8 – THCS)</option>
+        <option value="14">14 tuổi (Lớp 9 – THCS)</option>
+      </select>
+    </div>
+    <div class="f" style="margin-bottom:0">
+      <label for="child_school">Trường học hiện tại của bé <span class="req">*</span></label>
+      <input type="text" id="child_school" placeholder="VD: Tiểu học Quang Vinh" required>
+    </div>
+  </div>
+
+  <p class="slabel">Chọn 2 môn năng khiếu <span style="color:var(--red)">*</span></p>
+  <div class="card">
+    <div class="subject-grid" id="subjectGrid">
+      <label class="sitem"><input type="checkbox" name="subject" value="Bóng rổ"><div class="schk"></div><span class="sname">⛹️ Bóng rổ</span></label>
+      <label class="sitem"><input type="checkbox" name="subject" value="Bóng đá"><div class="schk"></div><span class="sname">⚽ Bóng đá</span></label>
+      <label class="sitem"><input type="checkbox" name="subject" value="Bơi lội"><div class="schk"></div><span class="sname">🏊 Bơi lội</span></label>
+      <label class="sitem"><input type="checkbox" name="subject" value="Robotics &amp; AI"><div class="schk"></div><span class="sname">🤖 Robotics &amp; AI</span></label>
+      <label class="sitem"><input type="checkbox" name="subject" value="Vẽ"><div class="schk"></div><span class="sname">🎨 Hội họa &amp; Sáng tạo</span></label>
+      <label class="sitem"><input type="checkbox" name="subject" value="Nhảy hiện đại"><div class="schk"></div><span class="sname">💃 Nhảy hiện đại</span></label>
+      <label class="sitem full"><input type="checkbox" name="subject" value="MC"><div class="schk"></div><span class="sname">🎤 MC &amp; Kỹ năng nói</span></label>
+    </div>
+    <p class="field-err" id="subjectErr">Vui lòng chọn đúng 2 môn năng khiếu</p>
+  </div>
+
+  <p class="slabel">Gói bán trú &amp; năng khiếu <span style="color:var(--red)">*</span></p>
+  <div class="card">
+    <div class="pkg-grid">
+      <label class="pkg-card">
+        <input type="radio" name="package" value="TH_1BUOI" required>
+        <div class="pkg-chk"></div>
+        <div class="pkg-name">Tiểu học · Bán trú trưa</div>
+        <div class="pkg-sub">Học sáng tại trường → bán trú + năng khiếu chiều tại NVHTTN</div>
+        <div class="pkg-price">2.695.000đ</div>
+      </label>
+      <label class="pkg-card">
+        <input type="radio" name="package" value="THCS_1BUOI">
+        <div class="pkg-chk"></div>
+        <div class="pkg-name">THCS · Bán trú trưa</div>
+        <div class="pkg-sub">Học sáng tại trường → bán trú + năng khiếu chiều tại NVHTTN</div>
+        <div class="pkg-price">2.820.000đ</div>
+      </label>
+      <label class="pkg-card">
+        <input type="radio" name="package" value="TH_2BUOI">
+        <div class="pkg-chk"></div>
+        <div class="pkg-name">Tiểu học · Cả ngày</div>
+        <div class="pkg-sub">Sáng + chiều tại trường → bán trú trưa + năng khiếu sau 16h30 tại NVHTTN</div>
+        <div class="pkg-price">2.795.000đ</div>
+      </label>
+      <label class="pkg-card">
+        <input type="radio" name="package" value="THCS_2BUOI">
+        <div class="pkg-chk"></div>
+        <div class="pkg-name">THCS · Cả ngày</div>
+        <div class="pkg-sub">Sáng + chiều tại trường → năng khiếu tối tại NVHTTN (đến 19h30)</div>
+        <div class="pkg-price">2.920.000đ</div>
+      </label>
+    </div>
+    <p class="pkg-note">* Giá trên áp dụng cho 08 trường tuyến gần (giảm 30% phí xe). Trường khác sẽ được tư vấn thêm.</p>
+  </div>
+
+  <p class="slabel">Tuỳ chọn</p>
+  <div class="card">
+    <label class="toggle" style="margin-bottom:10px">
+      <input type="checkbox" id="after1630">
+      <div>
+        <div class="tlabel">🕔 Ba/mẹ cần đón bé sau 16:30</div>
+        <div class="tsub">Đánh dấu nếu cần hỗ trợ trông giữ ngoài giờ tiêu chuẩn</div>
+      </div>
+    </label>
+
+    <div class="f" style="margin-bottom:0">
+      <label for="referral_code">Mã người giới thiệu (nếu có)</label>
+      <input type="text" id="referral_code" placeholder="Nhập mã để được giảm học phí">
+      <div class="ref-ok hidden" id="refOk">✅ <span id="refOkText"></span></div>
+    </div>
+  </div>
+
+  <p class="slabel">Ghi chú thêm</p>
+  <div class="card">
+    <div class="f" style="margin-bottom:0">
+      <label for="note">Ghi chú (nếu có)</label>
+      <input type="text" id="note" placeholder="VD: Bé dị ứng thực phẩm, yêu cầu đặc biệt...">
+    </div>
+  </div>
+
+  <div class="submit-wrap" style="margin-top:16px">
+    <div class="form-err" id="formErrBottom"></div>
+    <button type="submit" class="btn-submit" id="submitBtn">
+      <span id="submitText">🚀 Gửi đăng ký</span>
+    </button>
+    <p class="privacy">🔒 Thông tin gia đình được bảo mật, chỉ dùng để tư vấn chương trình.</p>
+  </div>
+
+</form>
+
+<script>
+const SUPABASE_URL = 'https://sxrjulkzmqlrggxvhgtb.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_-JGQB7CIBudgja_wjtBOQA_T8gNpR3k';
+const { createClient } = supabase;
+const db = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+const formErrBottom = document.getElementById('formErrBottom');
+const subjectErr = document.getElementById('subjectErr');
+const submitBtn = document.getElementById('submitBtn');
+const submitText = document.getElementById('submitText');
+const refInput = document.getElementById('referral_code');
+const refOk = document.getElementById('refOk');
+const refOkText = document.getElementById('refOkText');
+
+// Limit subject checkboxes to 2
+document.querySelectorAll('input[name=subject]').forEach(cb => {
+  cb.addEventListener('change', () => {
+    const checked = document.querySelectorAll('input[name=subject]:checked');
+    if (checked.length > 2) cb.checked = false;
+    subjectErr.classList.remove('show');
+  });
+});
+
+// Referral validation
+refInput.addEventListener('blur', async () => {
+  const code = refInput.value.trim().toUpperCase();
+  if (!code) { refOk.classList.add('hidden'); return; }
+  const { data } = await db.from('leads').select('parent_name').eq('referral_code', code).maybeSingle();
+  if (data) {
+    refOkText.textContent = 'Mã hợp lệ – ' + data.parent_name;
+    refOk.classList.remove('hidden');
+  } else {
+    refOk.classList.add('hidden');
+  }
+});
+
+document.getElementById('regForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  formErrBottom.classList.remove('show');
+
+  const parentName = document.getElementById('parent_name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const childName = document.getElementById('child_name').value.trim();
+  const childAge = document.getElementById('child_age').value;
+  const childSchool = document.getElementById('child_school').value.trim();
+  const subjects = Array.from(document.querySelectorAll('input[name=subject]:checked')).map(c => c.value);
+  const pkg = document.querySelector('input[name=package]:checked');
+  const after1630 = document.getElementById('after1630').checked;
+  const refCode = refInput.value.trim().toUpperCase() || null;
+  const note = document.getElementById('note').value.trim() || null;
+
+  if (!parentName || !phone || !childName || !childAge || !childSchool || !pkg) {
+    formErrBottom.textContent = 'Vui lòng điền đầy đủ thông tin bắt buộc.';
+    formErrBottom.classList.add('show');
+    formErrBottom.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+  if (subjects.length !== 2) {
+    subjectErr.classList.add('show');
+    document.getElementById('subjectGrid').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+
+  submitBtn.disabled = true;
+  submitText.innerHTML = '<div class="spinner"></div> Đang gửi...';
+
+  try {
+    const { error } = await db.from('leads').insert([{
+      parent_name: parentName,
+      phone,
+      child_name: childName,
+      child_age: parseInt(childAge),
+      child_school: childSchool,
+      subjects: subjects.join(', '),
+      package: pkg.value,
+      after1630,
+      referral_code: refCode,
+      note,
+      status: 'new',
+      source: 'dang-ky-page'
+    }]);
+    if (error) throw error;
+    window.location.href = '/thank-you.html';
+  } catch (err) {
+    formErrBottom.textContent = 'Có lỗi xảy ra, vui lòng thử lại hoặc gọi 090 858 3999.';
+    formErrBottom.classList.add('show');
+    submitBtn.disabled = false;
+    submitText.textContent = '🚀 Gửi đăng ký';
+  }
+});
+</script>
+</body>
+</html>

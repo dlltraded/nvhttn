@@ -125,6 +125,17 @@
     50% { box-shadow: 0 0 0 12px rgba(245,179,1,0); transform: scale(1.02); }
     100% { box-shadow: 0 0 0 0 rgba(245,179,1,0); transform: scale(1); }
   }
+  /* ---------- OPS SCHEDULE TABLE ---------- */
+  .ops-table{width:100%;border-collapse:collapse;min-width:620px;font-size:14px;}
+  .ops-table thead tr{background:var(--navy-800);}
+  .ops-table thead th{padding:14px 16px;color:#fff;font-size:12.5px;font-weight:700;text-align:left;letter-spacing:.03em;}
+  .ops-table tbody tr{border-bottom:1px solid #e2e8f0;}
+  .ops-table tbody tr.row-alt{background:#f8fafc;}
+  .ops-table tbody td{padding:14px 16px;color:var(--ink-700);line-height:1.5;vertical-align:top;}
+  .ops-table tbody td.row-label{min-width:160px;}
+  .ops-table tbody td.row-label strong{font-weight:700;color:var(--navy-900);}
+  @media(max-width:640px){.ops-table{font-size:13px;}.ops-table thead th,.ops-table tbody td{padding:11px 12px;}}
+
   .english-club-banner {
     background: linear-gradient(135deg, var(--blue-600), var(--navy-800));
     border-radius: var(--radius-lg);
@@ -628,6 +639,62 @@
   </div>
 </section>
 
+<!-- ================= VẬN HÀNH HẰNG NGÀY ================= -->
+<section class="section" id="van-hanh" style="background:#f8fafc;">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="ops.eyebrow">Vận hành hằng ngày</span>
+      <h2 data-i18n="ops.h2">Hình thức tổ chức theo lịch học của học sinh</h2>
+      <p data-i18n="ops.p">Nhà Văn hóa chủ động phối hợp với nhà trường, tổ chức xe đưa đón, bán trú và năng khiếu — ba mẹ chỉ cần chọn đúng nhóm phù hợp với lịch học của bé.</p>
+    </div>
+
+    <div class="ops-table-wrap" style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:32px;">
+      <table class="ops-table">
+        <thead>
+          <tr>
+            <th data-i18n="ops.col1">Nhóm học sinh</th>
+            <th data-i18n="ops.col2">Buổi sáng</th>
+            <th data-i18n="ops.col3">Buổi trưa</th>
+            <th data-i18n="ops.col4">Buổi chiều / Tối</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="row-label"><strong data-i18n="ops.r1name">Tiểu học – học buổi sáng</strong></td>
+            <td data-i18n="ops.r1m">Học chính khóa tại trường</td>
+            <td data-i18n="ops.r1n">Xe đón về NVHTTN · ăn trưa, nghỉ trưa</td>
+            <td data-i18n="ops.r1a">14h00–16h30 kỹ năng &amp; năng khiếu tại NVHTTN · phụ huynh đón tại NVHTTN</td>
+          </tr>
+          <tr class="row-alt">
+            <td class="row-label"><strong data-i18n="ops.r2name">Tiểu học – học buổi chiều</strong></td>
+            <td data-i18n="ops.r2m">06h45–10h30 kỹ năng &amp; năng khiếu tại NVHTTN</td>
+            <td data-i18n="ops.r2n">Ăn trưa, nghỉ trưa tại NVHTTN</td>
+            <td data-i18n="ops.r2a">12h30 đưa đến trường · phụ huynh đón tại trường</td>
+          </tr>
+          <tr>
+            <td class="row-label"><strong data-i18n="ops.r3name">Tiểu học – học cả 2 buổi</strong></td>
+            <td data-i18n="ops.r3m">Học chính khóa tại trường</td>
+            <td data-i18n="ops.r3n">Xe đón về NVHTTN · ăn/nghỉ · đưa lại trường buổi chiều</td>
+            <td data-i18n="ops.r3a">Sau giờ học: xe đón về NVHTTN · học năng khiếu · phụ huynh đón tại NVHTTN</td>
+          </tr>
+          <tr class="row-alt">
+            <td class="row-label"><strong data-i18n="ops.r4name">Trung học cơ sở</strong></td>
+            <td data-i18n="ops.r4m">Học chính khóa tại trường</td>
+            <td><span style="color:#94a3b8">—</span></td>
+            <td data-i18n="ops.r4a">Sau giờ học đến tối đa 19h30 theo TKB · có thể tổ chức cuối tuần</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="font-size:12.5px;color:var(--ink-600);margin-top:16px;text-align:center;font-style:italic" data-i18n="ops.note">Việc đưa, đón, bàn giao học sinh được điểm danh và xác nhận giữa nhà trường, người đưa đón, NVHTTN và phụ huynh ở mọi mốc chuyển giao.</p>
+
+    <div style="text-align:center;margin-top:32px;">
+      <a href="/dang-ky.html" class="btn btn-primary" id="opsRegisterBtn" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;" data-i18n="ops.cta">📋 Đăng ký nhanh tại đây</a>
+    </div>
+  </div>
+</section>
+
 <!-- ================= BẢNG GIÁ ================= -->
 <section class="section" id="hoc-phi">
   <div class="wrap">
@@ -829,22 +896,22 @@
           <div class="pkg-options" id="pkg-options">
             <label class="pkg-option">
               <input type="radio" name="package" value="TH_1BUOI" required>
-              <div class="pt"><div class="t1" data-i18n="price.th1">Học 01 buổi tại trường</div><div class="t2" data-i18n="pkg.th">Tiểu học · tuyến gần</div></div>
+              <div class="pt"><div class="t1" data-i18n="pkg.th1Name">Tiểu học · Bán trú trưa</div><div class="t2" data-i18n="pkg.th1Desc">Học sáng tại trường → bán trú + năng khiếu chiều tại NVHTTN</div></div>
               <div class="pp">2.695.000đ</div>
             </label>
             <label class="pkg-option">
               <input type="radio" name="package" value="THCS_1BUOI" required>
-              <div class="pt"><div class="t1" data-i18n="price.thcs1">Học 01 buổi tại trường</div><div class="t2" data-i18n="pkg.thcs">THCS · tuyến gần</div></div>
+              <div class="pt"><div class="t1" data-i18n="pkg.thcs1Name">THCS · Bán trú trưa</div><div class="t2" data-i18n="pkg.thcs1Desc">Học sáng tại trường → bán trú + năng khiếu chiều tại NVHTTN</div></div>
               <div class="pp">2.820.000đ</div>
             </label>
             <label class="pkg-option">
               <input type="radio" name="package" value="TH_2BUOI" required>
-              <div class="pt"><div class="t1" data-i18n="price.th2">Học 02 buổi tại trường</div><div class="t2" data-i18n="pkg.th">Tiểu học · tuyến gần</div></div>
+              <div class="pt"><div class="t1" data-i18n="pkg.th2Name">Tiểu học · Cả ngày</div><div class="t2" data-i18n="pkg.th2Desc">Học 2 buổi tại trường → bán trú trưa + năng khiếu sau 16h30 tại NVHTTN</div></div>
               <div class="pp">2.795.000đ</div>
             </label>
             <label class="pkg-option">
               <input type="radio" name="package" value="THCS_2BUOI" required>
-              <div class="pt"><div class="t1" data-i18n="price.thcs2">Học 02 buổi tại trường</div><div class="t2" data-i18n="pkg.thcs">THCS · tuyến gần</div></div>
+              <div class="pt"><div class="t1" data-i18n="pkg.thcs2Name">THCS · Cả ngày</div><div class="t2" data-i18n="pkg.thcs2Desc">Học 2 buổi tại trường → năng khiếu tối tại NVHTTN (đến 19h30)</div></div>
               <div class="pp">2.920.000đ</div>
             </label>
           </div>
@@ -1152,6 +1219,38 @@ const I18N = {
   "ecb.badge": {vi:"MIỄN PHÍ", en:"FREE"},
   "ecb.title": {vi:"CLB Tiếng Anh", en:"English Club"},
   "ecb.desc": {vi:"Tất cả học viên được tham gia sinh hoạt Câu lạc bộ Tiếng Anh hàng ngày với <strong>100% Giáo viên nước ngoài</strong>, giúp các em phản xạ tự nhiên và tự tin giao tiếp.", en:"All students join the daily English Club with <strong>100% Native Teachers</strong>, helping them develop natural reflexes and confident communication skills."},
+  "ops.eyebrow": {vi:"Vận hành hằng ngày", en:"Daily Operations"},
+  "ops.h2": {vi:"Hình thức tổ chức theo lịch học của học sinh", en:"How the program runs around your child's school schedule"},
+  "ops.p": {vi:"Nhà Văn hóa chủ động phối hợp với nhà trường, tổ chức xe đưa đón, bán trú và năng khiếu — ba mẹ chỉ cần chọn đúng nhóm phù hợp với lịch học của bé.", en:"We coordinate directly with schools to arrange pickup, boarding and talent classes — parents simply choose the group that matches their child's schedule."},
+  "ops.col1": {vi:"Nhóm học sinh", en:"Student group"},
+  "ops.col2": {vi:"Buổi sáng", en:"Morning"},
+  "ops.col3": {vi:"Buổi trưa", en:"Noon"},
+  "ops.col4": {vi:"Buổi chiều / Tối", en:"Afternoon / Evening"},
+  "ops.r1name": {vi:"Tiểu học – học buổi sáng", en:"Primary – morning school"},
+  "ops.r1m": {vi:"Học chính khóa tại trường", en:"Attends school"},
+  "ops.r1n": {vi:"Xe đón về NVHTTN · ăn trưa, nghỉ trưa", en:"Shuttle to NVHTTN · lunch & rest"},
+  "ops.r1a": {vi:"14h00–16h30 kỹ năng & năng khiếu tại NVHTTN · phụ huynh đón tại NVHTTN", en:"14:00–16:30 life skills & talent classes at NVHTTN · parents pick up at NVHTTN"},
+  "ops.r2name": {vi:"Tiểu học – học buổi chiều", en:"Primary – afternoon school"},
+  "ops.r2m": {vi:"06h45–10h30 kỹ năng & năng khiếu tại NVHTTN", en:"06:45–10:30 life skills & talent classes at NVHTTN"},
+  "ops.r2n": {vi:"Ăn trưa, nghỉ trưa tại NVHTTN", en:"Lunch & rest at NVHTTN"},
+  "ops.r2a": {vi:"12h30 đưa đến trường · phụ huynh đón tại trường", en:"12:30 shuttle to school · parents pick up at school"},
+  "ops.r3name": {vi:"Tiểu học – học cả 2 buổi", en:"Primary – full school day"},
+  "ops.r3m": {vi:"Học chính khóa tại trường", en:"Attends school (full day)"},
+  "ops.r3n": {vi:"Xe đón về NVHTTN · ăn/nghỉ · đưa lại trường buổi chiều", en:"Shuttle to NVHTTN · lunch/rest · shuttle back to school"},
+  "ops.r3a": {vi:"Sau giờ học: xe đón về NVHTTN · học năng khiếu · phụ huynh đón tại NVHTTN", en:"After school: shuttle to NVHTTN · talent classes · parents pick up at NVHTTN"},
+  "ops.r4name": {vi:"Trung học cơ sở", en:"Secondary school (THCS)"},
+  "ops.r4m": {vi:"Học chính khóa tại trường", en:"Attends school"},
+  "ops.r4a": {vi:"Sau giờ học đến tối đa 19h30 theo TKB · có thể tổ chức cuối tuần", en:"After school up to 19:30 per schedule · weekend sessions available"},
+  "ops.note": {vi:"Việc đưa, đón, bàn giao học sinh được điểm danh và xác nhận giữa nhà trường, người đưa đón, NVHTTN và phụ huynh ở mọi mốc chuyển giao.", en:"All handovers are checked and confirmed between the school, driver, NVHTTN and parents at every transfer point."},
+  "ops.cta": {vi:"📋 Đăng ký nhanh tại đây", en:"📋 Register quickly here"},
+  "pkg.th1Name": {vi:"Tiểu học · Bán trú trưa", en:"Primary · Midday boarding"},
+  "pkg.th1Desc": {vi:"Học sáng tại trường → bán trú + năng khiếu chiều tại NVHTTN", en:"Morning school → boarding + afternoon talent at NVHTTN"},
+  "pkg.thcs1Name": {vi:"THCS · Bán trú trưa", en:"Secondary · Midday boarding"},
+  "pkg.thcs1Desc": {vi:"Học sáng tại trường → bán trú + năng khiếu chiều tại NVHTTN", en:"Morning school → boarding + afternoon talent at NVHTTN"},
+  "pkg.th2Name": {vi:"Tiểu học · Cả ngày", en:"Primary · Full day"},
+  "pkg.th2Desc": {vi:"Học 2 buổi tại trường → bán trú trưa + năng khiếu sau 16h30 tại NVHTTN", en:"Full school day → midday boarding + talent classes after 16:30 at NVHTTN"},
+  "pkg.thcs2Name": {vi:"THCS · Cả ngày", en:"Secondary · Full day"},
+  "pkg.thcs2Desc": {vi:"Học 2 buổi tại trường → năng khiếu tối tại NVHTTN (đến 19h30)", en:"Full school day → evening talent classes at NVHTTN (until 19:30)"},
   "steps.eyebrow": {vi:"Quy trình đơn giản", en:"Simple Process"},
   "steps.h2": {vi:"Chỉ 3 bước để con có chỗ học", en:"Just 3 steps to secure a spot"},
   "steps.s1h": {vi:"Đăng ký trực tuyến", en:"Register online"},
@@ -1321,8 +1420,7 @@ form.addEventListener('submit', async (e)=>{
     errorBox.textContent = I18N['form.errorGeneric'][currentLang];
     errorBox.classList.remove('hidden');
   } else {
-    form.classList.add('hidden');
-    document.getElementById('form-success').classList.remove('hidden');
+    window.location.href = '/thank-you.html';
   }
 });
 // Promo Popup Logic
