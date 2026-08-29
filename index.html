@@ -1438,18 +1438,53 @@ document.querySelectorAll('input[name="subject"]').forEach(cb => {
   });
 });
 
-/* ============ referral auto-fill ============ */
-window.addEventListener('DOMContentLoaded', ()=>{
+/* ============ referral validation ============ */
+let refIsValid = true;
+let refDiscount = 0;
+
+async function checkRef(code) {
+  const note = document.getElementById('ref-note');
+  const noteText = document.getElementById('ref-note-text');
+  const input = document.getElementById('referral_code');
+
+  if (!code) { 
+    note.classList.add('hidden'); 
+    input.style.borderColor = '';
+    refIsValid = true; 
+    refDiscount = 0;
+    return; 
+  }
+  const { data, error } = await supabase.rpc('validate_referral_code', { p_code: code });
+  if (data && data.length > 0) { 
+    const r = data[0];
+    noteText.textContent = currentLang==='vi'
+      ? `🎉 Chúc mừng! Mã hợp lệ của ${r.referrer_name}. Bạn được giảm ${r.discount_amount.toLocaleString('vi-VN')}đ!`
+      : `🎉 Valid code by ${r.referrer_name}. You get a ${r.discount_amount.toLocaleString('vi-VN')} VND discount!`;
+    note.classList.remove('hidden'); 
+    note.style.color = 'var(--c-green)';
+    input.style.borderColor = 'var(--c-green)';
+    refIsValid = true;
+    refDiscount = r.discount_amount;
+  } else {
+    noteText.textContent = currentLang==='vi'
+      ? '❌ Mã giới thiệu không hợp lệ. Vui lòng kiểm tra lại hoặc để trống.'
+      : '❌ Invalid referral code. Please check again or leave blank.';
+    note.classList.remove('hidden');
+    note.style.color = 'var(--c-error)';
+    input.style.borderColor = 'var(--c-error)';
+    refIsValid = false;
+    refDiscount = 0;
+  }
+}
+
+document.getElementById('referral_code').addEventListener('blur', (e) => checkRef(e.target.value.trim().toUpperCase()));
+
+window.addEventListener('DOMContentLoaded', async ()=>{
   const { ref } = getStoredAttribution();
   if (ref){
     const input = document.getElementById('referral_code');
     input.value = ref;
-    const note = document.getElementById('ref-note');
-    const noteText = document.getElementById('ref-note-text');
-    noteText.textContent = currentLang==='vi'
-      ? `Đã tự động áp dụng mã "${ref}" từ liên kết/QR bạn vừa quét.`
-      : `Code "${ref}" auto-applied from the link/QR you scanned.`;
-    note.classList.remove('hidden');
+    await checkRef(ref);
   }
 });
 
@@ -1503,6 +1538,7 @@ form.addEventListener('submit', async (e)=>{
     wants_after_1630: document.getElementById('after1630').checked,
     staff_discount_claim: document.getElementById('staffDiscount') ? document.getElementById('staffDiscount').checked : false,
     referral_code: refCodeInput || null,
+    discount_applied: refDiscount,
     status: 'new',
     source: src || ref || 'nvh-ky-nang-he-2026',
     site: 'nvhttn'
@@ -1521,6 +1557,7 @@ form.addEventListener('submit', async (e)=>{
       child_age: payload.child_age,
       programs: payload.programs,
       referral_code: payload.referral_code,
+      discount_applied: payload.discount_applied,
       status: payload.status,
       source: payload.source
     };

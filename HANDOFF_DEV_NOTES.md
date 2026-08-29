@@ -123,6 +123,35 @@ git diff origin/main..HEAD    # xem toàn bộ nội dung sẽ được đẩy l
 
 **Sau khi migration Supabase đã chạy và Conversion ID/Label Google Ads đã điền thật** (mục 3), nếu đội dev có sửa thêm `index.html`/`dang-ky.html` để bật tracking, nhớ commit riêng 1 commit mới (đừng amend commit cũ) rồi push tiếp — không cần làm gì thêm ở phía Vercel, tự động deploy lại.
 
+## 6. Cập nhật văn phong nội dung — 29/08/2026 (CHƯA COMMIT, cần rà soát + commit + push)
+
+Theo yêu cầu của anh Kenny, đã rà soát và chỉnh lại một số câu chữ trong `index.html` và `dang-ky.html` nghe máy móc/dịch Tây, đổi sang giọng tự nhiên hơn, gần với cách nói chuyện thật của Nhà Văn hóa với phụ huynh. Đã sửa **cả trong đối tượng `I18N` (JS) lẫn trong HTML tĩnh** ở những chỗ có hardcode sẵn, để không bị lệch giữa 2 nơi.
+
+**index.html:**
+
+| Khóa i18n | Trước | Sau |
+|---|---|---|
+| `qf.h4` | Để lại số, Nhà Văn hóa gọi tư vấn ngay | Để lại số điện thoại, Nhà Văn hóa gọi lại tư vấn ngay cho ba mẹ |
+| `qf.sub` | Chỉ mất 15 giây — không cần điền chi tiết ngay bây giờ. | Ba mẹ chưa cần nhớ hết chi tiết đâu — cứ để lại số, tụi em gọi tư vấn kỹ hơn. |
+| `qf.okH` | Đã ghi nhận! | Cảm ơn ba mẹ! |
+| `qf.okP` | Nhà Văn hóa sẽ gọi lại trong thời gian sớm nhất. | Nhà Văn hóa sẽ gọi lại cho ba mẹ trong ngày hôm nay. |
+| `qf.errorRequired` | Vui lòng điền đầy đủ 3 thông tin trên. | Ba mẹ điền giúp em đủ 3 mục ở trên nhé. |
+| `form.errorGeneric` | Có lỗi xảy ra, vui lòng thử lại hoặc gọi... | Hệ thống đang bận một chút, ba mẹ thử lại hoặc gọi trực tiếp giúp em nhé: ... |
+| `ops.note` | Việc đưa, đón, bàn giao học sinh được điểm danh và xác nhận giữa nhà trường, người đưa đón, NVHTTN và phụ huynh ở mọi mốc chuyển giao. | Mỗi lượt đưa đón đều được điểm danh và xác nhận giữa nhà trường, người đưa đón, Nhà Văn hóa và phụ huynh — đảm bảo an toàn cho bé ở từng chặng. |
+| `cta.h2` | Chỗ học có giới hạn theo từng tuyến xe | Mỗi tuyến xe đưa đón chỉ nhận số lượng có hạn |
+| `footer.poweredBy` | Vận hành đăng ký cùng hệ thống Huy Võ Education | Hệ thống ghi danh được phối hợp vận hành cùng Huy Võ Education |
+
+**dang-ky.html:**
+
+| Khóa i18n | Trước | Sau |
+|---|---|---|
+| `err.generic` | Có lỗi xảy ra, vui lòng thử lại hoặc gọi... | Hệ thống đang bận một chút, ba mẹ thử lại hoặc gọi trực tiếp giúp em nhé: ... |
+| `err.required` | Vui lòng điền đầy đủ thông tin bắt buộc. | Ba mẹ điền giúp em đầy đủ các mục có dấu * nhé. |
+
+Đã kiểm tra: object `I18N` trong `index.html` vẫn parse hợp lệ (213 khóa, không lỗi cú pháp), chụp màn hình khu vực form nhanh + hero bằng Playwright xác nhận chữ mới hiển thị đúng, không tràn khung, không lỗi JS console.
+
+**Đội dev cần làm:** `git add index.html dang-ky.html` (đúng 2 file này), review diff (`git diff --cached`), commit riêng (ví dụ: `Chỉnh văn phong nội dung tự nhiên hơn cho form nhanh, thông báo lỗi, footer, CTA`), rồi push — không gộp chung với các thay đổi khác đang dở dang trong repo NVHTTN (nếu có).
+
 ---
 
 *Tài liệu tạo tự động, phục vụ bàn giao nội bộ — cập nhật lần cuối theo phiên làm việc gần nhất.*

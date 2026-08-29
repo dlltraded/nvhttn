@@ -3,41 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Đăng ký Bán trú Tiểu học & Năng khiếu Đồng Nai 2026-2027 | NVHTTN</title>
-  <meta name="description" content="Đăng ký giữ chỗ Lớp Rèn luyện Kỹ năng 2026-2027 tại Nhà Văn hóa Thanh Thiếu nhi TP. Đồng Nai. Xe đưa đón, ăn trưa, chọn 2 trong 4 môn năng khiếu.">
-
-  <!-- Open Graph / Facebook / Zalo / Telegram -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Đăng ký giữ chỗ – Lớp Rèn luyện Kỹ năng 2026-2027 | NVHTTN">
-  <meta property="og:description" content="Đăng ký giữ chỗ Lớp Rèn luyện Kỹ năng 2026-2027 tại Nhà Văn hóa Thanh Thiếu nhi TP. Đồng Nai. Xe đưa đón, ăn trưa, chọn 2 trong 4 môn năng khiếu.">
-  <meta property="og:image" content="https://raw.githubusercontent.com/dlltraded/nvhttn/main/assets/thumbnail.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:title" content="Đăng ký giữ chỗ – Lớp Rèn luyện Kỹ năng 2026-2027 | NVHTTN">
-  <meta property="twitter:description" content="Đăng ký giữ chỗ Lớp Rèn luyện Kỹ năng 2026-2027 tại Nhà Văn hóa Thanh Thiếu nhi TP. Đồng Nai. Xe đưa đón, ăn trưa, chọn 2 trong 4 môn năng khiếu.">
-  <meta property="twitter:image" content="https://raw.githubusercontent.com/dlltraded/nvhttn/main/assets/thumbnail.jpg">
+  <title>Đăng ký giữ chỗ – Lớp Rèn luyện Kỹ năng 2026-2027 | NVHTTN</title>
+  <meta name="description" content="Đăng ký giữ chỗ Lớp Rèn luyện Kỹ năng 2026-2027 tại Nhà Văn hóa Thanh Thiếu nhi TP. Đồng Nai. Xe đưa đón, ăn trưa, 7 môn năng khiếu.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --navy-900:#0b1f3b;--navy-800:#162d52;--navy-700:#1e3a6e;
-  --gold-500:#f5b301;--gold-400:#d97706;
+  --navy:#0b1f3b;--navy2:#162d52;--navy3:#1e3a6e;
+  --gold:#f5b301;--gold2:#d97706;
   --green:#20b84d;--red:#ef4444;
   --line:#e2e8f0;--line2:#cbd5e1;
-  --ink-800:#1e293b;--ink-600:#475569;--ink-500:#94a3b8;
+  --ink:#1e293b;--ink2:#475569;--ink3:#94a3b8;
   --bg:#f1f5f9;--white:#fff;
   --r:12px;--r-sm:8px;
   --shadow:0 1px 3px rgba(0,0,0,.07),0 4px 16px rgba(0,0,0,.05);
 }
 html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent;}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink-800);min-height:100dvh;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);min-height:100dvh;}
 
 /* TOPBAR */
-.topbar{background:var(--navy-900);padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 16px rgba(0,0,0,.3);}
+.topbar{background:var(--navy);padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 16px rgba(0,0,0,.3);}
 .topbar-left{display:flex;align-items:center;gap:12px;}
 .tlogo{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
 .brand-name{font-size:13px;font-weight:800;color:#fff;letter-spacing:.02em;line-height:1.2;}
@@ -57,11 +43,11 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink-800);mi
 /* INFO PANEL */
 .info-panel{position:sticky;top:76px;}
 @media(max-width:900px){.info-panel{position:static;}}
-.info-hero{background:linear-gradient(140deg,var(--navy-900) 0%,var(--navy-700) 100%);border-radius:20px;padding:28px 24px;color:#fff;margin-bottom:16px;position:relative;overflow:hidden;}
+.info-hero{background:linear-gradient(140deg,var(--navy) 0%,var(--navy3) 100%);border-radius:20px;padding:28px 24px;color:#fff;margin-bottom:16px;position:relative;overflow:hidden;}
 .info-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1.5px);background-size:22px 22px;pointer-events:none;}
-.info-pill{display:inline-block;background:rgba(245,179,1,.18);border:1px solid rgba(245,179,1,.4);color:var(--gold-500);font-size:10.5px;font-weight:700;letter-spacing:.07em;padding:4px 12px;border-radius:999px;text-transform:uppercase;margin-bottom:14px;}
+.info-pill{display:inline-block;background:rgba(245,179,1,.18);border:1px solid rgba(245,179,1,.4);color:var(--gold);font-size:10.5px;font-weight:700;letter-spacing:.07em;padding:4px 12px;border-radius:999px;text-transform:uppercase;margin-bottom:14px;}
 .info-hero h1{font-size:clamp(20px,2.5vw,26px);font-weight:900;line-height:1.25;margin-bottom:10px;}
-.info-hero h1 em{color:var(--gold-500);font-style:normal;}
+.info-hero h1 em{color:var(--gold);font-style:normal;}
 .info-hero .desc{font-size:13.5px;color:rgba(255,255,255,.68);line-height:1.65;margin-bottom:20px;}
 .feat-list{display:flex;flex-direction:column;gap:8px;}
 .feat-item{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:11px 13px;display:flex;align-items:flex-start;gap:10px;}
@@ -70,26 +56,26 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink-800);mi
 .feat-tx strong{color:#fff;font-weight:700;}
 .info-card{background:var(--white);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow);margin-bottom:12px;}
 .info-card:last-child{margin-bottom:0;}
-.info-card-title{font-size:13.5px;font-weight:700;color:var(--ink-800);margin-bottom:12px;}
+.info-card-title{font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:12px;}
 .cinfo-row{display:flex;align-items:flex-start;gap:9px;margin-bottom:9px;}
 .cinfo-row:last-child{margin-bottom:0;}
 .cinfo-ic{font-size:15px;flex-shrink:0;margin-top:2px;}
-.cinfo-tx{font-size:13px;color:var(--ink-600);line-height:1.5;}
-.cinfo-tx strong{color:var(--ink-800);font-weight:700;}
+.cinfo-tx{font-size:13px;color:var(--ink2);line-height:1.5;}
+.cinfo-tx strong{color:var(--ink);font-weight:700;}
 .trust-row{display:flex;flex-wrap:wrap;gap:7px;}
-.trust-chip{display:flex;align-items:center;gap:5px;background:#f8fafc;border:1px solid var(--line);border-radius:7px;padding:6px 10px;font-size:12px;font-weight:600;color:var(--ink-800);}
+.trust-chip{display:flex;align-items:center;gap:5px;background:#f8fafc;border:1px solid var(--line);border-radius:7px;padding:6px 10px;font-size:12px;font-weight:600;color:var(--ink);}
 
 /* FORM */
 .form-card{background:var(--white);border-radius:16px;padding:22px 20px;box-shadow:var(--shadow);margin-bottom:14px;}
 .form-card:last-of-type{margin-bottom:0;}
-.sec-lbl{font-size:11px;font-weight:700;color:var(--ink-500);letter-spacing:.08em;text-transform:uppercase;margin-bottom:15px;display:flex;align-items:center;gap:8px;}
+.sec-lbl{font-size:11px;font-weight:700;color:var(--ink3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:15px;display:flex;align-items:center;gap:8px;}
 .sec-lbl::after{content:'';flex:1;height:1px;background:var(--line);}
 .req{color:var(--red);}
 .f{margin-bottom:13px;}
 .f:last-child{margin-bottom:0;}
-.f > label{display:block;font-size:13px;font-weight:600;color:var(--ink-800);margin-bottom:6px;}
-.f input,.f select{width:100%;padding:12px 14px;font-family:inherit;font-size:15px;color:var(--ink-800);border:1.5px solid var(--line);border-radius:var(--r-sm);background:var(--white);outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;appearance:none;}
-.f input:focus,.f select:focus{border-color:var(--navy-900);box-shadow:0 0 0 3px rgba(11,31,59,.08);}
+.f > label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px;}
+.f input,.f select{width:100%;padding:12px 14px;font-family:inherit;font-size:15px;color:var(--ink);border:1.5px solid var(--line);border-radius:var(--r-sm);background:var(--white);outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;appearance:none;}
+.f input:focus,.f select:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(11,31,59,.08);}
 .f-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 @media(max-width:480px){.f-row{grid-template-columns:1fr;}}
 
@@ -97,11 +83,11 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink-800);mi
 .sub-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
 .sitem{position:relative;border:1.5px solid var(--line);border-radius:var(--r-sm);padding:11px 10px;cursor:pointer;background:var(--white);display:flex;align-items:center;gap:8px;transition:all .18s;user-select:none;}
 .sitem input{position:absolute;opacity:0;width:0;height:0;}
-.sitem:has(input:checked){border-color:var(--navy-900);background:#eef2ff;}
+.sitem:has(input:checked){border-color:var(--navy);background:#eef2ff;}
 .schk{width:20px;height:20px;min-width:20px;border-radius:5px;border:2px solid var(--line2);background:var(--white);display:flex;align-items:center;justify-content:center;transition:all .18s;}
-.sitem:has(input:checked) .schk{background:var(--navy-900);border-color:var(--navy-900);}
+.sitem:has(input:checked) .schk{background:var(--navy);border-color:var(--navy);}
 .sitem:has(input:checked) .schk::after{content:'';display:block;width:5px;height:9px;border:2.5px solid #fff;border-top:none;border-left:none;transform:rotate(45deg) translateY(-1px);}
-.sname{font-size:13px;font-weight:600;color:var(--ink-800);line-height:1.3;}
+.sname{font-size:13px;font-weight:600;color:var(--ink);line-height:1.3;}
 .sitem.full{grid-column:span 2;}
 .ferr{font-size:12px;color:var(--red);margin-top:6px;display:none;}
 .ferr.show{display:block;}
@@ -111,21 +97,21 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink-800);mi
 @media(max-width:480px){.pkg-grid{grid-template-columns:1fr;}}
 .pkg-card{position:relative;border:1.5px solid var(--line);border-radius:var(--r-sm);padding:16px 13px;cursor:pointer;background:var(--white);transition:all .18s;user-select:none;}
 .pkg-card input{position:absolute;opacity:0;width:0;height:0;}
-.pkg-card:has(input:checked){border-color:var(--navy-900);background:#eef2ff;box-shadow:0 0 0 3px rgba(11,31,59,.07);}
+.pkg-card:has(input:checked){border-color:var(--navy);background:#eef2ff;box-shadow:0 0 0 3px rgba(11,31,59,.07);}
 .pkg-chk{position:absolute;top:12px;right:12px;width:20px;height:20px;border-radius:50%;border:2px solid var(--line2);background:var(--white);display:flex;align-items:center;justify-content:center;transition:all .18s;}
-.pkg-card:has(input:checked) .pkg-chk{background:var(--navy-900);border-color:var(--navy-900);}
+.pkg-card:has(input:checked) .pkg-chk{background:var(--navy);border-color:var(--navy);}
 .pkg-card:has(input:checked) .pkg-chk::after{content:'';display:block;width:5px;height:9px;border:2.5px solid #fff;border-top:none;border-left:none;transform:rotate(45deg) translateY(-1px);}
-.pkg-name{font-size:13.5px;font-weight:800;color:var(--ink-800);padding-right:26px;margin-bottom:4px;}
-.pkg-sub{font-size:11.5px;color:var(--ink-500);line-height:1.45;margin-bottom:10px;}
-.pkg-price{font-size:18px;font-weight:900;color:var(--navy-900);}
-.pkg-note-txt{font-size:11.5px;color:var(--ink-500);margin-top:10px;line-height:1.5;}
+.pkg-name{font-size:13.5px;font-weight:800;color:var(--ink);padding-right:26px;margin-bottom:4px;}
+.pkg-sub{font-size:11.5px;color:var(--ink3);line-height:1.45;margin-bottom:10px;}
+.pkg-price{font-size:18px;font-weight:900;color:var(--navy);}
+.pkg-note-txt{font-size:11.5px;color:var(--ink3);margin-top:10px;line-height:1.5;}
 
 /* Toggle */
 .tog{display:flex;align-items:flex-start;gap:12px;border:1.5px solid var(--line);border-radius:var(--r-sm);padding:14px;cursor:pointer;transition:all .18s;user-select:none;margin-bottom:12px;}
-.tog:has(input:checked){border-color:var(--navy-900);background:#eef2ff;}
-.tog input{flex-shrink:0;width:18px;height:18px;margin-top:2px;accent-color:var(--navy-900);cursor:pointer;}
-.tog .tl{font-size:13.5px;font-weight:600;color:var(--ink-800);line-height:1.4;}
-.tog .ts{font-size:12px;color:var(--ink-600);margin-top:3px;line-height:1.45;}
+.tog:has(input:checked){border-color:var(--navy);background:#eef2ff;}
+.tog input{flex-shrink:0;width:18px;height:18px;margin-top:2px;accent-color:var(--navy);cursor:pointer;}
+.tog .tl{font-size:13.5px;font-weight:600;color:var(--ink);line-height:1.4;}
+.tog .ts{font-size:12px;color:var(--ink2);margin-top:3px;line-height:1.45;}
 .ref-ok{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--green);font-weight:700;margin-top:6px;}
 
 /* Ref banner */
@@ -139,88 +125,13 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink-800);mi
 /* Submit */
 .form-err{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:12px 14px;font-size:13px;color:var(--red);margin-bottom:12px;display:none;}
 .form-err.show{display:block;}
-.btn-sub{width:100%;padding:16px;background:linear-gradient(180deg,var(--gold-500),var(--gold-400));color:#1a0d00;font-weight:900;font-size:16px;border:none;border-radius:var(--r);cursor:pointer;box-shadow:0 8px 24px rgba(245,179,1,.4);transition:transform .2s,box-shadow .2s;display:flex;align-items:center;justify-content:center;gap:8px;font-family:inherit;}
+.btn-sub{width:100%;padding:16px;background:linear-gradient(180deg,var(--gold),var(--gold2));color:#1a0d00;font-weight:900;font-size:16px;border:none;border-radius:var(--r);cursor:pointer;box-shadow:0 8px 24px rgba(245,179,1,.4);transition:transform .2s,box-shadow .2s;display:flex;align-items:center;justify-content:center;gap:8px;font-family:inherit;}
 .btn-sub:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(245,179,1,.55);}
 .btn-sub:disabled{opacity:.6;cursor:not-allowed;transform:none;}
-.privacy-note{font-size:11.5px;color:var(--ink-500);text-align:center;margin-top:10px;line-height:1.5;}
+.privacy-note{font-size:11.5px;color:var(--ink3);text-align:center;margin-top:10px;line-height:1.5;}
 .hidden{display:none!important;}
 @keyframes spin{to{transform:rotate(360deg)}}
-.spinner{width:20px;height:20px;border:2.5px solid rgba(0,0,0,.15);border-top-color:#1a0d00;border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0;}  /* New Floating Widgets */
-  .floating-widgets {
-    position: fixed; right: 24px; bottom: 84px; z-index: 95;
-    display: flex; flex-direction: column; gap: 16px; align-items: flex-end;
-  }
-  .f-btn {
-    position: relative; display: flex; align-items: center; justify-content: center;
-    width: 52px; height: 52px; border-radius: 50%; color: #fff; text-decoration: none;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.2); transition: transform 0.2s;
-  }
-  .f-btn:hover { transform: translateY(-4px); }
-  .f-tx { display: none; }
-  .f-ic {
-    display: flex; align-items: center; justify-content: center;
-    font-size: 22px; width: 100%; height: 100%; border-radius: 50%;
-  }
-  .f-btn.call { background: var(--green, #22c55e); animation: callPulse 2s ease-in-out infinite; }
-  .f-btn.zalo { background: #0068ff; animation: zaloPulse 2s ease-in-out infinite; animation-delay: 1s; }
-  .f-btn.call .f-ic { animation: callRing 1.6s ease-in-out infinite; }
-  
-  @keyframes callPulse { 0%,100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.6); } 50% { box-shadow: 0 0 0 14px rgba(34,197,94,0); } }
-  @keyframes zaloPulse { 0%,100% { box-shadow: 0 0 0 0 rgba(0,104,255,0.6); } 50% { box-shadow: 0 0 0 14px rgba(0,104,255,0); } }
-  @keyframes callRing { 0%,100% { transform: rotate(0); } 10% { transform: rotate(-15deg); } 20% { transform: rotate(12deg); } 30% { transform: rotate(-10deg); } 40% { transform: rotate(6deg); } 50% { transform: rotate(0); } }
-
-  @media(max-width:760px){ 
-    body { padding-bottom: 56px; }
-    .floating-widgets {
-      right: 0; left: 0; bottom: 0; flex-direction: row; gap: 0;
-      background: #fff; box-shadow: 0 -2px 16px rgba(0,0,0,0.1); align-items: stretch;
-    }
-    .f-btn {
-      flex: 1; border-radius: 0; width: auto; height: 56px;
-      box-shadow: none; animation: none !important; gap: 8px; justify-content: center;
-    }
-    .f-btn:hover { transform: none; }
-    .f-tx { display: block; font-weight: 800; font-size: 15px; }
-    .f-ic { width: auto; height: auto; font-size: 20px; }
-    .f-btn.call .f-ic { animation: none; } .f-btn.zalo .f-ic { display: none; }
-  }
-</style>
-<!-- ============================================================
-     GOOGLE ADS CONVERSION TRACKING — chỉ dùng Google Ads (Facebook thu lead
-     riêng qua Lead Ads trên nền tảng Facebook, không đi qua website này nên
-     không cần Meta Pixel ở đây).
-     TODO trước khi chạy Ads: lấy "Conversion ID/Conversion Label" từ
-     Google Ads → Tools & Settings → Conversions → New conversion action
-     → Website. Chuỗi trả về dạng "AW-123456789/AbCdEfGhIjKlMnOp":
-       - Phần trước dấu / → thay vào TODO_REPLACE_ADS_ID (2 chỗ bên dưới)
-       - Phần sau dấu /  → thay vào TODO_REPLACE_CONVERSION_LABEL
-     Sau khi thay xong, đổi NVH_TRACKING_READY thành true.
-     ============================================================ -->
-<script>window.NVH_TRACKING_READY = false; /* đổi thành true sau khi điền ID thật bên dưới */</script>
-<!--
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-TODO_REPLACE_ADS_ID"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-TODO_REPLACE_ADS_ID');
-</script>
--->
-<script>
-  // Gọi ngay sau khi 1 form đăng ký gửi thành công (đã gắn sẵn ở các submit handler bên dưới).
-  // Hiện là no-op an toàn cho tới khi khối script Google Ads ở trên được bỏ comment,
-  // điền đúng Conversion ID/Label, và NVH_TRACKING_READY = true.
-  function nvhTrackLead(formName){
-    try {
-      if (window.NVH_TRACKING_READY && typeof gtag === 'function') {
-        gtag('event', 'conversion', {
-          'send_to': 'AW-TODO_REPLACE_ADS_ID/TODO_REPLACE_CONVERSION_LABEL',
-          'event_callback': function(){ console.log('Google Ads conversion sent:', formName); }
-        });
-      }
-    } catch (e) { console.warn('nvhTrackLead error', e); }
-  }
-</script>
+.spinner{width:20px;height:20px;border:2.5px solid rgba(0,0,0,.15);border-top-color:#1a0d00;border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0;}</style>
 </head>
 <body>
 
@@ -252,15 +163,16 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink-800);mi
       <div class="feat-list">
         <div class="feat-item"><span class="feat-ic">🚌</span><div class="feat-tx" data-i18n-html="f.shuttle"><strong>Xe đưa đón tận trường</strong> · 08 trường tuyến gần giảm 30%</div></div>
         <div class="feat-item"><span class="feat-ic">🍱</span><div class="feat-tx" data-i18n-html="f.meal"><strong>Ăn trưa + bán trú</strong> · có sữa chua/trái cây</div></div>
-        <div class="feat-item"><span class="feat-ic">⚽</span><div class="feat-tx" data-i18n-html="f.talent"><strong>4 môn năng khiếu</strong> · chọn 2 môn phù hợp</div></div>
+        <div class="feat-item"><span class="feat-ic">⚽</span><div class="feat-tx" data-i18n-html="f.talent"><strong>7 môn năng khiếu</strong> · chọn 2 môn phù hợp</div></div>
+        <div class="feat-item"><span class="feat-ic">🇬🇧</span><div class="feat-tx" data-i18n-html="f.english"><strong>CLB Tiếng Anh miễn phí</strong> · 100% giáo viên nước ngoài</div></div>
         <div class="feat-item"><span class="feat-ic">📚</span><div class="feat-tx" data-i18n-html="f.study"><strong>Không gian tự học có giám sát</strong> · không dạy thêm văn hóa</div></div>
       </div>
     </div>
     <div class="info-card">
       <div class="info-card-title" data-i18n="contact.title">Liên hệ & Ghi danh</div>
-      <div class="cinfo-row"><span class="cinfo-ic">📞</span><div class="cinfo-tx"><a href="tel:02513847369" style="color:inherit;text-decoration:none;font-weight:700;">0251.3847369</a> &nbsp;·&nbsp; <a href="tel:0769663366" style="color:inherit;text-decoration:none;font-weight:700;">0769.663366</a></div></div>
+      <div class="cinfo-row"><span class="cinfo-ic">📞</span><div class="cinfo-tx"><a href="tel:025133840648" style="color:inherit;text-decoration:none;font-weight:700;">0251.3384.0648</a> &nbsp;·&nbsp; <a href="tel:0769663366" style="color:inherit;text-decoration:none;font-weight:700;">0769.663366</a></div></div>
       <div class="cinfo-row"><span class="cinfo-ic">🕐</span><div class="cinfo-tx" data-i18n="contact.hours">Thứ 2–CN · 8:00–11:00 & 14:00–17:00</div></div>
-      <div class="cinfo-row"><span class="cinfo-ic">📍</span><div class="cinfo-tx" data-i18n="contact.addr">Phòng Truyền thống – Nhà Văn hóa Thanh Thiếu nhi TP. Đồng Nai, 159 Cách Mạng Tháng 8, phường Trấn Biên, Đồng Nai</div></div>
+      <div class="cinfo-row"><span class="cinfo-ic">📍</span><div class="cinfo-tx" data-i18n="contact.addr">Phòng Truyền thống – Nhà Văn hóa Thanh Thiếu nhi TP. Đồng Nai</div></div>
       <div class="cinfo-row"><span class="cinfo-ic">📅</span><div class="cinfo-tx" data-i18n-html="contact.open">Ghi danh từ <strong>24/08/2026</strong> · Khai giảng <strong>07/09/2026</strong></div></div>
     </div>
     <div class="info-card">
@@ -343,6 +255,9 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink-800);mi
           <label class="sitem"><input type="checkbox" name="subject" value="Bóng đá"><div class="schk"></div><span class="sname">⚽ <span data-i18n="sub.bongda">Bóng đá</span></span></label>
           <label class="sitem"><input type="checkbox" name="subject" value="Bơi lội"><div class="schk"></div><span class="sname">🏊 <span data-i18n="sub.boiloi">Bơi lội</span></span></label>
           <label class="sitem"><input type="checkbox" name="subject" value="Robotics &amp; AI"><div class="schk"></div><span class="sname">🤖 <span data-i18n="sub.robotics">Robotics &amp; AI</span></span></label>
+          <label class="sitem"><input type="checkbox" name="subject" value="Vẽ"><div class="schk"></div><span class="sname">🎨 <span data-i18n="sub.ve">Hội họa &amp; Sáng tạo</span></span></label>
+          <label class="sitem"><input type="checkbox" name="subject" value="Nhảy hiện đại"><div class="schk"></div><span class="sname">💃 <span data-i18n="sub.nhay">Nhảy hiện đại</span></span></label>
+          <label class="sitem full"><input type="checkbox" name="subject" value="MC"><div class="schk"></div><span class="sname">🎤 <span data-i18n="sub.mc">MC &amp; Kỹ năng nói</span></span></label>
         </div>
         <p class="ferr" id="subjectErr" data-i18n="err.subjects">Vui lòng chọn đúng 2 môn năng khiếu</p>
       </div>
@@ -410,7 +325,6 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink-800);mi
         <span id="submitText" data-i18n="btn.submit">🚀 Gửi đăng ký</span>
       </button>
       <p class="privacy-note" data-i18n="note.privacy">🔒 Thông tin gia đình được bảo mật, chỉ dùng để tư vấn chương trình.</p>
-      <p style="text-align:center;font-size:11.5px;margin-top:6px"><a href="privacy-policy.html" style="color:inherit;text-decoration:underline" data-i18n="note.privacyLink">Xem chính sách bảo mật</a></p>
 
     </form>
   </div>
@@ -418,7 +332,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink-800);mi
 </div>
 
 <script>
-const I18N = {"brand.name":{"vi":"NHÀ VĂN HÓA THANH THIẾU NHI","en":"YOUTH CULTURE HOUSE"},"brand.sub":{"vi":"Thành phố Đồng Nai","en":"Dong Nai City"},"nav.back":{"vi":"← Trang chủ","en":"← Home"},"hero.pill":{"vi":"📋 Đăng ký giữ chỗ","en":"📋 Reserve a Spot"},"hero.h1":{"vi":"Lớp <em>Rèn luyện Kỹ năng</em><br>Năm học 2026 – 2027","en":"<em>Skills Training Program</em><br>Academic Year 2026 – 2027"},"hero.desc":{"vi":"Điền thông tin bên dưới — đội ngũ Nhà Văn hóa sẽ liên hệ xác nhận lịch học trong thời gian sớm nhất.","en":"Fill in the form below — our team will contact you to confirm the schedule as soon as possible."},"f.shuttle":{"vi":"<strong>Xe đưa đón tận trường</strong> · 08 trường tuyến gần giảm 30%","en":"<strong>Door-to-school shuttle</strong> · 30% off for 8 nearby-route schools"},"f.meal":{"vi":"<strong>Ăn trưa + bán trú</strong> · có sữa chua/trái cây","en":"<strong>Lunch + boarding</strong> · with yogurt / fruit"},"f.talent":{"vi":"<strong>4 môn năng khiếu</strong> · chọn 2 môn phù hợp","en":"<strong>4 talent classes</strong> · choose 2 that suit your child"},"f.study":{"vi":"<strong>Không gian tự học có giám sát</strong> · không dạy thêm văn hóa","en":"<strong>Supervised self-study space</strong> · no unauthorized tutoring"},"contact.title":{"vi":"Liên hệ & Ghi danh","en":"Contact & Enrollment"},"contact.hours":{"vi":"Thứ 2–CN · 8:00–11:00 & 14:00–17:00","en":"Mon–Sun · 8:00–11:00 & 14:00–17:00"},"contact.addr":{"vi":"Phòng Truyền thống – Nhà Văn hóa Thanh Thiếu nhi TP. Đồng Nai, 159 Cách Mạng Tháng 8, phường Trấn Biên, Đồng Nai","en":"Tradition Room – Youth Culture House, 159 Cach Mang Thang 8, Tran Bien Ward, Dong Nai"},"contact.open":{"vi":"Ghi danh từ <strong>24/08/2026</strong> · Khai giảng <strong>07/09/2026</strong>","en":"Enrollment from <strong>24/08/2026</strong> · Opening day <strong>07/09/2026</strong>"},"trust.title":{"vi":"✅ Chương trình được bảo đảm","en":"✅ Program Guarantees"},"trust.b1":{"vi":"Đơn vị Nhà nước","en":"State Institution"},"trust.b2":{"vi":"GV được đào tạo","en":"Trained Instructors"},"trust.b3":{"vi":"Bảo mật thông tin","en":"Data Privacy"},"trust.b4":{"vi":"Giám sát chặt chẽ","en":"Strict Supervision"},"sec.parent":{"vi":"Thông tin phụ huynh","en":"Parent Information"},"sec.child":{"vi":"Thông tin học sinh","en":"Student Information"},"sec.subjects":{"vi":"Chọn 2 môn năng khiếu","en":"Choose 2 talent classes"},"sec.pkg":{"vi":"Gói bán trú & năng khiếu","en":"Boarding & Talent Package"},"sec.extra":{"vi":"Tuỳ chọn thêm","en":"Additional options"},"lbl.parentName":{"vi":"Họ tên phụ huynh","en":"Parent full name"},"lbl.phone":{"vi":"Số điện thoại","en":"Phone number"},"lbl.childName":{"vi":"Họ tên học sinh","en":"Student full name"},"lbl.age":{"vi":"Tuổi của bé","en":"Child's age"},"lbl.school":{"vi":"Trường học hiện tại","en":"Current school"},"lbl.ref":{"vi":"Mã người giới thiệu","en":"Referral code"},"lbl.optional":{"vi":"nếu có","en":"if any"},"lbl.note":{"vi":"Ghi chú thêm","en":"Additional notes"},"ph.parentName":{"vi":"VD: Nguyễn Văn An","en":"E.g. John Smith"},"ph.phone":{"vi":"VD: 0901234567","en":"E.g. 0901234567"},"ph.childName":{"vi":"VD: Nguyễn Minh Khoa","en":"E.g. Michael Smith"},"ph.school":{"vi":"VD: Tiểu học Quang Vinh","en":"E.g. Quang Vinh Primary School"},"ph.ref":{"vi":"Nhập mã để được giảm học phí","en":"Enter code to receive a discount"},"ph.note":{"vi":"VD: Bé dị ứng thực phẩm, yêu cầu đặc biệt...","en":"E.g. Food allergy, special requests..."},"opt.ageDefault":{"vi":"-- Chọn độ tuổi --","en":"-- Select age --"},"opt.afterTitle":{"vi":"🕔 Ba/mẹ cần đón bé sau 16:30","en":"🕔 Pickup needed after 16:30"},"opt.afterDesc":{"vi":"Đánh dấu nếu cần hỗ trợ trông giữ ngoài giờ tiêu chuẩn — Nhà Văn hóa sẽ tư vấn phương án phù hợp","en":"Tick if you need after-hours care — our team will advise on the best arrangement"},"sub.bongro":{"vi":"Bóng rổ","en":"Basketball"},"sub.bongda":{"vi":"Bóng đá","en":"Football"},"sub.boiloi":{"vi":"Bơi lội","en":"Swimming"},"sub.robotics":{"vi":"Robotics & AI","en":"Robotics & AI"},"pkg.th1n":{"vi":"Tiểu học · Bán trú trưa","en":"Primary · Midday boarding"},"pkg.th1d":{"vi":"Học sáng tại trường → bán trú + năng khiếu chiều tại NVHTTN","en":"Morning school → boarding + afternoon talent at NVHTTN"},"pkg.thcs1n":{"vi":"THCS · Bán trú trưa","en":"Secondary · Midday boarding"},"pkg.thcs1d":{"vi":"Học sáng tại trường → bán trú + năng khiếu chiều tại NVHTTN","en":"Morning school → boarding + afternoon talent at NVHTTN"},"pkg.th2n":{"vi":"Tiểu học · Cả ngày","en":"Primary · Full day"},"pkg.th2d":{"vi":"Học 2 buổi tại trường → bán trú trưa + năng khiếu sau 16h30 tại NVHTTN","en":"Full school day → midday boarding + talent after 16:30 at NVHTTN"},"pkg.thcs2n":{"vi":"THCS · Cả ngày","en":"Secondary · Full day"},"pkg.thcs2d":{"vi":"Học 2 buổi tại trường → năng khiếu tối tại NVHTTN (đến 19h30)","en":"Full school day → evening talent at NVHTTN (until 19:30)"},"pkg.note":{"vi":"* Giá trên áp dụng cho 08 trường tuyến gần (giảm 30% phí xe). Trường khác sẽ được tư vấn thêm.","en":"* Prices apply to 8 nearby-route schools (30% shuttle discount). Other schools will be advised separately."},"err.subjects":{"vi":"Vui lòng chọn đúng 2 môn năng khiếu","en":"Please select exactly 2 talent classes"},"err.required":{"vi":"Vui lòng điền đầy đủ thông tin bắt buộc.","en":"Please fill in all required fields."},"err.generic":{"vi":"Có lỗi xảy ra, vui lòng thử lại hoặc gọi 0251.3847369 / 0769.663366.","en":"Something went wrong. Please try again or call 0251.3847369 / 0769.663366."},"btn.submit":{"vi":"🚀 Gửi đăng ký","en":"🚀 Submit Registration"},"btn.sending":{"vi":"Đang gửi...","en":"Sending..."},"note.privacy":{"vi":"🔒 Thông tin gia đình được bảo mật, chỉ dùng để tư vấn chương trình.","en":"🔒 Your information is kept private and used only for program consultation."},"note.privacyLink":{"vi":"Xem chính sách bảo mật","en":"View Privacy Policy"},"ref.bannerTitle":{"vi":"Đăng ký qua mã giới thiệu","en":"Registering with a referral code"},"ref.bannerNote":{"vi":"Mã này sẽ được áp dụng tự động — ba mẹ sẽ nhận ưu đãi học phí khi đăng ký thành công.","en":"This code will be applied automatically — you will receive a tuition discount upon successful registration."}};
+const I18N = {"brand.name":{"vi":"NHÀ VĂN HÓA THANH THIẾU NHI","en":"YOUTH CULTURE HOUSE"},"brand.sub":{"vi":"Thành phố Đồng Nai","en":"Dong Nai City"},"nav.back":{"vi":"← Trang chủ","en":"← Home"},"hero.pill":{"vi":"📋 Đăng ký giữ chỗ","en":"📋 Reserve a Spot"},"hero.h1":{"vi":"Lớp <em>Rèn luyện Kỹ năng</em><br>Năm học 2026 – 2027","en":"<em>Skills Training Program</em><br>Academic Year 2026 – 2027"},"hero.desc":{"vi":"Điền thông tin bên dưới — đội ngũ Nhà Văn hóa sẽ liên hệ xác nhận lịch học trong thời gian sớm nhất.","en":"Fill in the form below — our team will contact you to confirm the schedule as soon as possible."},"f.shuttle":{"vi":"<strong>Xe đưa đón tận trường</strong> · 08 trường tuyến gần giảm 30%","en":"<strong>Door-to-school shuttle</strong> · 30% off for 8 nearby-route schools"},"f.meal":{"vi":"<strong>Ăn trưa + bán trú</strong> · có sữa chua/trái cây","en":"<strong>Lunch + boarding</strong> · with yogurt / fruit"},"f.talent":{"vi":"<strong>7 môn năng khiếu</strong> · chọn 2 môn phù hợp","en":"<strong>7 talent classes</strong> · choose 2 that suit your child"},"f.english":{"vi":"<strong>CLB Tiếng Anh miễn phí</strong> · 100% giáo viên nước ngoài","en":"<strong>Free English Club</strong> · 100% native teachers"},"f.study":{"vi":"<strong>Không gian tự học có giám sát</strong> · không dạy thêm văn hóa","en":"<strong>Supervised self-study space</strong> · no unauthorized tutoring"},"contact.title":{"vi":"Liên hệ & Ghi danh","en":"Contact & Enrollment"},"contact.hours":{"vi":"Thứ 2–CN · 8:00–11:00 & 14:00–17:00","en":"Mon–Sun · 8:00–11:00 & 14:00–17:00"},"contact.addr":{"vi":"Phòng Truyền thống – Nhà Văn hóa Thanh Thiếu nhi TP. Đồng Nai","en":"Tradition Room – Youth Culture House, Dong Nai City"},"contact.open":{"vi":"Ghi danh từ <strong>24/08/2026</strong> · Khai giảng <strong>07/09/2026</strong>","en":"Enrollment from <strong>24/08/2026</strong> · Opening day <strong>07/09/2026</strong>"},"trust.title":{"vi":"✅ Chương trình được bảo đảm","en":"✅ Program Guarantees"},"trust.b1":{"vi":"Đơn vị Nhà nước","en":"State Institution"},"trust.b2":{"vi":"GV được đào tạo","en":"Trained Instructors"},"trust.b3":{"vi":"Bảo mật thông tin","en":"Data Privacy"},"trust.b4":{"vi":"Giám sát chặt chẽ","en":"Strict Supervision"},"sec.parent":{"vi":"Thông tin phụ huynh","en":"Parent Information"},"sec.child":{"vi":"Thông tin học sinh","en":"Student Information"},"sec.subjects":{"vi":"Chọn 2 môn năng khiếu","en":"Choose 2 talent classes"},"sec.pkg":{"vi":"Gói bán trú & năng khiếu","en":"Boarding & Talent Package"},"sec.extra":{"vi":"Tuỳ chọn thêm","en":"Additional options"},"lbl.parentName":{"vi":"Họ tên phụ huynh","en":"Parent full name"},"lbl.phone":{"vi":"Số điện thoại","en":"Phone number"},"lbl.childName":{"vi":"Họ tên học sinh","en":"Student full name"},"lbl.age":{"vi":"Tuổi của bé","en":"Child's age"},"lbl.school":{"vi":"Trường học hiện tại","en":"Current school"},"lbl.ref":{"vi":"Mã người giới thiệu","en":"Referral code"},"lbl.optional":{"vi":"nếu có","en":"if any"},"lbl.note":{"vi":"Ghi chú thêm","en":"Additional notes"},"ph.parentName":{"vi":"VD: Nguyễn Văn An","en":"E.g. John Smith"},"ph.phone":{"vi":"VD: 0901234567","en":"E.g. 0901234567"},"ph.childName":{"vi":"VD: Nguyễn Minh Khoa","en":"E.g. Michael Smith"},"ph.school":{"vi":"VD: Tiểu học Quang Vinh","en":"E.g. Quang Vinh Primary School"},"ph.ref":{"vi":"Nhập mã để được giảm học phí","en":"Enter code to receive a discount"},"ph.note":{"vi":"VD: Bé dị ứng thực phẩm, yêu cầu đặc biệt...","en":"E.g. Food allergy, special requests..."},"opt.ageDefault":{"vi":"-- Chọn độ tuổi --","en":"-- Select age --"},"opt.afterTitle":{"vi":"🕔 Ba/mẹ cần đón bé sau 16:30","en":"🕔 Pickup needed after 16:30"},"opt.afterDesc":{"vi":"Đánh dấu nếu cần hỗ trợ trông giữ ngoài giờ tiêu chuẩn — Nhà Văn hóa sẽ tư vấn phương án phù hợp","en":"Tick if you need after-hours care — our team will advise on the best arrangement"},"sub.bongro":{"vi":"Bóng rổ","en":"Basketball"},"sub.bongda":{"vi":"Bóng đá","en":"Football"},"sub.boiloi":{"vi":"Bơi lội","en":"Swimming"},"sub.robotics":{"vi":"Robotics & AI","en":"Robotics & AI"},"sub.ve":{"vi":"Hội họa & Sáng tạo","en":"Painting & Creativity"},"sub.nhay":{"vi":"Nhảy hiện đại","en":"Modern Dance"},"sub.mc":{"vi":"MC & Kỹ năng nói","en":"MC & Public Speaking"},"pkg.th1n":{"vi":"Tiểu học · Bán trú trưa","en":"Primary · Midday boarding"},"pkg.th1d":{"vi":"Học sáng tại trường → bán trú + năng khiếu chiều tại NVHTTN","en":"Morning school → boarding + afternoon talent at NVHTTN"},"pkg.thcs1n":{"vi":"THCS · Bán trú trưa","en":"Secondary · Midday boarding"},"pkg.thcs1d":{"vi":"Học sáng tại trường → bán trú + năng khiếu chiều tại NVHTTN","en":"Morning school → boarding + afternoon talent at NVHTTN"},"pkg.th2n":{"vi":"Tiểu học · Cả ngày","en":"Primary · Full day"},"pkg.th2d":{"vi":"Học 2 buổi tại trường → bán trú trưa + năng khiếu sau 16h30 tại NVHTTN","en":"Full school day → midday boarding + talent after 16:30 at NVHTTN"},"pkg.thcs2n":{"vi":"THCS · Cả ngày","en":"Secondary · Full day"},"pkg.thcs2d":{"vi":"Học 2 buổi tại trường → năng khiếu tối tại NVHTTN (đến 19h30)","en":"Full school day → evening talent at NVHTTN (until 19:30)"},"pkg.note":{"vi":"* Giá trên áp dụng cho 08 trường tuyến gần (giảm 30% phí xe). Trường khác sẽ được tư vấn thêm.","en":"* Prices apply to 8 nearby-route schools (30% shuttle discount). Other schools will be advised separately."},"err.subjects":{"vi":"Vui lòng chọn đúng 2 môn năng khiếu","en":"Please select exactly 2 talent classes"},"err.required":{"vi":"Vui lòng điền đầy đủ thông tin bắt buộc.","en":"Please fill in all required fields."},"err.generic":{"vi":"Có lỗi xảy ra, vui lòng thử lại hoặc gọi 0251.3384.0648 / 0769.663366.","en":"Something went wrong. Please try again or call 0251.3384.0648 / 0769.663366."},"btn.submit":{"vi":"🚀 Gửi đăng ký","en":"🚀 Submit Registration"},"btn.sending":{"vi":"Đang gửi...","en":"Sending..."},"note.privacy":{"vi":"🔒 Thông tin gia đình được bảo mật, chỉ dùng để tư vấn chương trình.","en":"🔒 Your information is kept private and used only for program consultation."},"ref.bannerTitle":{"vi":"Đăng ký qua mã giới thiệu","en":"Registering with a referral code"},"ref.bannerNote":{"vi":"Mã này sẽ được áp dụng tự động — ba mẹ sẽ nhận ưu đãi học phí khi đăng ký thành công.","en":"This code will be applied automatically — you will receive a tuition discount upon successful registration."}};
 
 let currentLang = localStorage.getItem('nvh_lang') || 'vi';
 
@@ -440,16 +354,8 @@ function applyLang(lang) {
 document.querySelectorAll('[data-lang]').forEach(btn => btn.addEventListener('click', () => applyLang(btn.dataset.lang)));
 applyLang(currentLang);
 
-let db = null;
-try {
-  if (window.supabase && typeof window.supabase.createClient === 'function') {
-    db = window.supabase.createClient('https://sxrjulkzmqlrggxvhgtb.supabase.co', 'sb_publishable_-JGQB7CIBudgja_wjtBOQA_T8gNpR3k', { auth: { persistSession: false } });
-  } else {
-    console.warn('supabase-js failed to load from CDN — registration form will show an error on submit.');
-  }
-} catch (err) {
-  console.error('Failed to initialize Supabase client', err);
-}
+const { createClient } = supabase;
+const db = createClient('https://sxrjulkzmqlrggxvhgtb.supabase.co', 'sb_publishable_-JGQB7CIBudgja_wjtBOQA_T8gNpR3k');
 const formErrBottom = document.getElementById('formErrBottom');
 const subjectErr    = document.getElementById('subjectErr');
 const submitBtn     = document.getElementById('submitBtn');
@@ -465,11 +371,35 @@ document.querySelectorAll('input[name=subject]').forEach(cb => {
   });
 });
 
+let refIsValid = true;
+let refDiscount = 0;
+
 async function checkRef(code) {
-  if (!code || !db) { refOk.classList.add('hidden'); return; }
-  const { data } = await db.from('leads').select('parent_name').eq('referral_code', code).maybeSingle();
-  if (data) { refOkText.textContent = (currentLang==='vi'?'Mã hợp lệ – ':'Valid code – ')+data.parent_name; refOk.classList.remove('hidden'); }
-  else refOk.classList.add('hidden');
+  if (!code) { 
+    refOk.classList.add('hidden'); 
+    refInput.style.borderColor = '';
+    refIsValid = true; 
+    refDiscount = 0;
+    return; 
+  }
+  const { data, error } = await db.rpc('validate_referral_code', { p_code: code });
+  if (data && data.length > 0) { 
+    const r = data[0];
+    refOkText.textContent = (currentLang==='vi'?'🎉 Chúc mừng! Mã hợp lệ của ' + r.referrer_name + '. Bạn được giảm ' + r.discount_amount.toLocaleString('vi-VN') + 'đ!':'🎉 Valid code by ' + r.referrer_name + '. You get a ' + r.discount_amount.toLocaleString('vi-VN') + ' VND discount!');
+    refOk.classList.remove('hidden'); 
+    refOk.style.color = 'var(--green)';
+    refInput.style.borderColor = 'var(--green)';
+    refIsValid = true;
+    refDiscount = r.discount_amount;
+  }
+  else {
+    refOkText.textContent = (currentLang==='vi'?'❌ Mã giới thiệu không hợp lệ. Vui lòng kiểm tra lại hoặc để trống.':'❌ Invalid referral code. Please check again or leave blank.');
+    refOk.classList.remove('hidden');
+    refOk.style.color = 'var(--red)';
+    refInput.style.borderColor = 'var(--red)';
+    refIsValid = false;
+    refDiscount = 0;
+  }
 }
 refInput.addEventListener('blur', () => checkRef(refInput.value.trim().toUpperCase()));
 
@@ -501,34 +431,24 @@ document.getElementById('regForm').addEventListener('submit', async e => {
     subjectErr.classList.add('show');
     document.getElementById('subjectGrid').scrollIntoView({behavior:'smooth',block:'center'}); return;
   }
-  if (!db) {
-    formErrBottom.textContent = I18N['err.generic'][currentLang];
-    formErrBottom.classList.add('show');
-    formErrBottom.scrollIntoView({behavior:'smooth',block:'center'});
+  if (!refIsValid) {
+    refOk.scrollIntoView({behavior:'smooth',block:'center'}); 
+    refInput.focus();
     return;
   }
+
   submitBtn.disabled = true;
   submitText.innerHTML = '<div class="spinner"></div> ' + I18N['btn.sending'][currentLang];
   try {
-    const p = new URLSearchParams(window.location.search);
-    const srcParam = p.get('src') || p.get('utm_source') || '';
-    const refParam = (p.get('ref') || p.get('referral') || '').toUpperCase();
-    const payload = {
+    const {error} = await db.from('leads').insert([{
       parent_name:pn, phone:ph, child_name:cn, child_age:parseInt(ca), child_school:cs,
-      programs:['Rèn luyện Kỹ năng hè 2026-2027', ...subs], package_selected:pkg.value,
-      wants_after_1630:document.getElementById('after1630').checked,
+      subjects:subs.join(', '), package:pkg.value,
+      after1630:document.getElementById('after1630').checked,
       referral_code:refInput.value.trim().toUpperCase()||null,
-      note:v('note')||null, status:'new',
-      source: srcParam || refParam || 'nvh-dang-ky-page-2026',
-      site: 'nvhttn'
-    };
-    let {error} = await db.from('leads').insert([payload]);
-    if (error && /column|schema/i.test(error.message || '')) {
-      const { note, site, ...fallback } = payload;
-      ({ error } = await db.from('leads').insert([fallback]));
-    }
+      discount_applied: refDiscount,
+      note:v('note')||null, status:'new', source:'dang-ky-page'
+    }]);
     if (error) throw error;
-    nvhTrackLead('dang-ky-page');
     window.location.href = '/thank-you.html';
   } catch(err) {
     formErrBottom.textContent = I18N['err.generic'][currentLang];
@@ -538,21 +458,5 @@ document.getElementById('regForm').addEventListener('submit', async e => {
   }
 });
 </script>
-<div class="floating-widgets">
-  <a href="tel:0769663366" class="f-btn call">
-        <div class="f-ic">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
-      </svg>
-    </div>
-    <span class="f-tx" data-i18n="float.call">Gọi ngay</span>
-  </a>
-  <a href="https://zalo.me/0928775599" target="_blank" class="f-btn zalo">
-        <div class="f-ic" style="background:transparent;">
-      <div style="font-family: Arial, sans-serif; font-weight: 900; font-size: 13px; color: #fff; letter-spacing: -0.5px;">Zalo</div>
-    </div>
-    <span class="f-tx">Zalo</span>
-  </a>
-</div>
 </body>
 </html>
