@@ -1598,16 +1598,31 @@ document.addEventListener('DOMContentLoaded', () => {
   const promoClose = document.getElementById('promoClose');
   const promoBtnCTA = document.getElementById('promoBtnCTA');
   
-  if(promoOverlay && !sessionStorage.getItem('promoSeen')) {
-    setTimeout(() => {
+    const showPromo = () => {
+    if(promoOverlay && !sessionStorage.getItem('promoSeen')) {
       promoOverlay.classList.add('show');
-    }, 3500);
-  }
+      sessionStorage.setItem('promoSeen', 'true');
+    }
+  };
 
   const closePromo = () => {
-    promoOverlay.classList.remove('show');
+    if(promoOverlay) promoOverlay.classList.remove('show');
     sessionStorage.setItem('promoSeen', 'true');
   };
+
+  // Exit intent (Desktop)
+  document.addEventListener('mouseout', (e) => {
+    if (e.clientY < 10 && !sessionStorage.getItem('promoSeen')) {
+      showPromo();
+    }
+  });
+
+  // Fallback (Mobile)
+  setTimeout(() => {
+    if (window.innerWidth <= 760 && !sessionStorage.getItem('promoSeen')) {
+      showPromo();
+    }
+  }, 30000);
 
   if(promoClose) promoClose.addEventListener('click', closePromo);
   if(promoBtnCTA) promoBtnCTA.addEventListener('click', closePromo);
