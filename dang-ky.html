@@ -441,12 +441,13 @@ document.getElementById('regForm').addEventListener('submit', async e => {
   submitText.innerHTML = '<div class="spinner"></div> ' + I18N['btn.sending'][currentLang];
   try {
     const {error} = await db.from('leads').insert([{
-      parent_name:pn, phone:ph, child_name:cn, child_age:parseInt(ca), child_school:cs,
-      subjects:subs.join(', '), package:pkg.value,
+      parent_name:pn, phone:ph, child_name:cn, child_age:parseInt(ca)||null, child_school:cs,
+      programs: ['Rèn luyện Kỹ năng hè 2026-2027', ...subs],
+      package_selected:pkg.value,
       wants_after_1630:document.getElementById('after1630').checked,
       referral_code:refInput.value.trim().toUpperCase()||null,
       discount_applied: refDiscount,
-      note:v('note')||null, status:'new', source:'dang-ky-page'
+      note:v('note')||null, status:'new', source:'dang-ky-page', site:'nvhttn'
     }]);
     if (error) throw error;
     const pkgName = pkg.parentElement.querySelector('.pkg-name').textContent;
