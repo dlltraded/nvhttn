@@ -463,7 +463,8 @@ document.getElementById('regForm').addEventListener('submit', async e => {
 
     window.location.href = '/thank-you.html';
   } catch(err) {
-    formErrBottom.textContent = I18N['err.generic'][currentLang];
+    console.error('Supabase Error:', err);
+    formErrBottom.innerHTML = I18N['err.generic'][currentLang] + '<br><small style="color:red">' + (err.message || JSON.stringify(err)) + '</small>';
     formErrBottom.classList.add('show');
     submitBtn.disabled = false;
     submitText.textContent = I18N['btn.submit'][currentLang];
