@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Đăng ký Lớp Rèn luyện Kỹ năng Hè 2026-2027 | Nhà Văn hóa Thanh Thiếu nhi TP. Đồng Nai</title>
-<meta name="description" content="Đăng ký Lớp Rèn luyện Kỹ năng năm học 2026-2027 tại Nhà Văn hóa Thanh Thiếu nhi TP. Đồng Nai. Có xe đưa đón, bán trú, 7 môn năng khiếu tự chọn & CLB Tiếng Anh miễn phí.">
+<meta name="description" content="Đăng ký Lớp Rèn luyện Kỹ năng năm học 2026-2027 tại Nhà Văn hóa Thanh Thiếu nhi TP. Đồng Nai. Có xe đưa đón, bán trú, chọn 2 trong 4 môn năng khiếu: Bóng đá, Bóng rổ, Bơi lội, Robotics & AI.">
 
 <!-- Open Graph / Facebook / Zalo / Telegram -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Lớp Rèn luyện Kỹ năng 2026-2027 | NVHTTN Đồng Nai">
-<meta property="og:description" content="Chương trình bán trú, xe đưa đón tận trường, 7 môn năng khiếu tự chọn (Bóng rổ, Bơi lội, Robotics...) & Câu lạc bộ Tiếng Anh miễn phí.">
+<meta property="og:description" content="Chương trình bán trú, xe đưa đón tận trường. Chọn 2 trong 4 môn năng khiếu: Bóng đá, Bóng rổ, Bơi lội, Robotics & AI.">
 <meta property="og:image" content="https://raw.githubusercontent.com/dlltraded/nvhttn/main/assets/thumbnail.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -17,7 +17,7 @@
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:title" content="Lớp Rèn luyện Kỹ năng 2026-2027 | NVHTTN Đồng Nai">
-<meta property="twitter:description" content="Chương trình bán trú, xe đưa đón tận trường, 7 môn năng khiếu tự chọn (Bóng rổ, Bơi lội, Robotics...) & Câu lạc bộ Tiếng Anh miễn phí.">
+<meta property="twitter:description" content="Chương trình bán trú, xe đưa đón tận trường. Chọn 2 trong 4 môn năng khiếu: Bóng đá, Bóng rổ, Bơi lội, Robotics & AI.">
 <meta property="twitter:image" content="https://raw.githubusercontent.com/dlltraded/nvhttn/main/assets/thumbnail.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -135,44 +135,6 @@
   .ops-table tbody td.row-label{min-width:160px;}
   .ops-table tbody td.row-label strong{font-weight:700;color:var(--navy-900);}
   @media(max-width:640px){.ops-table{font-size:13px;}.ops-table thead th,.ops-table tbody td{padding:11px 12px;}}
-
-  .english-club-banner {
-    background: linear-gradient(135deg, var(--blue-600), var(--navy-800));
-    border-radius: var(--radius-lg);
-    color: #fff;
-    margin-bottom: 24px;
-    border: 1.5px solid var(--gold-500);
-    animation: pulseGlow 2.5s infinite;
-    transition: transform 0.3s ease;
-    display: grid;
-    grid-template-columns: 240px 1fr;
-    overflow: hidden;
-  }
-  .english-club-banner:hover {
-    transform: scale(1.02);
-    animation-play-state: paused;
-  }
-  .ecb-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .ecb-content {
-    padding: 24px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  @media(max-width:640px) {
-    .english-club-banner {
-      grid-template-columns: 1fr;
-    }
-    .ecb-img {
-      height: 180px;
-    }
-  }
-
   /* ---------- HERO ---------- */
   .hero{
     position:relative;overflow:hidden;color:#fff;
@@ -203,6 +165,21 @@
   }
   .hero-info-card .k{font-size:11.5px;color:#b9cdf0;text-transform:uppercase;letter-spacing:.05em;font-weight:700}
   .hero-info-card .v{font-size:16px;font-weight:800;color:#fff;margin-top:4px}
+  .hero-quickform{
+    background:#fff;border-radius:18px;padding:22px 22px 18px;box-shadow:0 24px 60px rgba(4,15,40,.35);
+    border:1px solid rgba(255,255,255,.5);margin-bottom:18px;
+  }
+  .hero-quickform h4{font-size:15.5px;font-weight:800;color:var(--navy-900);margin-bottom:3px}
+  .hero-quickform .qf-sub{font-size:12.5px;color:var(--ink-600);margin-bottom:14px}
+  .hero-quickform input{width:100%;padding:11px 13px;border:1.5px solid var(--line);border-radius:10px;font-size:14px;margin-bottom:10px;font-family:inherit}
+  .hero-quickform input:focus{outline:none;border-color:var(--blue-600)}
+  .hero-quickform button{width:100%;margin-top:2px}
+  .hero-quickform .qf-note{font-size:11px;color:var(--ink-600);text-align:center;margin-top:9px}
+  .hero-quickform .qf-error{display:none;background:#fef2f2;color:#b91c1c;font-size:12.5px;padding:8px 10px;border-radius:8px;margin-bottom:10px}
+  .hero-quickform .qf-error.show{display:block}
+  .hero-quickform .qf-success{display:none;text-align:center;padding:10px 0}
+  .hero-quickform .qf-success.show{display:block}
+  .hero-quickform .qf-success .ok{font-size:30px;margin-bottom:6px}
   .hero-photo{
     position:relative;z-index:1;border-radius:var(--radius-lg);overflow:hidden;
     box-shadow:var(--shadow-lg);border:4px solid rgba(255,255,255,.15);
@@ -422,11 +399,27 @@
 
   /* ---------- utility for hidden ---------- */
   .hidden{display:none !important}
+  .school-chip{
+    display:inline-block;background:var(--bg-soft);border:1px solid var(--line);
+    color:var(--navy-900);font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:999px;
+  }
   .float-back-top{
     position:fixed;right:20px;bottom:20px;width:46px;height:46px;border-radius:50%;
     background:var(--navy-800);color:#fff;display:flex;align-items:center;justify-content:center;
     box-shadow:var(--shadow-md);z-index:90;font-size:18px;border:none;
   }
+  .float-call-btn{
+    position:fixed;left:16px;bottom:16px;z-index:95;display:none;
+    align-items:center;gap:8px;background:var(--green-600,#20b84d);color:#fff;
+    padding:12px 18px 12px 14px;border-radius:999px;text-decoration:none;
+    box-shadow:0 10px 26px rgba(32,184,77,.45);font-weight:800;font-size:14.5px;
+    animation:callPulse 2.4s ease-in-out infinite;
+  }
+  .float-call-btn .ic{font-size:19px;animation:callRing 1.6s ease-in-out infinite}
+  @keyframes callPulse{0%,100%{box-shadow:0 10px 26px rgba(32,184,77,.45)}50%{box-shadow:0 10px 26px rgba(32,184,77,.75),0 0 0 8px rgba(32,184,77,.15)}}
+  @keyframes callRing{0%,100%{transform:rotate(0)}10%{transform:rotate(-15deg)}20%{transform:rotate(12deg)}30%{transform:rotate(-10deg)}40%{transform:rotate(6deg)}50%{transform:rotate(0)}}
+  @media(max-width:760px){ .float-call-btn{display:flex} }
+  
   /* ---------- PROMO POPUP ---------- */
   .promo-overlay{
     position:fixed;inset:0;background:rgba(11,31,59,.75);z-index:999;
@@ -470,6 +463,42 @@
   }
   .promo-btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(10,102,194,.5)}
 </style>
+<!-- ============================================================
+     GOOGLE ADS CONVERSION TRACKING — chỉ dùng Google Ads (Facebook thu lead
+     riêng qua Lead Ads trên nền tảng Facebook, không đi qua website này nên
+     không cần Meta Pixel ở đây).
+     TODO trước khi chạy Ads: lấy "Conversion ID/Conversion Label" từ
+     Google Ads → Tools & Settings → Conversions → New conversion action
+     → Website. Chuỗi trả về dạng "AW-123456789/AbCdEfGhIjKlMnOp":
+       - Phần trước dấu / → thay vào TODO_REPLACE_ADS_ID (2 chỗ bên dưới)
+       - Phần sau dấu /  → thay vào TODO_REPLACE_CONVERSION_LABEL
+     Sau khi thay xong, đổi NVH_TRACKING_READY thành true.
+     ============================================================ -->
+<script>window.NVH_TRACKING_READY = false; /* đổi thành true sau khi điền ID thật bên dưới */</script>
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-TODO_REPLACE_ADS_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-TODO_REPLACE_ADS_ID');
+</script>
+-->
+<script>
+  // Gọi ngay sau khi 1 form đăng ký gửi thành công (đã gắn sẵn ở các submit handler bên dưới).
+  // Hiện là no-op an toàn cho tới khi khối script Google Ads ở trên được bỏ comment,
+  // điền đúng Conversion ID/Label, và NVH_TRACKING_READY = true.
+  function nvhTrackLead(formName){
+    try {
+      if (window.NVH_TRACKING_READY && typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-TODO_REPLACE_ADS_ID/TODO_REPLACE_CONVERSION_LABEL',
+          'event_callback': function(){ console.log('Google Ads conversion sent:', formName); }
+        });
+      }
+    } catch (e) { console.warn('nvhTrackLead error', e); }
+  }
+</script>
 </head>
 <body>
 
@@ -486,7 +515,7 @@
     <div class="header-right">
       <div class="header-phone">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span>0251.3384.0648</span> &nbsp;·&nbsp; <span>0769.663366</span>
+        <span>0251.3847369</span> &nbsp;·&nbsp; <span>0769.663366</span>
       </div>
       <div class="lang-switch">
         <button type="button" data-lang-btn="vi" class="active">VI</button>
@@ -519,9 +548,30 @@
         <div class="hero-info-card"><div class="k" data-i18n="hero.info4k">Trường tuyến gần</div><div class="v" data-i18n="hero.info4v">08 trường · -30% phí xe</div></div>
       </div>
     </div>
-    <div class="hero-photo">
-      <img src="assets/hero-nhom-hoc-sinh.jpg" alt="Nhóm học sinh tham gia hoạt động">
-      <div class="hero-photo-tag" data-i18n="hero.phototag">📍 Nhà Văn hóa Thanh Thiếu nhi TP. Đồng Nai</div>
+    <div>
+      <div class="hero-quickform">
+        <div id="qf-form-wrap">
+          <h4 data-i18n="qf.h4">Để lại số, Nhà Văn hóa gọi tư vấn ngay</h4>
+          <p class="qf-sub" data-i18n="qf.sub">Chỉ mất 15 giây — không cần điền chi tiết ngay bây giờ.</p>
+          <div id="qf-error" class="qf-error"></div>
+          <form id="quick-form">
+            <input type="text" id="qf_parent_name" data-i18n-placeholder="qf.parentPh" placeholder="Họ tên phụ huynh *" required>
+            <input type="tel" id="qf_phone" data-i18n-placeholder="qf.phonePh" placeholder="Số điện thoại *" required>
+            <input type="text" id="qf_child_school" data-i18n-placeholder="qf.schoolPh" placeholder="Trường học hiện tại của bé *" required>
+            <button type="submit" id="qf-submit-btn" class="btn btn-primary" data-i18n="qf.submit">Gọi lại tư vấn miễn phí</button>
+          </form>
+          <p class="qf-note" data-i18n="qf.note">🔒 Thông tin được bảo mật, chỉ dùng để tư vấn chương trình.</p>
+        </div>
+        <div id="qf-success" class="qf-success">
+          <div class="ok">✓</div>
+          <div style="font-weight:800;color:var(--navy-900);margin-bottom:4px" data-i18n="qf.okH">Đã ghi nhận!</div>
+          <div style="font-size:13px;color:var(--ink-600)" data-i18n="qf.okP">Nhà Văn hóa sẽ gọi lại trong thời gian sớm nhất.</div>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="assets/hero-nhom-hoc-sinh.jpg" alt="Nhóm học sinh tham gia hoạt động">
+        <div class="hero-photo-tag" data-i18n="hero.phototag">📍 Nhà Văn hóa Thanh Thiếu nhi TP. Đồng Nai</div>
+      </div>
     </div>
   </div>
 </section>
@@ -529,7 +579,7 @@
 <!-- ================= STATS BAR ================= -->
 <section class="stats-bar">
   <div class="wrap stats-grid">
-    <div class="stat"><div class="num">7</div><div class="lbl" data-i18n="stats.1">Môn năng khiếu tự chọn</div></div>
+    <div class="stat"><div class="num">4</div><div class="lbl" data-i18n="stats.1">Môn năng khiếu tự chọn</div></div>
     <div class="stat"><div class="num">08</div><div class="lbl" data-i18n="stats.2">Trường thuộc tuyến xe gần</div></div>
     <div class="stat"><div class="num">T2–T7</div><div class="lbl" data-i18n="stats.3">Lịch hoạt động trong tuần</div></div>
     <div class="stat"><div class="num">20+</div><div class="lbl" data-i18n="stats.4">Đội ngũ giáo viên giảng dạy</div></div>
@@ -576,21 +626,7 @@
       <p data-i18n="program.p">Học sinh được tư vấn, bố trí năng khiếu phù hợp độ tuổi, sức khỏe và nguyện vọng — song song rèn luyện các kỹ năng nền tảng mỗi ngày.</p>
     </div>
 
-    <h3 style="text-align:center;font-size:17px;margin-bottom:20px" data-i18n="program.pickTitle">Chọn 2 trong 7 môn năng khiếu</h3>
-    
-    <div class="english-club-banner">
-      <img src="assets/english_club.jpg" alt="Câu lạc bộ Tiếng Anh" class="ecb-img">
-      <div class="ecb-content">
-        <div style="position:absolute; top: -5px; right: -5px; font-size:70px; opacity:0.1; line-height:1">🇬🇧</div>
-        <div style="display:flex; align-items:center; gap:12px; margin-bottom:8px">
-          <span style="background:var(--gold-500); color:var(--navy-900); padding:4px 10px; border-radius:999px; font-size:12px; font-weight:800; text-transform:uppercase;" data-i18n="ecb.badge">MIỄN PHÍ</span>
-          <h4 style="font-size:19px;font-weight:800;color:var(--gold-500);margin:0" data-i18n="ecb.title">CLB Tiếng Anh</h4>
-        </div>
-        <p style="font-size:14.5px;opacity:0.9;line-height:1.5;margin:0" data-i18n-html="ecb.desc">
-          Tất cả học viên được tham gia sinh hoạt Câu lạc bộ Tiếng Anh hàng ngày với <strong>100% Giáo viên nước ngoài</strong>, giúp các em phản xạ tự nhiên và tự tin giao tiếp.
-        </p>
-      </div>
-    </div>
+    <h3 style="text-align:center;font-size:17px;margin-bottom:20px" data-i18n="program.pickTitle">Chọn 2 trong 4 môn năng khiếu</h3>
 
     <div class="program-grid">
       <div class="program-card">
@@ -609,20 +645,8 @@
         <div class="ph"><img src="assets/robotics.jpg" alt="Học sinh học Robotics và AI" loading="lazy"></div>
         <div class="pb"><h4 data-i18n="program.robotics">Robotics &amp; AI</h4><p data-i18n="program.roboticsP">Tư duy công nghệ, lắp ráp và lập trình cơ bản</p></div>
       </div>
-      <div class="program-card">
-        <div class="ph"><img src="assets/ve.jpg" alt="Học sinh học Vẽ" loading="lazy"></div>
-        <div class="pb"><h4 data-i18n="program.ve">Hội họa &amp; Sáng tạo</h4><p data-i18n="program.veP">Phát huy trí tưởng tượng, rèn luyện tư duy thẩm mỹ và sự khéo léo</p></div>
-      </div>
-      <div class="program-card">
-        <div class="ph"><img src="assets/nhay.jpg" alt="Học sinh học Nhảy hiện đại" loading="lazy"></div>
-        <div class="pb"><h4 data-i18n="program.nhay">Nhảy hiện đại</h4><p data-i18n="program.nhayP">Giải phóng hình thể, cảm thụ âm nhạc và tự tin tỏa sáng</p></div>
-      </div>
-      <div class="program-card">
-        <div class="ph"><img src="assets/mc.jpg" alt="Học sinh học MC" loading="lazy"></div>
-        <div class="pb"><h4 data-i18n="program.mc">MC &amp; Kỹ năng nói</h4><p data-i18n="program.mcP">Rèn luyện chất giọng, diễn đạt lưu loát và tự tin nói trước đám đông</p></div>
-      </div>
-    </div>
     <p style="text-align:center;font-size:12.5px;color:var(--ink-600);margin-top:12px" data-i18n="program.note">* Ban tư vấn của Nhà Văn hóa sẽ hỗ trợ chọn môn phù hợp theo độ tuổi, sức khỏe và điều kiện tổ chức thực tế.</p>
+    <p style="max-width:760px;margin:20px auto 0;text-align:center;font-size:13.5px;color:var(--ink-700);line-height:1.7" data-i18n="program.seoNote">Là nhà thiếu nhi Đồng Nai trực thuộc Nhà Văn hóa Thanh Thiếu nhi thành phố, chương trình chiêu sinh lớp năng khiếu 2026 – 2027 kết hợp bán trú tiểu học Đồng Nai, xe đưa đón học sinh Đồng Nai tận trường và không gian rèn kỹ năng sống cho trẻ mỗi ngày — một lựa chọn lớp ngoại khóa cho bé, lớp năng khiếu thiếu nhi Trấn Biên (Biên Hòa) được nhiều phụ huynh tin tưởng.</p>
 
     <div class="split" style="margin-top:56px">
       <div class="split-photo"><img src="assets/trong-nghi-thuc.jpg" alt="Học sinh sinh hoạt tập thể tại Nhà Văn hóa"></div>
@@ -706,6 +730,20 @@
       <h2 data-i18n="price.h2">Gói học theo tháng, đã gồm ăn trưa &amp; bán trú</h2>
       <p data-i18n="price.p">Áp dụng từ tháng 9/2026, tính theo 25 ngày hoạt động/tháng. Giá bên dưới là gói tuyến xe gần (08 trường) — xem chi tiết tuyến chuẩn trong từng thẻ.</p>
     </div>
+    <div class="schools-list" style="max-width:920px;margin:0 auto 34px;text-align:center">
+      <div style="font-size:13px;font-weight:700;color:var(--navy-900);margin-bottom:12px" data-i18n="schools.title">📍 08 trường thuộc tuyến xe đưa đón gần (giảm 30% phí xe):</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center">
+        <span class="school-chip" data-i18n="schools.s1">TH Quang Vinh</span>
+        <span class="school-chip" data-i18n="schools.s2">TH Lê Văn Tám</span>
+        <span class="school-chip" data-i18n="schools.s3">TH Nguyễn Khắc Hiếu</span>
+        <span class="school-chip" data-i18n="schools.s4">TH Trịnh Hoài Đức</span>
+        <span class="school-chip" data-i18n="schools.s5">THCS Trần Hưng Đạo</span>
+        <span class="school-chip" data-i18n="schools.s6">THCS Nguyễn Bỉnh Khiêm</span>
+        <span class="school-chip" data-i18n="schools.s7">THCS Hùng Vương</span>
+        <span class="school-chip" data-i18n="schools.s8">THCS Quyết Thắng</span>
+      </div>
+      <p style="font-size:12px;color:var(--ink-600);margin-top:10px" data-i18n="schools.note">Bé học trường khác trong TP. Đồng Nai vẫn được tiếp nhận — mức phí xe tuyến chuẩn sẽ được tư vấn thêm.</p>
+    </div>
     <div class="price-grid">
       <div class="price-card">
         <div class="grade" data-i18n="price.thGrade">Tiểu học</div>
@@ -766,7 +804,7 @@
 </section>
 
 <!-- ================= ƯU ĐÃI ================= -->
-<section class="section-tight" style="background:var(--bg-soft)">
+<section class="section-tight" id="uu-dai" style="background:var(--bg-soft)">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow" data-i18n="discount.eyebrow">Chính sách ưu đãi</span>
@@ -838,16 +876,23 @@
         <div>
           <div class="contact-row">
             <div class="ic">📞</div>
-            <div><div class="lbl">Hotline</div><div class="val">0251.3384.0648 &nbsp;·&nbsp; 0769.663366</div></div>
+            <div><div class="lbl">Hotline</div><div class="val">0251.3847369 &nbsp;·&nbsp; 0769.663366</div></div>
           </div>
           <div class="contact-row">
             <div class="ic">📍</div>
-            <div><div class="lbl" data-i18n="form.addrLbl">Địa chỉ ghi danh</div><div class="val" data-i18n="form.addrVal">Phòng Truyền thống – Nhà Văn hóa Thanh Thiếu nhi TP. Đồng Nai</div></div>
+            <div><div class="lbl" data-i18n="form.addrLbl">Địa chỉ ghi danh</div><div class="val" data-i18n="form.addrVal">Phòng Truyền thống – Nhà Văn hóa Thanh Thiếu nhi TP. Đồng Nai, 159 Cách Mạng Tháng 8, phường Trấn Biên, Đồng Nai</div></div>
           </div>
           <div class="contact-row">
             <div class="ic">🕐</div>
             <div><div class="lbl" data-i18n="form.timeLbl">Giờ tiếp nhận</div><div class="val" data-i18n="form.timeVal">T2–CN · 8:00–11:00 &amp; 14:00–17:00</div></div>
           </div>
+        </div>
+        <div class="map-embed" style="margin-top:18px;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.18)">
+          <iframe
+            src="https://www.google.com/maps?q=159%20C%C3%A1ch%20M%E1%BA%A1ng%20Th%C3%A1ng%208%2C%20ph%C6%B0%E1%BB%9Dng%20Tr%E1%BA%A5n%20Bi%C3%AAn%2C%20%C4%90%E1%BB%93ng%20Nai&output=embed"
+            width="100%" height="220" style="border:0;display:block" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Bản đồ Nhà Văn hóa Thanh Thiếu nhi TP. Đồng Nai - 159 Cách Mạng Tháng 8"></iframe>
         </div>
       </div>
 
@@ -887,9 +932,6 @@
               <label class="checkline" style="margin:0;align-items:center;padding:10px 12px"><input type="checkbox" name="subject" value="Bóng đá"><div class="ct" style="margin:0" data-i18n="program.bongda">Bóng đá</div></label>
               <label class="checkline" style="margin:0;align-items:center;padding:10px 12px"><input type="checkbox" name="subject" value="Bơi lội"><div class="ct" style="margin:0" data-i18n="program.boiloi">Bơi lội</div></label>
               <label class="checkline" style="margin:0;align-items:center;padding:10px 12px"><input type="checkbox" name="subject" value="Robotics & AI"><div class="ct" style="margin:0" data-i18n="program.robotics">Robotics &amp; AI</div></label>
-              <label class="checkline" style="margin:0;align-items:center;padding:10px 12px"><input type="checkbox" name="subject" value="Vẽ"><div class="ct" style="margin:0" data-i18n="program.ve">Hội họa &amp; Sáng tạo</div></label>
-              <label class="checkline" style="margin:0;align-items:center;padding:10px 12px"><input type="checkbox" name="subject" value="Nhảy hiện đại"><div class="ct" style="margin:0" data-i18n="program.nhay">Nhảy hiện đại</div></label>
-              <label class="checkline" style="margin:0;align-items:center;padding:10px 12px;grid-column:span 2"><input type="checkbox" name="subject" value="MC"><div class="ct" style="margin:0" data-i18n="program.mc">MC &amp; Kỹ năng nói</div></label>
             </div>
           </div>
 
@@ -963,7 +1005,7 @@
       <div class="card">
         <div class="icon-box icon-blue">📝</div>
         <h3 data-i18n="steps.s1h">Đăng ký trực tuyến</h3>
-        <p data-i18n="steps.s1p">Điền form đăng ký phía trên hoặc gọi 0251.3384.0648 hoặc 0769.663366 hoặc 0769.663366.</p>
+        <p data-i18n="steps.s1p">Điền form đăng ký phía trên hoặc gọi 0251.3847369 / 0769.663366.</p>
       </div>
       <div class="step-arrow">→</div>
       <div class="card">
@@ -988,7 +1030,7 @@
     <p data-i18n="cta.p">Đăng ký ngay hôm nay để con được sắp xếp lịch học và tuyến đưa đón phù hợp nhất trước ngày khai giảng.</p>
     <div class="hero-cta">
       <a href="#dang-ky" class="btn btn-primary" data-i18n="cta.btn1">Đăng ký ngay</a>
-      <a href="tel:025133840648" class="btn btn-outline">0251.3384.0648</a> <a href="tel:0769663366" class="btn btn-outline">0769.663366</a>
+      <a href="tel:02513847369" class="btn btn-outline">0251.3847369</a> <a href="tel:0769663366" class="btn btn-outline">0769.663366</a>
     </div>
     <p class="form-note" data-i18n="cta.note">Ghi danh từ 24/8/2026 · Miễn phí tư vấn lộ trình học tập cho bé</p>
   </div>
@@ -1012,7 +1054,8 @@
       <h5 data-i18n="footer.exploreH">Khám phá</h5>
       <a href="#hoc-phi" data-i18n="footer.link1">Bảng học phí</a>
       <a href="#dang-ky" data-i18n="footer.link2">Đăng ký lớp học</a>
-      <a href="#" data-i18n="footer.link3">Chính sách ưu đãi</a>
+      <a href="#uu-dai" data-i18n="footer.link3">Chính sách ưu đãi</a>
+      <a href="privacy-policy.html" data-i18n="footer.link4">Chính sách bảo mật</a>
     </div>
     <div class="footer-col">
       <h5 data-i18n="footer.aboutH">Chương trình</h5>
@@ -1023,8 +1066,8 @@
     <div class="footer-col footer-contact">
       <h5 data-i18n="footer.contactH">Liên hệ</h5>
       <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="footer.address">Nhà Văn hóa Thanh Thiếu nhi TP. Đồng Nai, phường Trấn Biên, Đồng Nai</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>0251.3384.0648</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="footer.address">Nhà Văn hóa Thanh Thiếu nhi TP. Đồng Nai, 159 Cách Mạng Tháng 8, phường Trấn Biên, Đồng Nai</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>0251.3847369</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 2H7a2 2 0 0 0-2 2v16l7-4 7 4V4a2 2 0 0 0-2-2z"/></svg><span data-i18n="footer.facebook">facebook.com/NVHTTN.DongNai</span></li>
       </ul>
     </div>
@@ -1036,6 +1079,7 @@
 </footer>
 
 <button class="float-back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+<a href="tel:02513847369" class="float-call-btn" id="floatCallBtn"><span class="ic">📞</span><span data-i18n="callfab.text">Gọi ngay</span></a>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
@@ -1093,7 +1137,7 @@ const I18N = {
     vi:'Đăng ký <span class="accent">Lớp Rèn luyện Kỹ năng</span> năm học 2026 – 2027',
     en:'Register for the <span class="accent">Skills Training Program</span> 2026 – 2027'
   },
-  "hero.desc": {vi:"Xe đưa đón tận trường, ăn trưa – bán trú, tự chọn 2 trong 7 môn năng khiếu (Bóng rổ, Bóng đá, Bơi lội, Robotics & AI, Hội họa, Nhảy hiện đại, MC & Kỹ năng nói) và không gian rèn kỹ năng sống có giám sát — dành cho học sinh Tiểu học & THCS tại TP. Đồng Nai.",
+  "hero.desc": {vi:"Xe đưa đón tận trường, ăn trưa – bán trú, tự chọn 2 trong 4 môn năng khiếu (Bóng rổ, Bóng đá, Bơi lội, Robotics & AI) và không gian rèn kỹ năng sống có giám sát — dành cho học sinh Tiểu học & THCS tại TP. Đồng Nai.",
     en:"Door-to-school shuttle, lunch & supervised boarding, choose 2 of 7 talent classes (Basketball, Football, Swimming, Robotics & AI, Painting, Modern Dance, MC & Public Speaking) and a supervised life-skills space — for Primary & Secondary students in Dong Nai City."},
   "hero.cta1": {vi:"Đăng ký ngay", en:"Register Now"},
   "hero.cta2": {vi:"Xem học phí & lịch học", en:"View Tuition & Schedule"},
@@ -1120,22 +1164,17 @@ const I18N = {
   "models.c3p": {vi:"08 trường tuyến gần được giảm 30% phí xe. Trường ngoài danh sách vẫn được tiếp nhận nhu cầu và xem xét bổ sung tuyến khi đủ điều kiện.", en:"08 nearby-route schools get a 30% shuttle discount. Other schools can still register interest for a new route when conditions allow."},
   "program.eyebrow": {vi:"Chương trình học", en:"Curriculum"},
   "program.h2": {vi:"Năng khiếu yêu thích + Kỹ năng sống thiết yếu", en:"Favorite talents + essential life skills"},
-  "program.p": {vi:"Học sinh được tư vấn, bố trí năng khiếu phù hợp độ tuổi, sức khỏe và nguyện vọng — song song rèn luyện các kỹ năng nền tảng mỗi ngày.", en:"Students are advised and placed into talent classes suited to age, health and interest — while building foundational life skills every day."},
-  "program.pickTitle": {vi:"Chọn 2 trong 7 môn năng khiếu", en:"Choose 2 of 7 talent classes"},
+  "program.p": {vi:"Học sinh được tư vấn, bố trí lớp năng khiếu cho bé phù hợp độ tuổi, sức khỏe và nguyện vọng — chọn 2 trong 4 môn năng khiếu tại Nhà Văn hóa Thanh Thiếu nhi Đồng Nai, song song rèn luyện kỹ năng sống cho trẻ mỗi ngày.", en:"Students are advised and placed into talent classes suited to age, health and interest — choosing 2 of 4 talent classes at the Dong Nai Youth Culture House, while building life skills every day."},
+  "program.pickTitle": {vi:"Chọn 2 trong 4 môn năng khiếu", en:"Choose 2 of 4 talent classes"},
   "program.bongro": {vi:"Bóng rổ", en:"Basketball"},
-  "program.bongroP": {vi:"Rèn thể lực, phản xạ và tinh thần đồng đội", en:"Builds fitness, reflexes and teamwork"},
+  "program.bongroP": {vi:"Lớp bóng rổ trẻ em Đồng Nai — rèn thể lực, phản xạ và tinh thần đồng đội cho học sinh tại Biên Hòa.", en:"Basketball class for kids in Dong Nai — builds fitness, reflexes and teamwork."},
   "program.bongda": {vi:"Bóng đá", en:"Football"},
-  "program.bongdaP": {vi:"Vận động ngoài trời, rèn kỷ luật và tinh thần đồng đội", en:"Outdoor sport, discipline and team spirit"},
+  "program.bongdaP": {vi:"Lớp bóng đá trẻ em Đồng Nai — vận động ngoài trời, rèn kỷ luật cho bé tại Biên Hòa.", en:"Football class for kids in Dong Nai — outdoor activity and discipline."},
   "program.boiloi": {vi:"Bơi lội", en:"Swimming"},
-  "program.boiloiP": {vi:"Kỹ năng an toàn dưới nước, rèn sức bền", en:"Water-safety skills and endurance"},
+  "program.boiloiP": {vi:"Lớp học bơi cho bé Đồng Nai — dạy bơi trẻ em Biên Hòa an toàn dưới nước, rèn sức bền.", en:"Swimming class for kids in Dong Nai — water-safety skills and endurance."},
   "program.robotics": {vi:"Robotics & AI", en:"Robotics & AI"},
-  "program.roboticsP": {vi:"Tư duy công nghệ, lắp ráp và lập trình cơ bản", en:"Tech thinking, building and basic coding"},
-  "program.ve": {vi:"Hội họa & Sáng tạo", en:"Painting & Creativity"},
-  "program.veP": {vi:"Phát huy trí tưởng tượng, rèn luyện tư duy thẩm mỹ và sự khéo léo", en:"Unleash imagination, develop aesthetic thinking and fine motor skills"},
-  "program.nhay": {vi:"Nhảy hiện đại", en:"Modern Dance"},
-  "program.nhayP": {vi:"Giải phóng hình thể, cảm thụ âm nhạc và tự tin tỏa sáng", en:"Express body movement, feel the music and shine with confidence"},
-  "program.mc": {vi:"MC & Kỹ năng nói", en:"MC & Public Speaking"},
-  "program.mcP": {vi:"Rèn luyện chất giọng, diễn đạt lưu loát và tự tin nói trước đám đông", en:"Train your voice, speak fluently and confidently in front of an audience"},
+  "program.roboticsP": {vi:"Lớp Robotics cho trẻ em Đồng Nai — học lập trình, lắp ráp robot cho bé tại Biên Hòa.", en:"Robotics class for kids in Dong Nai — coding and robot-building basics."},
+  "program.seoNote": {vi:"Là nhà thiếu nhi Đồng Nai trực thuộc Nhà Văn hóa Thanh Thiếu nhi thành phố, chương trình chiêu sinh lớp năng khiếu 2026 – 2027 kết hợp bán trú tiểu học Đồng Nai, xe đưa đón học sinh Đồng Nai tận trường và không gian rèn kỹ năng sống cho trẻ mỗi ngày — một lựa chọn lớp ngoại khóa cho bé, lớp năng khiếu thiếu nhi Trấn Biên (Biên Hòa) được nhiều phụ huynh tin tưởng.", en:"As the Dong Nai children's culture house, our 2026-2027 talent-class enrollment combines primary-school boarding, door-to-school shuttle service and a supervised life-skills space — a trusted after-school choice for families in Bien Hoa / Tran Bien."},
   "program.note": {vi:"* Ban tư vấn của Nhà Văn hóa sẽ hỗ trợ chọn môn phù hợp theo độ tuổi, sức khỏe và điều kiện tổ chức thực tế.", en:"* Our advisors help choose the right classes based on age, health and actual class availability."},
   "program.skillTitle": {vi:"Rèn luyện kỹ năng sống mỗi ngày", en:"Building life skills every day"},
   "program.skillDesc": {vi:"Không dạy trước chương trình, không dạy thêm văn hóa trái quy định — chỉ tập trung xây dựng nền tảng kỹ năng và thói quen tự lập cho các em.", en:"No teaching ahead of curriculum, no unauthorized academic tutoring — just building foundational skills and independence habits for children."},
@@ -1193,7 +1232,7 @@ const I18N = {
   "form.asideH": {vi:"Giữ chỗ cho con ngay hôm nay", en:"Reserve your child's spot today"},
   "form.asideP": {vi:"Số lượng chỗ theo từng tuyến xe có giới hạn. Đăng ký sớm để được ưu tiên sắp xếp lịch học và tuyến đưa đón phù hợp nhất.", en:"Seats on each shuttle route are limited. Register early to get priority scheduling and the best shuttle route."},
   "form.addrLbl": {vi:"Địa chỉ ghi danh", en:"Enrollment Address"},
-  "form.addrVal": {vi:"Phòng Truyền thống – Nhà Văn hóa Thanh Thiếu nhi TP. Đồng Nai", en:"Tradition Room – Youth Culture House, Dong Nai City"},
+  "form.addrVal": {vi:"Phòng Truyền thống – Nhà Văn hóa Thanh Thiếu nhi TP. Đồng Nai, 159 Cách Mạng Tháng 8, phường Trấn Biên, Đồng Nai", en:"Tradition Room – Youth Culture House, 159 Cach Mang Thang 8, Tran Bien Ward, Dong Nai"},
   "form.timeLbl": {vi:"Giờ tiếp nhận", en:"Reception Hours"},
   "form.timeVal": {vi:"T2–CN · 8:00–11:00 & 14:00–17:00", en:"Mon–Sun · 8:00–11:00 & 14:00–17:00"},
   "form.parentName": {vi:"Họ tên phụ huynh *", en:"Parent's Full Name *"},
@@ -1215,7 +1254,28 @@ const I18N = {
   "form.privacyNote": {vi:"Thông tin của gia đình được bảo mật và chỉ dùng để tư vấn chương trình Rèn luyện Kỹ năng.", en:"Your family's information is kept confidential and used only to advise on the Skills Training Program."},
   "form.successH": {vi:"Đăng ký thành công!", en:"Registration Successful!"},
   "form.successP": {vi:"Cảm ơn ba mẹ đã đăng ký. Đội ngũ Nhà Văn hóa Thanh Thiếu nhi TP. Đồng Nai sẽ liên hệ tư vấn trong thời gian sớm nhất.", en:"Thank you for registering. Our team at the Youth Culture House, Dong Nai City will contact you shortly."},
-  "form.errorGeneric": {vi:"Có lỗi xảy ra, vui lòng thử lại hoặc gọi 0251.3384.0648 hoặc 0769.663366 hoặc 0769.663366.", en:"Something went wrong, please try again or call 0251.3384.0648."},
+  "form.errorGeneric": {vi:"Có lỗi xảy ra, vui lòng thử lại hoặc gọi 0251.3847369 / 0769.663366.", en:"Something went wrong, please try again or call 0251.3847369 / 0769.663366."},
+  "qf.h4": {vi:"Để lại số, Nhà Văn hóa gọi tư vấn ngay", en:"Leave your number, we'll call you back"},
+  "qf.sub": {vi:"Chỉ mất 15 giây — không cần điền chi tiết ngay bây giờ.", en:"Takes 15 seconds — no need for full details right now."},
+  "qf.parentPh": {vi:"Họ tên phụ huynh *", en:"Parent full name *"},
+  "qf.phonePh": {vi:"Số điện thoại *", en:"Phone number *"},
+  "qf.schoolPh": {vi:"Trường học hiện tại của bé *", en:"Child's current school *"},
+  "qf.submit": {vi:"Gọi lại tư vấn miễn phí", en:"Request a free callback"},
+  "qf.note": {vi:"🔒 Thông tin được bảo mật, chỉ dùng để tư vấn chương trình.", en:"🔒 Your information is kept private and used only for program consultation."},
+  "qf.errorRequired": {vi:"Vui lòng điền đầy đủ 3 thông tin trên.", en:"Please fill in all 3 fields above."},
+  "qf.okH": {vi:"Đã ghi nhận!", en:"Got it!"},
+  "qf.okP": {vi:"Nhà Văn hóa sẽ gọi lại trong thời gian sớm nhất.", en:"Our team will call you back as soon as possible."},
+  "callfab.text": {vi:"Gọi ngay", en:"Call now"},
+  "schools.title": {vi:"📍 08 trường thuộc tuyến xe đưa đón gần (giảm 30% phí xe):", en:"📍 8 schools on the nearby shuttle route (30% off shuttle fee):"},
+  "schools.s1": {vi:"TH Quang Vinh", en:"Quang Vinh Primary"},
+  "schools.s2": {vi:"TH Lê Văn Tám", en:"Le Van Tam Primary"},
+  "schools.s3": {vi:"TH Nguyễn Khắc Hiếu", en:"Nguyen Khac Hieu Primary"},
+  "schools.s4": {vi:"TH Trịnh Hoài Đức", en:"Trinh Hoai Duc Primary"},
+  "schools.s5": {vi:"THCS Trần Hưng Đạo", en:"Tran Hung Dao Secondary"},
+  "schools.s6": {vi:"THCS Nguyễn Bỉnh Khiêm", en:"Nguyen Binh Khiem Secondary"},
+  "schools.s7": {vi:"THCS Hùng Vương", en:"Hung Vuong Secondary"},
+  "schools.s8": {vi:"THCS Quyết Thắng", en:"Quyet Thang Secondary"},
+  "schools.note": {vi:"Bé học trường khác trong TP. Đồng Nai vẫn được tiếp nhận — mức phí xe tuyến chuẩn sẽ được tư vấn thêm.", en:"Children from other schools in Dong Nai are still welcome — standard-route shuttle fees will be advised separately."},
   "promo.badge": {vi:"Ưu đãi độc quyền", en:"Exclusive Offer"},
   "promo.title": {vi:"Giảm thêm 5% học phí<br>cho 100 suất đăng ký đầu tiên!", en:"Extra 5% tuition discount<br>for the first 100 registrations!"},
   "promo.desc": {vi:"Chỉ áp dụng cho phụ huynh đăng ký giữ chỗ qua form online trước ngày <strong>khai giảng 07/09/2026</strong>. Đăng ký ngay để chọn được tuyến xe đưa đón phù hợp nhất!", en:"Available only for parents who reserve a spot via the online form before <strong>the opening day 07/09/2026</strong>. Register now to secure the most suitable shuttle route for your child!"},
@@ -1258,7 +1318,7 @@ const I18N = {
   "steps.eyebrow": {vi:"Quy trình đơn giản", en:"Simple Process"},
   "steps.h2": {vi:"Chỉ 3 bước để con có chỗ học", en:"Just 3 steps to secure a spot"},
   "steps.s1h": {vi:"Đăng ký trực tuyến", en:"Register online"},
-  "steps.s1p": {vi:"Điền form đăng ký phía trên hoặc gọi 0251.3384.0648 hoặc 0769.663366 hoặc 0769.663366.", en:"Fill in the form above or call the hotline 0251.3384.0648 hoặc 0769.663366."},
+  "steps.s1p": {vi:"Điền form đăng ký phía trên hoặc gọi 0251.3847369 / 0769.663366.", en:"Fill in the form above or call the hotline 0251.3847369 hoặc 0769.663366."},
   "steps.s2h": {vi:"Chuẩn bị hồ sơ", en:"Prepare your documents"},
   "steps.s2p": {vi:"Bản sao giấy khai sinh/thẻ học sinh, thông tin liên hệ và giấy tờ ưu đãi (nếu có), nộp tại Phòng Truyền thống.", en:"A copy of the birth certificate/student card, contact info, and discount documents (if any), submitted at the Tradition Room."},
   "steps.s3h": {vi:"Nhận lịch học & bắt đầu", en:"Get your schedule & begin"},
@@ -1266,7 +1326,7 @@ const I18N = {
   "cta.h2": {vi:"Chỗ học có giới hạn theo từng tuyến xe", en:"Seats are limited on every shuttle route"},
   "cta.p": {vi:"Đăng ký ngay hôm nay để con được sắp xếp lịch học và tuyến đưa đón phù hợp nhất trước ngày khai giảng.", en:"Register today so your child gets the best schedule and shuttle route before the start date."},
   "cta.btn1": {vi:"Đăng ký ngay", en:"Register Now"},
-  "cta.btn2": {vi:"Gọi 0251.3384.0648 hoặc 0769.663366", en:"Call 0251.3384.0648 or 0769.663366"},
+  "cta.btn2": {vi:"Gọi 0251.3847369 hoặc 0769.663366", en:"Call 0251.3847369 or 0769.663366"},
   "cta.note": {vi:"Ghi danh từ 24/8/2026 · Miễn phí tư vấn lộ trình học tập cho bé", en:"Enrollment opens Aug 24, 2026 · Free consultation on your child's learning path"},
   "footer.tagline": {vi:"Khát vọng vươn cao · Tri thức học tập · Phát triển toàn diện", en:"Aim high · Learn knowledge · Develop fully"},
   "footer.trainingBy": {vi:"Đơn vị phối hợp tổ chức đào tạo: Huy Võ Education", en:"Training organized in partnership with: Huy Võ Education"},
@@ -1274,12 +1334,13 @@ const I18N = {
   "footer.link1": {vi:"Bảng học phí", en:"Tuition"},
   "footer.link2": {vi:"Đăng ký lớp học", en:"Register"},
   "footer.link3": {vi:"Chính sách ưu đãi", en:"Discounts"},
+  "footer.link4": {vi:"Chính sách bảo mật", en:"Privacy Policy"},
   "footer.aboutH": {vi:"Chương trình", en:"Program"},
   "footer.about1": {vi:"Rèn luyện kỹ năng 2026-2027", en:"Skills Training 2026-2027"},
   "footer.about2": {vi:"Năng khiếu Bóng rổ - Bóng đá", en:"Basketball - Football classes"},
   "footer.about3": {vi:"Bơi lội - Robotics & AI", en:"Swimming - Robotics & AI"},
   "footer.contactH": {vi:"Liên hệ", en:"Contact"},
-  "footer.address": {vi:"Nhà Văn hóa Thanh Thiếu nhi TP. Đồng Nai, phường Trấn Biên, Đồng Nai", en:"Youth Culture House, Tran Bien Ward, Dong Nai City"},
+  "footer.address": {vi:"Nhà Văn hóa Thanh Thiếu nhi TP. Đồng Nai, 159 Cách Mạng Tháng 8, phường Trấn Biên, Đồng Nai", en:"Youth Culture House, 159 Cach Mang Thang 8, Tran Bien Ward, Dong Nai"},
   "footer.facebook": {vi:"facebook.com/NVHTTN.DongNai", en:"facebook.com/NVHTTN.DongNai"},
   "footer.copyright": {vi:"© 2026 Nhà Văn hóa Thanh Thiếu nhi Thành phố Đồng Nai. Mọi quyền được bảo lưu.", en:"© 2026 Youth Culture House, Dong Nai City. All rights reserved."},
   "footer.poweredBy": {vi:"Vận hành đăng ký cùng hệ thống Huy Võ Education", en:"Registration powered together with the Huy Võ Education system"}
@@ -1394,7 +1455,8 @@ form.addEventListener('submit', async (e)=>{
     staff_discount_claim: document.getElementById('staffDiscount') ? document.getElementById('staffDiscount').checked : false,
     referral_code: refCodeInput || null,
     status: 'new',
-    source: src || ref || 'nvh-ky-nang-he-2026'
+    source: src || ref || 'nvh-ky-nang-he-2026',
+    site: 'nvhttn'
   };
 
   let { error } = await supabaseClient.from('leads').insert(payload);
@@ -1424,9 +1486,61 @@ form.addEventListener('submit', async (e)=>{
     errorBox.textContent = I18N['form.errorGeneric'][currentLang];
     errorBox.classList.remove('hidden');
   } else {
+    nvhTrackLead('reg-form');
     window.location.href = '/thank-you.html';
   }
 });
+/* ============ QUICK FORM (hero, 3-field) ============ */
+(function(){
+  const qf = document.getElementById('quick-form');
+  if (!qf) return;
+  const qfError = document.getElementById('qf-error');
+  const qfBtn = document.getElementById('qf-submit-btn');
+  qf.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    qfError.classList.remove('show');
+    const parent_name = document.getElementById('qf_parent_name').value.trim();
+    const phone = document.getElementById('qf_phone').value.trim();
+    const child_school = document.getElementById('qf_child_school').value.trim();
+    if (!parent_name || !phone || !child_school){
+      qfError.textContent = I18N['qf.errorRequired'][currentLang];
+      qfError.classList.add('show');
+      return;
+    }
+    if (!supabaseClient){
+      qfError.textContent = I18N['form.errorGeneric'][currentLang];
+      qfError.classList.add('show');
+      return;
+    }
+    qfBtn.disabled = true;
+    qfBtn.style.opacity = '0.7';
+    const { ref, src } = getStoredAttribution();
+    const payload = {
+      parent_name, phone, child_school,
+      programs: ['Rèn luyện Kỹ năng hè 2026-2027'],
+      status: 'new',
+      source: src || ref || 'nvh-quick-form-2026',
+      site: 'nvhttn'
+    };
+    let { error } = await supabaseClient.from('leads').insert(payload);
+    if (error && /column|schema/i.test(error.message || '')){
+      const { child_school: _cs, site: _site, ...fallback } = payload;
+      ({ error } = await supabaseClient.from('leads').insert(fallback));
+    }
+    qfBtn.disabled = false;
+    qfBtn.style.opacity = '1';
+    if (error){
+      console.error(error);
+      qfError.textContent = I18N['form.errorGeneric'][currentLang];
+      qfError.classList.add('show');
+    } else {
+      document.getElementById('qf-form-wrap').style.display = 'none';
+      nvhTrackLead('quick-form');
+      document.getElementById('qf-success').classList.add('show');
+    }
+  });
+})();
+
 // Promo Popup Logic
 document.addEventListener('DOMContentLoaded', () => {
   const promoOverlay = document.getElementById('promoOverlay');
