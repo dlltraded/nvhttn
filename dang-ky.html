@@ -443,7 +443,7 @@ document.getElementById('regForm').addEventListener('submit', async e => {
     const {error} = await db.from('leads').insert([{
       parent_name:pn, phone:ph, child_name:cn, child_age:parseInt(ca), child_school:cs,
       subjects:subs.join(', '), package:pkg.value,
-      after1630:document.getElementById('after1630').checked,
+      wants_after_1630:document.getElementById('after1630').checked,
       referral_code:refInput.value.trim().toUpperCase()||null,
       discount_applied: refDiscount,
       note:v('note')||null, status:'new', source:'dang-ky-page'
