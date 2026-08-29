@@ -1573,6 +1573,24 @@ form.addEventListener('submit', async (e)=>{
     errorBox.classList.remove('hidden');
   } else {
     nvhTrackLead('reg-form');
+    
+    // Save receipt data
+    try {
+      const pkgLabel = pkgEl.nextElementSibling.querySelector('.t').textContent;
+      const pkgPriceText = pkgEl.nextElementSibling.querySelector('.p').textContent;
+      const tuition = parseInt(pkgPriceText.replace(/\./g, '').replace('d', '').replace('đ', '')) || 0;
+      
+      const subLabels = Array.from(form.querySelectorAll('input[name="subject"]:checked')).map(cb => cb.nextElementSibling.textContent.trim());
+      
+      sessionStorage.setItem('hve_receipt', JSON.stringify({
+        childName: payload.child_name,
+        pkgName: pkgLabel,
+        subjects: subLabels.join(', '),
+        tuition: tuition,
+        discount: refDiscount
+      }));
+    } catch(e) {}
+    
     window.location.href = '/thank-you.html';
   }
 });

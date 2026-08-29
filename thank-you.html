@@ -40,7 +40,87 @@
     .btn-home{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(180deg,var(--gold),#d97706);color:#1a0d00;font-weight:800;font-size:15px;padding:14px 28px;border-radius:12px;text-decoration:none;box-shadow:0 8px 24px rgba(245,179,1,.4);transition:transform .2s,box-shadow .2s;}
     .btn-home:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(245,179,1,.55);}
     .footer-logo{margin-top:32px;font-size:11.5px;color:rgba(255,255,255,.35);letter-spacing:.04em;}
-  </style>
+  
+    .receipt {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 28px;
+      text-align: left;
+      display: none;
+    }
+    .receipt.show {
+      display: block;
+      animation: slideUp 0.6s 0.2s both;
+    }
+    .receipt-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 16px;
+      border-bottom: 1px dashed rgba(255,255,255,0.15);
+      padding-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .receipt-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+    }
+    .receipt-row:last-child { margin-bottom: 0; }
+    .receipt-row strong { color: #fff; text-align: right; }
+    
+    .discount-banner {
+      background: linear-gradient(135deg, rgba(32,184,77,0.15), rgba(32,184,77,0.05));
+      border: 1px solid rgba(32,184,77,0.3);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin-bottom: 24px;
+      display: none;
+      align-items: center;
+      gap: 12px;
+      text-align: left;
+    }
+    .discount-banner.show {
+      display: flex;
+      animation: slideUp 0.6s 0.1s both;
+    }
+    .db-icon {
+      font-size: 24px;
+      background: rgba(32,184,77,0.2);
+      border-radius: 50%;
+      width: 40px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .db-text {
+      font-size: 13.5px;
+      color: #fff;
+      line-height: 1.4;
+    }
+    .db-text strong {
+      color: var(--green);
+      font-size: 15px;
+    }
+    .total-row {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px dashed rgba(255,255,255,0.15);
+      font-size: 16px;
+      color: #fff;
+      font-weight: 700;
+    }
+    .total-row .amount {
+      color: var(--gold);
+      font-size: 20px;
+    }
+</style>
 </head>
 <body>
   <div class="blob blob-1"></div>
@@ -52,6 +132,49 @@
     <div class="badge">✅ Ghi nhận thành công</div>
     <h1>Cảm ơn ba mẹ đã<br><span>đăng ký giữ chỗ!</span></h1>
     <p class="desc">Đội ngũ <strong>Nhà Văn hóa Thanh Thiếu nhi TP. Đồng Nai</strong> đã nhận được thông tin và sẽ liên hệ tư vấn lịch học &amp; tuyến xe trong thời gian sớm nhất.</p>
+    
+    <div class="discount-banner" id="discountBanner">
+      <div class="db-icon">🎉</div>
+      <div class="db-text">
+        Chúc mừng! Mã giới thiệu hợp lệ. <br>
+        Học phí của bé được <strong>giảm <span id="discountAmount"></span>đ</strong>
+      </div>
+    </div>
+
+    <div class="receipt" id="receiptBox">
+      <div class="receipt-title">
+        Thông tin đăng ký
+        <span style="font-size:12px; background:rgba(255,255,255,0.1); padding:2px 8px; border-radius:12px; color:rgba(255,255,255,0.8);">Chưa thanh toán</span>
+      </div>
+      <div class="receipt-row">
+        <span>Tên bé:</span>
+        <strong id="rChildName"></strong>
+      </div>
+      <div class="receipt-row">
+        <span>Gói học:</span>
+        <strong id="rPackage"></strong>
+      </div>
+      <div class="receipt-row">
+        <span>Môn năng khiếu:</span>
+        <strong id="rSubjects"></strong>
+      </div>
+      <div class="receipt-row">
+        <span>Học phí gốc:</span>
+        <strong id="rTuition"></strong>
+      </div>
+      <div class="receipt-row" id="rDiscountRow" style="color:var(--green); display:none;">
+        <span>Ưu đãi mã giới thiệu:</span>
+        <strong>-<span id="rDiscountVal"></span>đ</strong>
+      </div>
+      <div class="receipt-row total-row">
+        <span>Tổng tạm tính:</span>
+        <strong class="amount"><span id="rTotal"></span>đ</strong>
+      </div>
+      <div style="font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 12px; text-align: center; line-height: 1.4;">
+        * Phí xe tuyến (nếu có) sẽ được bộ phận tư vấn báo giá chính xác khi liên hệ.
+      </div>
+    </div>
+    
     <div class="info-box">
       <div class="info-row"><span class="info-icon">📞</span><div class="info-text">Cần hỗ trợ ngay: <strong>0251.3847369 / 0769.663366</strong></div></div>
       <div class="info-row"><span class="info-icon">🕐</span><div class="info-text">Giờ tiếp nhận: <strong>Thứ 2–CN · 8:00–11:00 &amp; 14:00–17:00</strong></div></div>
@@ -67,9 +190,36 @@
   </div>
   <script>
     let count = 5;
+    
+    // Parse receipt data
+    const rDataStr = sessionStorage.getItem('hve_receipt');
+    if (rDataStr) {
+      try {
+        const rData = JSON.parse(rDataStr);
+        document.getElementById('rChildName').textContent = rData.childName;
+        document.getElementById('rPackage').textContent = rData.pkgName;
+        document.getElementById('rSubjects').textContent = rData.subjects;
+        document.getElementById('rTuition').textContent = parseInt(rData.tuition).toLocaleString('vi-VN');
+        
+        let total = parseInt(rData.tuition);
+        if (rData.discount > 0) {
+          document.getElementById('discountBanner').classList.add('show');
+          document.getElementById('discountAmount').textContent = parseInt(rData.discount).toLocaleString('vi-VN');
+          
+          document.getElementById('rDiscountRow').style.display = 'flex';
+          document.getElementById('rDiscountVal').textContent = parseInt(rData.discount).toLocaleString('vi-VN');
+          
+          total = total - parseInt(rData.discount);
+        }
+        
+        document.getElementById('rTotal').textContent = total.toLocaleString('vi-VN');
+        document.getElementById('receiptBox').classList.add('show');
+      } catch(e) {}
+    }
+
     const numEl = document.getElementById('countNum');
     const homeBtn = document.getElementById('homeBtn');
-    const timer = setInterval(() => { count--; numEl.textContent = count; if (count <= 0) { clearInterval(timer); window.location.href = '/'; } }, 1000);
+    const timer = setInterval(() => { count--; numEl.textContent = count; if (count <= 0) { clearInterval(timer); if(!document.getElementById('receiptBox').classList.contains('show')) { window.location.href = '/'; } else { document.querySelector('.countdown-wrap').style.display = 'none'; } } }, 1000);
     homeBtn.addEventListener('click', () => clearInterval(timer));
   </script>
 </body>

@@ -449,6 +449,18 @@ document.getElementById('regForm').addEventListener('submit', async e => {
       note:v('note')||null, status:'new', source:'dang-ky-page'
     }]);
     if (error) throw error;
+    const pkgName = pkg.parentElement.querySelector('.pkg-name').textContent;
+    const pkgPriceStr = pkg.parentElement.querySelector('.pkg-price').textContent;
+    const tuition = parseInt(pkgPriceStr.replace(/\./g, '').replace('d', '').replace('đ', '')) || 0;
+    
+    sessionStorage.setItem('hve_receipt', JSON.stringify({
+      childName: v('child_name'),
+      pkgName: pkgName,
+      subjects: subs.join(', '),
+      tuition: tuition,
+      discount: refDiscount
+    }));
+
     window.location.href = '/thank-you.html';
   } catch(err) {
     formErrBottom.textContent = I18N['err.generic'][currentLang];
