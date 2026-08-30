@@ -176,18 +176,33 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);min-he
     </div>
     <div class="info-card">
       <div class="info-card-title" data-i18n="contact.title">Liên hệ & Ghi danh</div>
-      <div class="cinfo-row"><span class="cinfo-ic">📞</span><div class="cinfo-tx"><a href="tel:025133840648" style="color:inherit;text-decoration:none;font-weight:700;">0251.3384.0648</a> &nbsp;·&nbsp; <a href="tel:0769663366" style="color:inherit;text-decoration:none;font-weight:700;">0769.663366</a></div></div>
+      <div class="cinfo-row"><span class="cinfo-ic">📞</span><div class="cinfo-tx"><a href="tel:0928775599" style="color:inherit;text-decoration:none;font-weight:700;">0928.775.599 (Mr. Cường)</a></div></div>
       <div class="cinfo-row"><span class="cinfo-ic">🕐</span><div class="cinfo-tx" data-i18n="contact.hours">Thứ 2–CN · 8:00–11:00 & 14:00–17:00</div></div>
       <div class="cinfo-row"><span class="cinfo-ic">📍</span><div class="cinfo-tx" data-i18n="contact.addr">Phòng Truyền thống – Nhà Văn hóa Thanh Thiếu nhi TP. Đồng Nai</div></div>
       <div class="cinfo-row"><span class="cinfo-ic">📅</span><div class="cinfo-tx" data-i18n-html="contact.open">Ghi danh từ <strong>24/08/2026</strong> · Khai giảng <strong>07/09/2026</strong></div></div>
     </div>
     <div class="info-card">
-      <div class="info-card-title">📅 Thời khoá biểu dự kiến (Buổi chiều)</div>
-      <div style="font-size:12.5px;color:var(--ink2);line-height:1.6;">
-        <strong>11:15 - 12:00:</strong> Vệ sinh, ăn trưa<br>
-        <strong>12:00 - 13:15:</strong> Ngủ trưa<br>
-        <strong>13:45 - 15:15:</strong> Kỹ năng tự học (T2-T7)<br>
-        <strong>15:30 - 16:30:</strong> Năng khiếu tự chọn
+      <div class="info-card-title">📅 Thời khoá biểu dự kiến</div>
+      
+      <div style="margin-bottom: 8px;">
+        <strong style="color:var(--ink);font-size:13px;">🌞 Ca Sáng (Học sinh học chính khóa chiều)</strong><br>
+        <div style="font-size:12.5px;color:var(--ink2);line-height:1.6;margin-top:4px;">
+          <strong>07:00 - 07:30:</strong> Đón học sinh<br>
+          <strong>07:45 - 09:15:</strong> Kỹ năng tự học (T2-T7)<br>
+          <strong>09:30 - 10:30:</strong> Năng khiếu tự chọn<br>
+          <strong>10:30 - 12:10:</strong> Vệ sinh, ăn trưa & ngủ trưa<br>
+          <strong>12:10:</strong> Xe đưa bé đến trường
+        </div>
+      </div>
+      
+      <div style="border-top: 1px dashed var(--line); padding-top: 8px;">
+        <strong style="color:var(--ink);font-size:13px;">🌜 Ca Chiều (Học sinh học chính khóa sáng)</strong><br>
+        <div style="font-size:12.5px;color:var(--ink2);line-height:1.6;margin-top:4px;">
+          <strong>10:00 - 11:15:</strong> Đón học sinh về NVHTTN<br>
+          <strong>11:15 - 13:15:</strong> Vệ sinh, ăn trưa & ngủ trưa<br>
+          <strong>13:45 - 15:15:</strong> Kỹ năng tự học (T2-T7)<br>
+          <strong>15:30 - 16:30:</strong> Năng khiếu tự chọn
+        </div>
       </div>
     </div>
     <div class="info-card">
@@ -482,7 +497,7 @@ document.getElementById('regForm').addEventListener('submit', async e => {
     window.location.href = '/thank-you.html';
   } catch(err) {
     console.error('Supabase Error:', err);
-    formErrBottom.innerHTML = I18N['err.generic'][currentLang] + '<br><small style="color:red">' + (err.message || JSON.stringify(err)) + '</small>';
+    formErrBottom.innerHTML = I18N['err.generic'][currentLang].replace('0251.3384.0648 / 0769.663366', '0928.775.599 (Mr. Cường)') + '<br><small style="color:red">' + (err.message || JSON.stringify(err)) + '</small>';
     formErrBottom.classList.add('show');
     submitBtn.disabled = false;
     submitText.textContent = I18N['btn.submit'][currentLang];
@@ -490,8 +505,8 @@ document.getElementById('regForm').addEventListener('submit', async e => {
 });
 </script>
 <div class="floating-widgets">
-  <a href="https://zalo.me/0769663366" target="_blank" class="f-widget w-zalo">Zalo</a>
-  <a href="tel:0769663366" class="f-widget w-call">📞</a>
+  <a href="https://zalo.me/0928775599" target="_blank" class="f-widget w-zalo">Zalo</a>
+  <a href="tel:0928775599" class="f-widget w-call">📞</a>
 </div>
 </body>
 </html>
