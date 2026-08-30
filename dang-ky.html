@@ -133,6 +133,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);min-he
 @keyframes spin{to{transform:rotate(360deg)}}
 .spinner{width:20px;height:20px;border:2.5px solid rgba(0,0,0,.15);border-top-color:#1a0d00;border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0;}
 .floating-widgets { position: fixed; bottom: 20px; left: 20px; display: flex; flex-direction: column; gap: 15px; z-index: 999; }
+@media (max-width: 768px) { .floating-widgets { left: auto; right: 20px; } }
 .f-widget { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.2s; cursor: pointer; text-decoration: none; }
 .f-widget:hover { transform: scale(1.1); }
 .w-zalo { background: #0068FF; color: white; font-weight: bold; font-size: 14px; }
