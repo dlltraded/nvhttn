@@ -22,7 +22,7 @@ export default async function handler(req, res) {
     // Format the message
     let sourceText = payload.source === 'webapp-tu-van' ? '📱 Ứng dụng tư vấn viên' : '🌐 Website Landing Page';
     
-    let message = `🚨 <b>CÓ HỒ SƠ ĐĂNG KÝ MỚI</b> 🚨\n\n`;
+    let message = `🎉 <b>CÓ HÀNG MỚI NÈ MẤY SẾP ƠI!!!</b> 🥳🔥\n\n`;
     message += `👤 <b>Phụ huynh:</b> ${payload.parent_name || 'Không rõ'}\n`;
     message += `📞 <b>SĐT:</b> <code>${payload.phone || 'Không rõ'}</code>\n`;
     message += `👦 <b>Học sinh:</b> ${payload.child_name || 'Không rõ'}\n`;
