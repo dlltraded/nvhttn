@@ -349,8 +349,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     
     if (!error) {
-      // Call Telegram notification API silently
-      fetch('/api/notify', {
+      // Call Telegram notification API silently, wait for it to finish
+      await fetch('/api/notify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)

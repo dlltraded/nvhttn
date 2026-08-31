@@ -515,8 +515,8 @@ document.getElementById('regForm').addEventListener('submit', async e => {
     }]);
     if (error) throw error;
     
-    // Call Telegram notification API silently
-    fetch('/api/notify', {
+    // Call Telegram notification API silently, wait for it to avoid cancellation on redirect
+    await fetch('/api/notify', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
