@@ -132,18 +132,24 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);min-he
 .hidden{display:none!important;}
 @keyframes spin{to{transform:rotate(360deg)}}
 .spinner{width:20px;height:20px;border:2.5px solid rgba(0,0,0,.15);border-top-color:#1a0d00;border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0;}
-.contact-footer { position: fixed; bottom: 20px; left: 20px; z-index: 999; display: flex; flex-direction: column; gap: 15px; }
-.cf-btn { width: 50px; height: 50px; border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.2s; font-weight: bold; }
+.contact-footer { position: fixed; bottom: 20px; right: 20px; z-index: 999; display: flex; flex-direction: column; gap: 15px; }
+.cf-btn { position: relative; width: 50px; height: 50px; border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.2s; font-weight: bold; }
 .cf-btn:hover { transform: scale(1.1); }
-.cf-zalo { background: #0068FF; font-size: 14px; }
-.cf-mess { background: #0084FF; font-size: 13px; }
+.cf-zalo { background: #0068FF; font-size: 14px; animation: pulse-zalo 2s infinite; }
+.cf-mess { background: radial-gradient(circle at bottom left, #00B2FF, #006AFF, #8A2BE2, #FF5C87, #FF8C69); animation: pulse-mess 2s infinite; animation-delay: 1s; }
 .cf-call { background: #20b84d; font-size: 24px; display: none; }
 .cf-text { display: none; }
+
+@keyframes pulse-zalo { 0% { box-shadow: 0 0 0 0 rgba(0, 104, 255, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(0, 104, 255, 0); } 100% { box-shadow: 0 0 0 0 rgba(0, 104, 255, 0); } }
+@keyframes pulse-mess { 0% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.5); } 70% { box-shadow: 0 0 0 15px rgba(138, 43, 226, 0); } 100% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0); } }
+@keyframes shake-anim { 0%, 100% { transform: rotate(0) scale(1); } 10%, 30%, 50%, 70%, 90% { transform: rotate(-10deg) scale(1.1); } 20%, 40%, 60%, 80% { transform: rotate(10deg) scale(1.1); } }
+.cf-icon-zalo, .cf-icon-mess { animation: shake-anim 3s ease-in-out infinite; display: flex; align-items: center; justify-content: center; }
+
 @media (max-width: 768px) {
   .contact-footer { bottom: 0; left: 0; right: 0; flex-direction: row; gap: 0; box-shadow: 0 -2px 10px rgba(0,0,0,0.15); width: 100%; }
-  .cf-btn { flex: 1; width: auto; height: auto; border-radius: 0; padding: 18px; font-size: 16px; gap: 10px; box-shadow: none; }
+  .cf-btn { flex: 1; width: auto; height: auto; border-radius: 0; padding: 18px; font-size: 16px; gap: 10px; box-shadow: none; animation: none; }
   .cf-btn:hover { transform: none; }
-  .cf-icon-zalo, .cf-icon-call, .cf-icon-mess { display: none; }
+  .cf-icon-zalo, .cf-icon-call, .cf-icon-mess { display: none; animation: none; }
   .cf-text { display: flex; align-items: center; justify-content: center; gap: 8px; }
   .cf-call { display: flex; }
   .cf-mess { display: none; }
@@ -520,7 +526,7 @@ document.getElementById('regForm').addEventListener('submit', async e => {
     <span class="cf-icon-zalo">Zalo</span><span class="cf-text">💬 Chat Zalo</span>
   </a>
   <a href="https://m.me/1249999728205312" target="_blank" class="cf-btn cf-mess">
-    <span class="cf-icon-mess">Mess</span><span class="cf-text">💬 Messenger</span>
+    <span class="cf-icon-mess"><svg viewBox="0 0 36 36" width="26" height="26" fill="white"><path d="M18,3C9.716,3,3,9.261,3,16.983c0,4.407,2.203,8.34,5.656,10.999v5.018l5.176-2.853 c1.332,0.369,2.731,0.569,4.168,0.569c8.284,0,15-6.261,15-13.983C33,9.261,26.284,3,18,3z M21.758,19.341l-3.327-3.535 l-6.489,3.535l7.158-7.591l3.398,3.535l6.349-3.535L21.758,19.341z"/></svg></span><span class="cf-text">💬 Messenger</span>
   </a>
   <a href="tel:0928775599" class="cf-btn cf-call">
     <span class="cf-icon-call">📞</span><span class="cf-text">📞 Gọi ngay</span>
