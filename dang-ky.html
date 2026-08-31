@@ -514,6 +514,18 @@ document.getElementById('regForm').addEventListener('submit', async e => {
       note:v('note')||null, status:'new', source:'dang-ky-page', site:'nvhttn'
     }]);
     if (error) throw error;
+    
+    // Call Telegram notification API silently
+    fetch('/api/notify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        parent_name:pn, phone:ph, child_name:cn, child_age:parseInt(ca)||null, child_school:cs,
+        programs: ['Rèn luyện Kỹ năng hè 2026-2027', ...subs], package_selected:pkg.value,
+        wants_after_1630:document.getElementById('after1630').checked,
+        referral_code:refInput.value.trim().toUpperCase()||null, note:v('note')||null, source:'dang-ky-page'
+      })
+    }).catch(err => console.error('Notify err:', err));
     const pkgName = pkg.parentElement.querySelector('.pkg-name').textContent;
     const pkgPriceStr = pkg.parentElement.querySelector('.pkg-price').textContent;
     const tuition = parseInt(pkgPriceStr.replace(/\./g, '').replace('d', '').replace('đ', '')) || 0;

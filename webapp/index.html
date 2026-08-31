@@ -347,6 +347,15 @@ document.addEventListener('DOMContentLoaded', function () {
       };
       ({ error } = await supabase.from('leads').insert(fallback));
     }
+    
+    if (!error) {
+      // Call Telegram notification API silently
+      fetch('/api/notify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).catch(err => console.error('Notify err:', err));
+    }
 
     submitBtn.disabled = false;
     spinner.classList.add('hidden');
