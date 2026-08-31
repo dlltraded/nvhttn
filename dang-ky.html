@@ -136,14 +136,17 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);min-he
 .cf-btn { width: 50px; height: 50px; border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.2s; font-weight: bold; }
 .cf-btn:hover { transform: scale(1.1); }
 .cf-zalo { background: #0068FF; font-size: 14px; }
-.cf-call { background: #20b84d; font-size: 24px; }
+.cf-mess { background: #0084FF; font-size: 13px; }
+.cf-call { background: #20b84d; font-size: 24px; display: none; }
 .cf-text { display: none; }
 @media (max-width: 768px) {
   .contact-footer { bottom: 0; left: 0; right: 0; flex-direction: row; gap: 0; box-shadow: 0 -2px 10px rgba(0,0,0,0.15); width: 100%; }
   .cf-btn { flex: 1; width: auto; height: auto; border-radius: 0; padding: 18px; font-size: 16px; gap: 10px; box-shadow: none; }
   .cf-btn:hover { transform: none; }
-  .cf-icon-zalo, .cf-icon-call { display: none; }
+  .cf-icon-zalo, .cf-icon-call, .cf-icon-mess { display: none; }
   .cf-text { display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .cf-call { display: flex; }
+  .cf-mess { display: none; }
 }
 </style>
 </head>
@@ -515,6 +518,9 @@ document.getElementById('regForm').addEventListener('submit', async e => {
 <div class="contact-footer">
   <a href="https://zalo.me/0928775599" target="_blank" class="cf-btn cf-zalo">
     <span class="cf-icon-zalo">Zalo</span><span class="cf-text">💬 Chat Zalo</span>
+  </a>
+  <a href="https://m.me/1249999728205312" target="_blank" class="cf-btn cf-mess">
+    <span class="cf-icon-mess">Mess</span><span class="cf-text">💬 Messenger</span>
   </a>
   <a href="tel:0928775599" class="cf-btn cf-call">
     <span class="cf-icon-call">📞</span><span class="cf-text">📞 Gọi ngay</span>
