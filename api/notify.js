@@ -72,7 +72,7 @@ export default async function handler(req, res) {
     if (!response.ok) {
       const errorData = await response.text();
       console.error('Telegram API error:', errorData);
-      return res.status(500).json({ error: 'Failed to send telegram message' });
+      return res.status(500).json({ error: 'Failed to send telegram message', details: errorData });
     }
 
     return res.status(200).json({ success: true });
