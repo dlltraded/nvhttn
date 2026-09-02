@@ -1656,6 +1656,14 @@ form.addEventListener('submit', async (e)=>{
       qfError.textContent = I18N['form.errorGeneric'][currentLang];
       qfError.classList.add('show');
     } else {
+      // Call Telegram notification API silently
+      await fetch('/api/notify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        keepalive: true
+      }).catch(err => console.error('Notify err:', err));
+
       document.getElementById('qf-form-wrap').style.display = 'none';
       nvhTrackLead('quick-form');
       document.getElementById('qf-success').classList.add('show');
